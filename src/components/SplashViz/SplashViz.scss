@@ -1,0 +1,11 @@
+@import 'functions';
+@import 'vars';
+@import 'mixins';
+
+.splash-viz {
+  position: relative;
+  display: flex;
+  background: getColor(elephant);
+  flex-direction: column;
+  overflow: hidden;
+}

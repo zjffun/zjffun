@@ -1,7 +1,4 @@
-const fs = require('fs');
 const path = require('path');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const mdPlugins = [
@@ -99,10 +96,7 @@ module.exports = (env = {}) => ({
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.scss$/,
@@ -112,15 +106,13 @@ module.exports = (env = {}) => ({
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [
-                require('autoprefixer')
-              ],
+              plugins: () => [require('autoprefixer')]
             }
           },
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [ path.join('./src/styles/partials') ]
+              includePaths: [path.join('./src/styles/partials')]
             }
           }
         ]
@@ -140,7 +132,7 @@ module.exports = (env = {}) => ({
       },
       {
         test: /\.yaml$/,
-        use: ["json-loader", "yaml-frontmatter-loader"]
+        use: ['json-loader', 'yaml-frontmatter-loader']
       }
     ]
   },

@@ -2,10 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HTMLPlugin = require('html-webpack-plugin');
-// const DirectoryTreePlugin = require('directory-tree-webpack-plugin');
+const DirectoryTreePlugin = require('directory-tree-webpack-plugin');
 const HTMLTemplate = require('html-webpack-template');
 const common = require('./webpack.common.js');
-// const { enhance, filter, sort } = require('./src/utilities/content-tree-enhancers.js');
+const { enhance, filter, sort } = require('./src/utilities/content-tree-enhancers.js');
 
 module.exports = env => merge(common(env), {
   mode: 'development',
@@ -23,14 +23,14 @@ module.exports = env => merge(common(env), {
         description: '...'
       }
     }),
-    // new DirectoryTreePlugin({
-    //   dir: 'src/blogs',
-    //   path: 'src/blogs/_blogs.json',
-    //   extensions: /\.mdx?/,
-    //   enhance,
-    //   filter,
-    //   sort
-    // })
+    new DirectoryTreePlugin({
+      dir: 'src/blogs',
+      path: 'src/blogs/_blogs.json',
+      extensions: /\.mdx?/,
+      enhance,
+      filter,
+      sort
+    })
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
