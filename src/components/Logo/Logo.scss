@@ -1,16 +1,19 @@
-.logo, .title {
-  float: left;
-  width: auto;
-  height: 35px;
-  opacity: 0.9;
+.web-title {
   transition: opacity 250ms;
+  line-height: 35px;
+  font-size: 26px;
+  font-family: 'Courier New', Courier, monospace;
+
+  .logo{
+    float: left;
+    width: auto;
+    height: 35px;
+    opacity: 0.9;
+  }
 
   &:hover {
     opacity: 1;
   }
 }
 
-.title {
-  display: inline-block;
-  // line-height:
-}
+

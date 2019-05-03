@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '../Link/Link';
 import Container from '../Container/Container';
-import Icon from '../../assets/icon-square-small.svg';
+import Icon from '../../assets/site-logo.jpg';
 import CC from '../../assets/cc.svg';
 import BY from '../../assets/by.svg';
 import './Footer.scss';
@@ -10,10 +10,8 @@ const Footer = () => (
   <footer className="footer">
     <Container className="footer__inner">
       <section className="footer__left">
-        <Link className="footer__link" to="/guides/getting-started/">Get Started</Link>
-        <Link className="footer__link" to="/organization/">Organization</Link>
-        <Link className="footer__link" to="/starter-kits/">Starter Kits</Link>
-        <Link className="footer__link" to="/comparison/">Comparison</Link>
+        <Link className="footer__link" to="">友情链接1</Link>
+        <Link className="footer__link" to="">友情链接9</Link>
       </section>
 
       <section className="footer__middle">
@@ -23,10 +21,8 @@ const Footer = () => (
       </section>
 
       <section className="footer__right">
-        <Link className="footer__link" to="/glossary/">Glossary</Link>
-        <Link className="footer__link" to="/branding/">Branding</Link>
-        <Link className="footer__link" to="https://gitter.im/webpack/webpack">Gitter</Link>
-        <Link className="footer__link" to="https://github.com/webpack/webpack/releases">Changelog</Link>
+        <Link className="footer__link" to="">聊天</Link>
+        <Link className="footer__link" to="">大事记录</Link>
         <Link className="footer__link footer__license" to="/license">
           <img
             alt="Creative Commons License"

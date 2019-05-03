@@ -5,7 +5,11 @@ import { hot as Hot } from 'react-hot-loader';
 import DocumentTitle from 'react-document-title';
 
 // Import Utilities
-import { extractPages, extractSections, getPageTitle } from '../../utilities/content-utils';
+import {
+  extractPages,
+  extractSections,
+  getPageTitle
+} from '../../utilities/content-utils';
 import isClient from '../../utilities/is-client';
 
 // Import Components
@@ -31,6 +35,19 @@ import './Site.scss';
 // Load Content Tree
 import Content from '../../blogs/_blogs.json';
 
+const links = [
+  {
+    content: 'Blog',
+    url: '/blogs',
+    isActive: url => /^\/(blogs)/.test(url),
+    // children: this._strip(sections.filter(item => item.name !== 'contribute'))
+  },
+  { content: '在线工具', url: '/tools' },
+  { content: '常用文档', url: '/docs' },
+  { content: '软件', url: '/softwares' },
+  { content: 'ACG', url: '/acg' }
+];
+
 class Site extends React.Component {
   state = {
     mobileSidebarOpen: false
@@ -50,24 +67,16 @@ class Site extends React.Component {
         <Navigation
           pathname={location.pathname}
           toggleSidebar={this._toggleSidebar}
-          links={[
-            {
-              content: 'Blog',
-              url: '/blogs',
-              isActive: url => /^\/(blogs)/.test(url),
-              children: this._strip(sections.filter(item => item.name !== 'contribute'))
-            },
-            { content: '在线工具', url: '/tools' },
-            { content: '常用文档', url: '/docs' },
-            { content: '软件', url: '/softwares' },
-            { content: 'ACG', url: '/acg' }
-          ]}
+          links={links}
         />
 
-        {isClient ? <SidebarMobile
-          isOpen={mobileSidebarOpen}
-          sections={this._strip(Content.children)}
-          toggle={this._toggleSidebar} /> : null}
+        {isClient ? (
+          <SidebarMobile
+            isOpen={mobileSidebarOpen}
+            sections={[{content: '主页', url: '/'}, ...links]}
+            toggle={this._toggleSidebar}
+          />
+        ) : null}
 
         <Switch>
           <Route path="/" exact component={Splash} />
@@ -96,7 +105,11 @@ class Site extends React.Component {
                               pages={this._strip(
                                 section
                                   ? section.children
-                                  : Content.children.filter(item => item.type !== 'directory' && item.url !== '/')
+                                  : Content.children.filter(
+                                      item =>
+                                        item.type !== 'directory' &&
+                                        item.url !== '/'
+                                    )
                               )}
                             />
                             <Page {...page} content={content} />
@@ -135,7 +148,9 @@ class Site extends React.Component {
    * @return {array}       - ...
    */
   _strip = array => {
-    let anchorTitleIndex = array.findIndex(item => item.name.toLowerCase() === 'index.md');
+    let anchorTitleIndex = array.findIndex(
+      item => item.name.toLowerCase() === 'index.md'
+    );
 
     if (anchorTitleIndex !== -1) {
       array.unshift(array[anchorTitleIndex]);
@@ -143,15 +158,17 @@ class Site extends React.Component {
       array.splice(anchorTitleIndex + 1, 1);
     }
 
-    return array.map(({ title, name, url, group, sort, anchors, children }) => ({
-      title: title || name,
-      content: title || name,
-      url,
-      group,
-      sort,
-      anchors,
-      children: children ? this._strip(children) : []
-    }));
+    return array.map(
+      ({ title, name, url, group, sort, anchors, children }) => ({
+        title: title || name,
+        content: title || name,
+        url,
+        group,
+        sort,
+        anchors,
+        children: children ? this._strip(children) : []
+      })
+    );
   };
 }
 

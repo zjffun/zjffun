@@ -1,0 +1,70 @@
+
+ul.glass-tile{
+  list-style: none;
+}
+
+.glass-tile {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  box-sizing: border-box;
+  // grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "blog blog music music"
+    "blog blog motto motto"
+    "tool1 tool2 ACG ACG"
+    "tool3 tool4 ACG ACG"
+    ". . . .";
+  color: #fff;
+
+  * {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  &-container {
+    width: 100vw;
+    height: calc(100vw / 4 * 5);
+    max-width: 1200px;
+    max-height: calc(1200px / 4 * 5);
+    margin: 0 auto;
+  }
+  .tile {
+    background-color: rgba(0,0,0,0.25);
+    border: 1px rgba(255,255,255,0.4) solid;
+    margin: 4px;
+    position: relative;
+    &-title {
+      position: absolute;
+      bottom: 0;
+      line-height: 18px;
+      text-indent: 4px;
+    }
+    &:hover {
+      outline: 2px solid #000;
+    }
+    &:active {
+      outline: 3px solid #000;
+    }
+  }
+  .blog{
+    grid-area: blog;
+  }
+  .motto{
+    grid-area: motto;
+  }
+  .music{
+    grid-area: music;
+  }
+  .ACG{
+    grid-area: ACG;
+  }
+  @for $i from 1 through 4 {
+    .tool#{$i} {
+      grid-area: tool#{$i};
+    }
+  }
+
+}

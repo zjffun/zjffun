@@ -68,40 +68,9 @@ export default class SidebarMobile extends React.Component {
             key={ section.url }
             to={ section.url }
             onClick={ this.props.toggle.bind(null, false) }>
-            <h3>{ section.title || section.url }</h3>
+            <h3>{ section.content || section.url }</h3>
           </Link>
-
-          { this._getPages(section.children) }
         </div>
-      );
-    });
-  }
-
-  /**
-   * Retrieve markup for page links
-   *
-   * @param {array} pages - A list of page objects
-   * @return {array} - Markup containing the page links
-   */
-  _getPages(pages) {
-    let pathname = '';
-
-    if (window.location !== undefined) {
-      pathname = window.location.pathname;
-    }
-
-    return pages.map(page => {
-      let url = `${page.url}`,
-        active = pathname === url;
-
-      return (
-        <Link
-          key={ url }
-          className={ `sidebar-mobile__page ${active ? 'sidebar-mobile__page--active' : ''}` }
-          to={ url }
-          onClick={ this.props.toggle.bind(null, false) }>
-          { page.title }
-        </Link>
       );
     });
   }

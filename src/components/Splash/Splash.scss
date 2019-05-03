@@ -14,8 +14,8 @@
     position: relative;
     text-align: center;
 
-    &--dark {
-      background-color: #f3f3f3;
+    &--dusk {
+      background: linear-gradient(to right bottom, #002f4b, #dc4225);
     }
 
     p {

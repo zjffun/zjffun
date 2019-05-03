@@ -48,6 +48,10 @@
   letter-spacing: 0.5px;
   color: white;
   transition: all 250ms;
+
+  &:hover {
+    color: getColor(malibu);
+  }
 }
 
 .navigation__items {

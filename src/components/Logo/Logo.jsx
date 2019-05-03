@@ -5,8 +5,7 @@ import './Logo.scss';
 export default () => {
   return (
     <React.Fragment>
-      <img className="logo" src={Logo} alt="webpack logo" />
-      <h1 className="title">zjffun</h1>
+      <h1 className="web-title"><img className="logo" src={Logo} alt="webpack logo" /> zjffun</h1>
     </React.Fragment>
   );
 };
