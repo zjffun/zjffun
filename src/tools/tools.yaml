@@ -1,7 +1,7 @@
 前端:
   静态网站:
     netlify: https://www.netlify.com/
-  PNG转ICO: 
+  PNG转ICO:
     easyicon covert: https://www.easyicon.net/covert/
   图标素材:
     FLATICON: https://www.flaticon.com/
@@ -26,13 +26,12 @@ CS:
     Bmob: https://www.bmob.cn/
   UML图:
     PlantUML Editor: http://haha98k.com/
-  本地化管理工具: 
+  本地化管理工具:
     crowdin: https://crowdin.com/
-  接口管理工具: 
+  接口管理工具:
     RAP2: http://rap2.taobao.org/
-  问题需求跟踪工具: 
+  问题需求跟踪工具:
     ActionView: http://www.actionview.cn/
-  
 办公:
   文件同步:
     Dropbox: https://www.dropbox.com/
@@ -48,24 +47,17 @@ CS:
     SOURCEFORGE: https://sourceforge.net/
 数学:
   数字帝国: https://zh.numberempire.com/
-  可视化: 
+  可视化:
     Wolfram|Alpha Computational Intelligence: https://www.wolframalpha.com/
   Latex:
-    手写: 
+    手写:
       Detexify: http://detexify.kirelabs.org/classify.html
-    编辑: 
+    编辑:
       CODECOGS: https://www.codecogs.com/latex/eqneditor.php
-地信:
+地信（GIS）:
   GeoJSON:
     编辑:
       geojson.io: http://geojson.io/
-
 工具箱:
   在线工具: https://tool.lu/
   爱资料在线工具: https://www.toolnb.com/
-
-  
-  
-  
-
-  
