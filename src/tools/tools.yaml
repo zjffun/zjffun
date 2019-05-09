@@ -1,7 +1,11 @@
 前端:
   静态网站:
     netlify: https://www.netlify.com/
-  PNG转ICO:
+  分析:
+    页面加载速度:
+      PageSpeed Insights: https://developers.google.com/speed/pagespeed/insights/
+  图片转ICO:
+    ICO converter: https://www.icoconverter.com/
     easyicon covert: https://www.easyicon.net/covert/
   图标素材:
     FLATICON: https://www.flaticon.com/
@@ -10,6 +14,8 @@
     PLACEHOLDER.COM: https://placeholder.com/
   JS美化:
     Online JavaScript Beautifier: https://beautifier.io/
+  图标制作:
+    Iconfinder • Editor: https://www.iconfinder.com/editor/
 CS:
   正则表达式:
     regular expressions 101: https://regex101.com/
