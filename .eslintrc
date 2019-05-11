@@ -7,9 +7,6 @@
     "es6": true,
     "node": true
   },
-  "plugins": [
-    "markdown"
-  ],
   "globals": {
     "__DEV__": true
   },

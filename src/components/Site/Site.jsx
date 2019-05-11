@@ -23,7 +23,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';
 import Page from '../Page/Page';
 import Gitter from '../Gitter/Gitter';
-import Vote from '../Vote/Vote';
+import Blogs from '../Blogs/Blogs';
 import Organization from '../Organization/Organization';
 // import StarterKits from '../StarterKits/StarterKits';
 
@@ -35,12 +35,14 @@ import './Site.scss';
 // Load Content Tree
 import Content from '../../blogs/_blogs.json';
 
+const sections = extractSections(Content);
+
 const links = [
   {
     content: 'Blog',
     url: '/blogs',
     isActive: url => /^\/(blogs)/.test(url),
-    // children: this._strip(sections.filter(item => item.name !== 'contribute'))
+    children: _strip(sections)
   },
   { content: '在线工具', url: '/tools' },
   { content: '常用文档', url: '/docs' },
@@ -56,7 +58,6 @@ class Site extends React.Component {
   render() {
     let { location } = this.props;
     let { mobileSidebarOpen } = this.state;
-    let sections = extractSections(Content);
     let section = sections.find(({ url }) => location.pathname.startsWith(url));
     let pages = extractPages(Content);
 
@@ -73,7 +74,7 @@ class Site extends React.Component {
         {isClient ? (
           <SidebarMobile
             isOpen={mobileSidebarOpen}
-            sections={[{content: '主页', url: '/'}, ...links]}
+            sections={[{ content: '主页', url: '/' }, ...links]}
             toggle={this._toggleSidebar}
           />
         ) : null}
@@ -84,7 +85,11 @@ class Site extends React.Component {
             render={props => (
               <Container className="site__content">
                 <Switch>
-                  <Route path="/vote" component={Vote} />
+                  <Route
+                    exact
+                    path="/blogs"
+                    render={() => <Blogs sections={sections} />}
+                  />
                   <Route path="/organization" component={Organization} />
                   {/* <Route path="/starter-kits" component={StarterKits} /> */}
                   {pages.map(page => (
@@ -140,36 +145,34 @@ class Site extends React.Component {
       mobileSidebarOpen: open
     });
   };
+}
 
-  /**
-   * Strip any non-applicable properties
-   *
-   * @param  {array} array - ...
-   * @return {array}       - ...
-   */
-  _strip = array => {
-    let anchorTitleIndex = array.findIndex(
-      item => item.name.toLowerCase() === 'index.md'
-    );
+/**
+ * Strip any non-applicable properties
+ *
+ * @param  {array} array - ...
+ * @return {array}       - ...
+ */
+function _strip(array) {
+  let anchorTitleIndex = array.findIndex(
+    item => item.name.toLowerCase() === 'index.md'
+  );
 
-    if (anchorTitleIndex !== -1) {
-      array.unshift(array[anchorTitleIndex]);
+  if (anchorTitleIndex !== -1) {
+    array.unshift(array[anchorTitleIndex]);
 
-      array.splice(anchorTitleIndex + 1, 1);
-    }
+    array.splice(anchorTitleIndex + 1, 1);
+  }
 
-    return array.map(
-      ({ title, name, url, group, sort, anchors, children }) => ({
-        title: title || name,
-        content: title || name,
-        url,
-        group,
-        sort,
-        anchors,
-        children: children ? this._strip(children) : []
-      })
-    );
-  };
+  return array.map(({ title, name, url, group, sort, anchors, children }) => ({
+    title: title || name,
+    content: title || name,
+    url,
+    group,
+    sort,
+    anchors,
+    children: children ? _strip(children) : []
+  }));
 }
 
 export default Hot(module)(Site);
