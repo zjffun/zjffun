@@ -20,7 +20,7 @@ render((
       render={ props => (
         <Site
           { ...props }
-          // import={ path => import(`./content/${path}`) }
+          import={ path => import(`./blogs/${path}`) }
           />
       )} />
   </Router>

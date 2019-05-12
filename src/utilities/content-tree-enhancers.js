@@ -3,10 +3,9 @@ const path = require('path');
 const frontMatter = require('front-matter');
 const remark = require('remark');
 const slug = require('remark-slug');
-const extractAnchors = require('remark-extract-anchors');
+const visit = require('unist-util-visit');
 
 const enhance = (tree, options) => {
-
   // delete `./` root directory on node
   const dir = path.normalize(options.dir).replace(/^(\.\/)/gm, '');
 
@@ -37,7 +36,7 @@ const enhance = (tree, options) => {
 
     remark()
       .use(slug)
-      .use(extractAnchors, { anchors })
+      .use(extractAnchors, { anchors, levels: true })
       .process(content, err => {
         if (err) {
           throw err;
@@ -46,9 +45,13 @@ const enhance = (tree, options) => {
 
     tree.anchors = anchors;
 
-    Object.assign(tree, {
-      path: tree.path.replace(/\\/g, '/')
-    }, attributes);
+    Object.assign(
+      tree,
+      {
+        path: tree.path.replace(/\\/g, '/')
+      },
+      attributes
+    );
   }
 };
 
@@ -69,6 +72,28 @@ const sort = (a, b) => {
 
   return 0;
 };
+
+function extractAnchors(options = {}) {
+  let { anchors, levels } = options;
+
+  if (!Array.isArray(anchors)) {
+    throw new Error('Missing or malformed `anchors` in options.');
+  }
+
+  return function transformer(ast) {
+    visit(ast, 'heading', visitor);
+  };
+
+  function visitor(node) {
+    // TODO: Default header `levels` and check it to filter the `push`ed anchors
+    let anchor = {
+      title: node.children.length ? node.children[0].value : '',
+      id: node.data.id
+    };
+    levels && (anchor.level = node.depth);
+    options.anchors.push(anchor);
+  }
+}
 
 function restructure(item, options) {
   enhance(item, options);

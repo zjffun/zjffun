@@ -3,3 +3,4 @@ src/blogs/*/*
 
 node_modules
 .eslintcache
+.vscode

@@ -5,94 +5,16 @@ import './SidebarItem.scss';
 const block = 'sidebar-item';
 
 export default class SidebarItem extends React.Component {
-  state = {
-    open: this._isOpen(this.props)
-  };
+  state = {};
 
   render() {
-    let { title, anchors = [] } = this.props;
-    let openMod = this.state.open ? `${block}--open` : '';
-    let disabledMod = anchors.length == 0 ? `${block}--disabled` : '';
-
+    let { title, id, level } = this.props;
     return (
-      <div className={ `${block} ${openMod} ${disabledMod}` }>
-        { anchors.length > 0 ? (
-          <i
-            className={ `${block}__toggle icon-chevron-right` }
-            onClick={ this._toggle.bind(this) } />
-        ) : (
-          <i className={ `${block}__toggle icon-vertical-bar` } />
-        )}
-
-        <Link
-          className={ `${block}__title` }
-          to={ this.props.url }>
-          { title }
-        </Link>
-
-        { anchors.length > 0 ? (
-          <ul className={ `${block}__anchors` }>
-            {
-              anchors.map((anchor, i) => (
-                <li
-                  key={ `anchor-${title}-${i}` }
-                  className={ `${block}__anchor` }
-                  title={ anchor.title }>
-                  <a href={ this._generateAnchorURL(anchor) }>
-                    { anchor.title }
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        ) : null }
+      <div className={`${block}`}>
+        <a className={`${block}__title ${block}-level-${level}`} href={`#${id}`}>
+          {title}
+        </a>
       </div>
     );
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if ( nextProps.currentPage !== this.props.currentPage ) {
-      this.setState({
-        open: this._isOpen(nextProps)
-      });
-    }
-  }
-
-  /**
-   * Checks whether the item should be expanded
-   *
-   * @param {object} props - The current props
-   */
-  _isOpen(props) {
-    return RegExp(`${props.currentPage}/?$`).test(props.url);
-  }
-
-  /**
-   * Toggles the open state (expanded/collapsed)
-   *
-   * @param {object} e - Click event
-   */
-  _toggle(e) {
-    this.setState({
-      open: !this.state.open
-    });
-  }
-
-  /**
-   * Generate the url for the given [anchor] depending on the current page
-   *
-   * @return {object} anchor - The anchor object containing its id
-   */
-  _generateAnchorURL(anchor) {
-    let { currentPage, url } = this.props;
-
-    if ( `/${currentPage}` === url ) {
-      return `#${anchor.id}`;
-
-    } else if (!anchor.id) {
-      return url;
-    } else {
-      return `${url}#${anchor.id}`;
-    }
   }
 }

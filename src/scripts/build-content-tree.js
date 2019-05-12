@@ -33,7 +33,7 @@ function buildContentTree(source, output) {
   let content = directoryTree(source, { extensions: /\.md/ });
 
   content = restructure(content, {
-    dir: source
+    dir: './src'
   });
 
   fs.writeFileSync(path.resolve(output), JSON.stringify(content, 2), (error) => {

@@ -91,14 +91,23 @@ class Site extends React.Component {
                     render={() => <Blogs sections={sections} />}
                   />
                   <Route path="/organization" component={Organization} />
-                  {/* <Route path="/starter-kits" component={StarterKits} /> */}
+                  {sections.map(section => (
+                    <Route
+                      key={section.url}
+                      exact
+                      path={section.url}
+                      render={() => {
+                        return <Blogs sections={sections} section={section} />;
+                      }}
+                    />
+                  ))}
                   {pages.map(page => (
                     <Route
                       key={page.url}
-                      exact={true}
+                      exact
                       path={page.url}
                       render={props => {
-                        let path = page.path.replace('src/content/', '');
+                        let path = page.path.replace('src/blogs/', '');
                         let content = this.props.import(path);
 
                         return (
@@ -107,7 +116,7 @@ class Site extends React.Component {
                             <Sidebar
                               className="site__sidebar"
                               currentPage={location.pathname}
-                              pages={this._strip(
+                              pages={_strip(
                                 section
                                   ? section.children
                                   : Content.children.filter(
@@ -116,6 +125,9 @@ class Site extends React.Component {
                                         item.url !== '/'
                                     )
                               )}
+
+                              section={section}
+                              page={page}
                             />
                             <Page {...page} content={content} />
                             <Gitter />
