@@ -11,11 +11,8 @@ import '../Sidebar/Sidebar.scss';
 // Create and export the component
 export default ({
   className = '',
-  pages,
-  currentPage,
   section,
   page,
-  ...props
 }) => {
   return (
     <nav className={`sidebar ${className}`}>
@@ -29,7 +26,6 @@ export default ({
                 id={anchor.id}
                 title={anchor.title}
                 level={anchor.level}
-                currentPage={currentPage}
               />
             </React.Fragment>
           );
