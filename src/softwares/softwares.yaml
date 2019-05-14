@@ -1,3 +1,8 @@
+运维:
+  代码部署平台:
+    walle - 瓦力: https://github.com/meolu/walle-web/
+    Jenkins automation server: https://github.com/jenkinsci/jenkins
+
 编辑器:
   markdown:
     typora: https://www.typora.io/
