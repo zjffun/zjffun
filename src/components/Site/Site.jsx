@@ -25,6 +25,7 @@ import Page from '../Page/Page';
 import Gitter from '../Gitter/Gitter';
 import Blogs from '../Blogs/Blogs';
 import Organization from '../Organization/Organization';
+import Tools from '../Tools/Tools';
 // import StarterKits from '../StarterKits/StarterKits';
 
 // Load Styling
@@ -90,6 +91,7 @@ class Site extends React.Component {
                     path="/blogs"
                     render={() => <Blogs sections={sections} />}
                   />
+                  <Route exact path="/tools" component={Tools} />
                   <Route path="/organization" component={Organization} />
                   {sections.map(section => (
                     <Route
@@ -125,7 +127,6 @@ class Site extends React.Component {
                                         item.url !== '/'
                                     )
                               )}
-
                               section={section}
                               page={page}
                             />

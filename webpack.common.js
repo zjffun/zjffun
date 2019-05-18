@@ -132,7 +132,7 @@ module.exports = (env = {}) => ({
       },
       {
         test: /\.yaml$/,
-        use: ['json-loader', 'yaml-frontmatter-loader']
+        use: ['json-loader', 'yaml-loader']
       }
     ]
   },
