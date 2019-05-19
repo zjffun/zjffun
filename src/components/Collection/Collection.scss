@@ -1,52 +1,35 @@
-.blogs {
+.collection {
   &-container {
     display: flex;
     max-width: 1024px;
     width: 100%;
-    box-shadow: 6px 0px 8px #ccc, -6px 0px 8px #ccc;
+    position: relative;
+    padding: 10px;
   }
-  article {
-    background: #eee;
-    flex: 1 1 0;
-    padding: 20px 16px;
-    .blog {
-      flex-direction: column;
-      display: flex;
-      height: 130px;
-      box-shadow: 2px 2px 2px 2px #555;
-      padding: 6px;
-      margin-bottom: 18px;
-      &-title {
-        font-size: 22px;
-        line-height: 30px;
-        flex: 0 0 30px;
-        text-overflow: ellipsis;
-      }
-      &-digest {
-        flex: 1 1 0;
-      }
-      &-info {
-        font-size: 14px;
-        line-height: 16px;
-        flex: 0 0 16px;
-        text-overflow: ellipsis;
-      }
-    }
+  &-warp{
+    border: 1px dotted #000;
+    padding: 10px;
+    flex: 1 1 auto;
   }
-  aside {
-    flex: 0 0 240px;
-    section {
-      padding: 6px;
-      .title {
-        font-size: 1.5em;
-        height: 2em;
-        line-height: 2em;
-      }
-    }
+  &-title {
+    position: absolute;
+    background: #fff;
+    padding: 0 6px;
+    left: 20px;
+    top: 0;
   }
-  @media (max-width: 720px) {
-    aside {
-      display: none;
-    }
+  &-items{
+    margin-top: 6px;
+  }
+  &-item{
+    display: inline-block;
+    background: #f3f3f3;
+    border: 1px solid #8ffbf7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  &-children{
+    margin-top: 6px;
   }
 }

@@ -19,12 +19,20 @@ export default class Collection extends React.Component {
   render() {
     let { title, items } = this.props;
     return (
-      <div style={{border: '1px solid #000', padding: '5px'}}>
-        {title}
-        <br/>
-        {items.map(d => d.join(',')).join(';')}
-        <br/>
-        {this.props.children}
+      <div className="collection-container">
+        <div className="collection-warp">
+          <span className="collection-title">{title}</span>
+          <div className="collection-items">
+            <ul>
+              {items.map(d => (
+                <a href={d[1]}>
+                  <li className="collection-item">{d[0]}</li>
+                </a>
+              ))}
+            </ul>
+          </div>
+          <div className="collection-children">{this.props.children}</div>
+        </div>
       </div>
     );
   }

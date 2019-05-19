@@ -27,8 +27,7 @@ function createCollection(node, title = '', path = '') {
       }
     }
   }
-  // eslint-disable-next-line no-debugger
-  // debugger;
+
   return (
     <Colletcion title={title} items={items}>
       {childrens.map(c => (
