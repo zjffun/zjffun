@@ -1,9 +1,12 @@
 前端:
   静态网站:
     netlify: https://www.netlify.com/
-  分析:
-    页面加载速度:
-      PageSpeed Insights: https://developers.google.com/speed/pagespeed/insights/
+  优化:
+    分析:
+      页面加载速度:
+        PageSpeed Insights: https://developers.google.com/speed/pagespeed/insights/
+    图片压缩:
+      Squoosh: https://squoosh.app/
   图片转ICO:
     ICO converter: https://www.icoconverter.com/
     easyicon covert: https://www.easyicon.net/covert/
