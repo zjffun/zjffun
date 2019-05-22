@@ -28,6 +28,9 @@ CS:
   HTTP:
     测试:
       REDbot: https://redbot.org/
+存储:
+  图床:
+    SM.MS: https://sm.ms/
 项目:
   持续集成:
     AppVeyor: https://www.appveyor.com/
