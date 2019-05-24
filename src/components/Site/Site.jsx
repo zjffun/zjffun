@@ -89,7 +89,7 @@ class Site extends React.Component {
                   <Route
                     exact
                     path="/blogs"
-                    render={() => <Blogs sections={sections} />}
+                    render={() => <Blogs sections={sections} section={Content} />}
                   />
                   <Route exact path="/tools" component={Tools} />
                   <Route path="/organization" component={Organization} />
