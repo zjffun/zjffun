@@ -26,6 +26,8 @@ import Gitter from '../Gitter/Gitter';
 import Blogs from '../Blogs/Blogs';
 import Organization from '../Organization/Organization';
 import Tools from '../Tools/Tools';
+import Docs from '../Docs/Docs';
+import Softwares from '../Softwares/Softwares';
 // import StarterKits from '../StarterKits/StarterKits';
 
 // Load Styling
@@ -92,6 +94,8 @@ class Site extends React.Component {
                     render={() => <Blogs sections={sections} section={Content} />}
                   />
                   <Route exact path="/tools" component={Tools} />
+                  <Route exact path="/docs" component={Docs} />
+                  <Route exact path="/softwares" component={Softwares} />
                   <Route path="/organization" component={Organization} />
                   {sections.map(section => (
                     <Route

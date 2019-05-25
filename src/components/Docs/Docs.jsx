@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import createCollection from '../Collection/createCollection';
 
 // Load Styling
-import './Tools.scss';
+import './Docs.scss';
 
-import toolsData from '../../tools/tools.yaml';
+import docsData from '../../docs/docs.yaml';
 
 export default class Tools extends React.Component {
   render() {
-    return <React.Fragment>{createCollection(toolsData)}</React.Fragment>;
+    return <React.Fragment>{createCollection(docsData)}</React.Fragment>;
   }
 }

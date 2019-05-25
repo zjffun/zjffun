@@ -16,8 +16,9 @@ export default class Collection extends React.Component {
     theme: '',
     items: []
   };
+
   render() {
-    let { title, items } = this.props;
+    let { title, items, children } = this.props;
     return (
       <div className="collection-container">
         <div className="collection-warp">
@@ -25,13 +26,13 @@ export default class Collection extends React.Component {
           <div className="collection-items">
             <ul>
               {items.map(d => (
-                <a href={d[1]}>
-                  <li className="collection-item">{d[0]}</li>
+                <a href={d.link} key={d.key}>
+                  <li className="collection-item">{d.name}</li>
                 </a>
               ))}
             </ul>
           </div>
-          <div className="collection-children">{this.props.children}</div>
+          <div className="collection-children">{children}</div>
         </div>
       </div>
     );
