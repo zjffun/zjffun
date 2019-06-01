@@ -22,7 +22,6 @@ import Sponsors from '../Sponsors/Sponsors';
 import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';
 import Page from '../Page/Page';
-import Gitter from '../Gitter/Gitter';
 import Blogs from '../Blogs/Blogs';
 import Organization from '../Organization/Organization';
 import Tools from '../Tools/Tools';
@@ -135,7 +134,6 @@ class Site extends React.Component {
                               page={page}
                             />
                             <Page {...page} content={content} />
-                            <Gitter />
                           </React.Fragment>
                         );
                       }}

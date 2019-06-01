@@ -1,6 +1,7 @@
-src/blogs/*/*
-
-
 node_modules
 .eslintcache
 .vscode
+src/**/_*.json
+src/**/_*.md
+yarn.lock
+package-lock.json
