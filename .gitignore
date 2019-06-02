@@ -3,5 +3,6 @@ node_modules
 .vscode
 src/**/_*.json
 src/**/_*.md
+dist
 yarn.lock
 package-lock.json

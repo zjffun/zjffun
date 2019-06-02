@@ -14,6 +14,7 @@ const common = require('./webpack.common.js');
 // content tree to path array
 const paths = [
   '/',
+  '/blogs',
   '/tools',
   '/docs',
   '/softwares',
