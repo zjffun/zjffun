@@ -78,7 +78,7 @@ module.exports = (env = {}) => ({
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
-            loader: 'fontgen-loader',
+            loader: '@zjffun/fontgen-loader',
             options: { embed: true }
           }
         ]
