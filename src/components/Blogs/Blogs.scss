@@ -1,60 +1,62 @@
-.blogs {
-  display: flex;
-  max-width: 1024px;
-  width: 100%;
-  box-shadow: 6px 0px 8px #ccc, -6px 0px 8px #ccc;
+:local {
+  .blogs {
+    display: flex;
+    max-width: 1024px;
+    width: 100%;
+    box-shadow: 6px 0px 8px #ccc, -6px 0px 8px #ccc;
 
-  &__article {
-    background: #eee;
-    flex: 1 1 0;
-    padding: 20px 16px;
-  }
-  &__aside {
-    flex: 0 0 240px;
-    .section {
-      padding: 6px;
-      &__title {
-        font-size: 1.5em;
-        height: 2em;
-        line-height: 2em;
-      }
-      .items {
-        &__item {
-          &--active{
-            a {
-              color: lightcoral;
+    &__article {
+      background: #eee;
+      flex: 1 1 0;
+      padding: 20px 16px;
+    }
+    &__aside {
+      flex: 0 0 240px;
+      .section {
+        padding: 6px;
+        &__title {
+          font-size: 1.5em;
+          height: 2em;
+          line-height: 2em;
+        }
+        .items {
+          &__item {
+            &--active {
+              a {
+                color: lightcoral;
+              }
             }
           }
         }
       }
     }
-  }
-  @media (max-width: 720px) {
-    &__aside {
-      display: none;
+    @media (max-width: 720px) {
+      &__aside {
+        display: none;
+      }
     }
   }
-}
-.blog {
-  flex-direction: column;
-  display: flex;
-  height: 130px;
-  box-shadow: 2px 2px 2px 2px #555;
-  padding: 6px;
-  margin-bottom: 18px;
-  &__title {
-    font-size: 22px;
-    line-height: 30px;
-    flex: 0 0 30px;
-    text-overflow: ellipsis;
-  }
-  &__digest {
-    flex: 1 1 0;
-  }
-  &__info {
-    font-size: 14px;
-    line-height: 16px;
-    flex: 0 0 16px;
-    text-overflow: ellipsis;
+  .blog {
+    flex-direction: column;
+    display: flex;
+    height: 130px;
+    box-shadow: 2px 2px 2px 2px #555;
+    padding: 6px;
+    margin-bottom: 18px;
+    &__title {
+      font-size: 22px;
+      line-height: 30px;
+      flex: 0 0 30px;
+      text-overflow: ellipsis;
+    }
+    &__digest {
+      flex: 1 1 0;
+    }
+    &__info {
+      font-size: 14px;
+      line-height: 16px;
+      flex: 0 0 16px;
+      text-overflow: ellipsis;
+    }
   }
 }
