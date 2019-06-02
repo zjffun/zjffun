@@ -21,7 +21,7 @@
     "lint:js": "eslint src --ext .js,.jsx --cache true --cache-location .cache/.eslintcache",
     "lint:md": "remark . --quiet --frail ",
     "fix:md": "remark . -o --quiet --frail",
-    "sitemap": "cd dist && sitemap-static --prefix=https://webpack.js.org/ > sitemap.xml",
+    "sitemap": "cd dist && sitemap-static --prefix=http://zjffun.com/ > sitemap.xml",
     "serve": "npm run build && sirv start ./dist --port 4000",
     "deploy": "gh-pages -d dist"
   },

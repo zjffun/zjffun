@@ -26,7 +26,7 @@ export default locals => {
 
   const renderedHtml = ReactDOMServer.renderToString(
     <StaticRouter location={locals.path} context={{}}>
-      <html lang="en">
+      <html lang="zh-CN">
         <head>
           <meta charset="utf-8" />
           <meta name="theme-color" content="#2B3A42" />
