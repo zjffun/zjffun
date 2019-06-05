@@ -3,7 +3,6 @@ export default function init(canvas) {
   var stretch_factor = 600 / canvas.height;
   var y_speed = 3 / stretch_factor;
   var ctx = canvas.getContext('2d');
-  console.log(ctx);
   ctx.globalCompositeOperation = 'lighter';
   // tree
   var t = new Tree();
@@ -112,7 +111,6 @@ Branch.prototype = {
     this.fork();
   },
   fork: function() {
-    console.log(this.w, this.w / 10);
     var p = this.length - Branch.random(this.w / 20, this.w / 10); // + (this.generation * 10);
     if (p > 0) {
       var n = Math.round(Branch.random(1, 3));
