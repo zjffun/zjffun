@@ -1,0 +1,27 @@
+:local {
+  .blog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 14px;
+    &__title {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 6px 0;
+      flex: 0 0 auto;
+      font-size: 1.5em;
+      text-align: center;
+      span {
+        font-size: 0.6em;
+        cursor: pointer;
+        color: lightblue;
+        padding-left: 5px;
+      }
+    }
+    &__content {
+      padding: 10px;
+      flex: 1 1 auto;
+      text-align: left;
+      overflow-y: auto;
+    }
+  }
+}

@@ -6,22 +6,23 @@ import { BrowserRouter as AnalyticsRouter } from 'react-g-analytics';
 
 // Import Components
 import Site from './components/Site/Site';
+import importBlog from './importBlog';
 
 // Import helpers
-
-const Router = process.env.NODE_ENV === 'production' ? AnalyticsRouter : BrowserRouter;
-const render = process.env.NODE_ENV === 'production' ? ReactDOM.hydrate : ReactDOM.render;
+const Router =
+  process.env.NODE_ENV === 'production' ? AnalyticsRouter : BrowserRouter;
+const render =
+  process.env.NODE_ENV === 'production' ? ReactDOM.hydrate : ReactDOM.render;
 
 // Client Side Rendering
-render((
+render(
   <Router id="UA-XXXXXXXX-X">
     <Route
       path="/"
-      render={ props => (
-        <Site
-          { ...props }
-          import={ path => import(`./blogs/${path}`) }
-          />
-      )} />
-  </Router>
-), document.getElementById('root'));
+      render={props => (
+        <Site {...props} import={importBlog} />
+      )}
+    />
+  </Router>,
+  document.getElementById('root')
+);
