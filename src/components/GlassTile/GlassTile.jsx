@@ -1,7 +1,7 @@
 // Import External Dependencies
 import React from 'react';
 
-import { Blog } from './components';
+import { Blog, BGM } from './components';
 
 import './GlassTile.scss';
 
@@ -12,7 +12,7 @@ const GlassTile = () => (
         <Blog />
       </li>
       <li className="tile music">
-        <h2 className="tile-title">音乐</h2>
+        <BGM />
       </li>
       <li className="tile motto">
         <h2 className="tile-title">句子</h2>
