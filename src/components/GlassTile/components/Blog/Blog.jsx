@@ -2,15 +2,15 @@
 import React from 'react';
 
 // Import Utilities
-import { randomPickPage } from '../../../../utilities/content-utils';
+import { randomPickPage } from '@/utilities/content-utils';
 
 // Import Components
 import styles from './Blog.scss';
-import Markdown from '../../../Markdown/Markdown';
-import importBlog from '../../../../importBlog';
+import Markdown from '@/components/Markdown/Markdown';
+import importBlog from '@/importBlog';
 
 // Load Content Tree
-import Content from '../../../../blogs/_blogs.json';
+import Content from '@/blogs/_blogs.json';
 
 class Blog extends React.Component {
   state = {

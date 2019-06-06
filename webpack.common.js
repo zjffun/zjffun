@@ -46,6 +46,9 @@ module.exports = (env = {}) => ({
     ]
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/')
+    },
     symlinks: false,
     extensions: ['.js', '.jsx', '.scss']
   },
