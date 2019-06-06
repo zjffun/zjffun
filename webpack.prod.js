@@ -19,17 +19,14 @@ const paths = [
   '/docs',
   '/softwares',
   '/acg',
-  ...flattenContentTree(contentTree),
+  ...flattenContentTree(contentTree)
 ];
 
 // Prod only config
 const prod = {
   mode: 'production',
   optimization: {
-    minimizer: [
-      new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   plugins: [
     new CopyWebpackPlugin([
@@ -60,13 +57,14 @@ module.exports = env => [
     plugins: [
       new SSGPlugin({
         globals: {
-          window: {}
+          window: {},
+          Audio: function() {}
         },
         paths,
         locals: {
           content: contentTree
         }
-      }),
+      })
       // new RedirectWebpackPlugin({
       //   redirects: {
       //     'support': '/contribute/',
