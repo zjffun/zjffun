@@ -23,7 +23,7 @@
     "fix:md": "remark . -o --quiet --frail",
     "sitemap": "cd dist && sitemap-static --prefix=https://www.zjffun.com/ > sitemap.xml",
     "serve": "npm run build && sirv start ./dist --port 4000",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -o coding -b master"
   },
   "author": "zjf",
   "license": "CC BY 4.0",
