@@ -65,7 +65,7 @@ class Blog extends React.Component {
         <div
           onClick={this.handlePlay}
           className={`player__control ${
-            isPlaying ? 'player__control--play' : 'player__control--pause'
+            isPlaying ? 'player__control--pause' : 'player__control--play'
           }`}
         />
         <div onClick={this.handleNext} className="player__next" />
