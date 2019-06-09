@@ -14,7 +14,7 @@ import Content from '@/blogs/_blogs.json';
 
 class Blog extends React.Component {
   state = {
-    page: {},
+    page: randomPickPage(Content),
     content: null,
     contentLoading: true
   };
@@ -24,27 +24,32 @@ class Blog extends React.Component {
   }
 
   fetchPage = () => {
-    const page = randomPickPage(Content);
-    const content = importBlog(page.path.replace('src/blogs/', ''));
-    if (content instanceof Promise) {
-      content
-        .then(module =>
-          this.setState({
-            content: module.default || module,
-            contentLoading: true
-          })
-        )
-        .catch(error =>
-          this.setState({
-            content: 'Error loading content.'
-          })
-        )
-        .finally(_ => {
-          this.setState({
-            page,
-            contentLoading: false
+    const { page } = this.state;
+    try {
+      const content = importBlog(page.path.replace('src/blogs/', ''));
+      if (content instanceof Promise) {
+        content
+          .then(module =>
+            this.setState({
+              content: module.default || module,
+              contentLoading: true
+            })
+          )
+          .catch(error =>
+            this.setState({
+              content: 'Error loading content.'
+            })
+          )
+          .finally(_ => {
+            this.setState({
+              contentLoading: false
+            });
           });
-        });
+      }
+    } catch (e) {
+      this.setState({
+        content: e.toString()
+      });
     }
   };
 
