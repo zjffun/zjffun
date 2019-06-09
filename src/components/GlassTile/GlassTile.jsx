@@ -1,6 +1,7 @@
 // Import External Dependencies
 import React from 'react';
 
+import ErrorBoundary from '../ErrorBoundary';
 import { Blog, BGM } from './components';
 
 import './GlassTile.scss';
@@ -9,7 +10,9 @@ const GlassTile = () => (
   <div className="glass-tile-container">
     <ul className="glass-tile">
       <li className="tile blog">
-        <Blog />
+        <ErrorBoundary>
+          <Blog />
+        </ErrorBoundary>
       </li>
       <li className="tile music">
         <BGM />

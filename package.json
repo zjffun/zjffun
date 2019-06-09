@@ -63,6 +63,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "4.5.2",
@@ -128,6 +129,7 @@
   "dependencies": {
     "@rigor789/remark-autolink-headings": "^5.1.0",
     "ajv": "^5.5.2",
+    "hydrogen-js-sdk": "^1.7.0",
     "javascriptstuff-db": "^1.12.0",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",
