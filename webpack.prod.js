@@ -58,7 +58,8 @@ module.exports = env => [
       new SSGPlugin({
         globals: {
           window: {},
-          Audio: function() {}
+          Audio: function() {},
+          localStorage: {}
         },
         paths,
         locals: {
