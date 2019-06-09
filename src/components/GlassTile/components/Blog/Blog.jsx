@@ -14,7 +14,9 @@ import Content from '@/blogs/_blogs.json';
 
 class Blog extends React.Component {
   state = {
-    page: randomPickPage(Content),
+    page: {
+      url: ''
+    },
     content: null,
     contentLoading: true
   };
@@ -24,8 +26,8 @@ class Blog extends React.Component {
   }
 
   fetchPage = () => {
-    const { page } = this.state;
     try {
+      const page = randomPickPage(Content);
       const content = importBlog(page.path.replace('src/blogs/', ''));
       if (content instanceof Promise) {
         content
@@ -42,6 +44,7 @@ class Blog extends React.Component {
           )
           .finally(_ => {
             this.setState({
+              page,
               contentLoading: false
             });
           });
