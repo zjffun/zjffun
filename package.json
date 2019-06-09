@@ -24,7 +24,7 @@
     "sitemap": "cd dist && sitemap-static --prefix=https://www.zjffun.com/ > sitemap.xml",
     "serve": "npm run build && sirv start ./dist --port 4000",
     "deploy": "gh-pages -d dist -o coding -b master",
-    "bp": "npm run build && npm run deploy"
+    "bd": "npm run build && npm run deploy"
   },
   "author": "zjf",
   "license": "CC BY 4.0",
