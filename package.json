@@ -15,7 +15,7 @@
     "fetch:starter-kits": "node src/utilities/fetch-starter-kits.js",
     "fetch:sentences": "python ./src/utilities/fetch-sentences.py",
     "prebuild": "npm run clean",
-    "build": "run-s fetch content && cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "build": "run-s content && cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "postbuild": "npm run sitemap",
     "test": "npm run lint",
     "lint": "run-s lint:*",
