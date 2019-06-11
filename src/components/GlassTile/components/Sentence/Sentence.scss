@@ -1,0 +1,36 @@
+.sentence {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__content {
+    text-align: left;
+  }
+  &__writer {
+    text-align: right
+  }
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(80, 255, 159, 0.788);
+    height: 7px;
+    width: 100%;
+    cursor: pointer;
+    .now {
+      background-color: rgba(255, 255, 255, 0.8);
+      height: 7px;
+      width: 0px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .sentence {
+    font-size: 8px;
+    padding: 5px 10px;
+  }
+}
