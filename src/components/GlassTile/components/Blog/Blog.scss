@@ -4,6 +4,25 @@
     flex-direction: column;
     height: 100%;
     font-size: 14px;
+    word-break: break-all;
+    h1 {
+      font-size: 1.4em;
+    }
+    h2 {
+      font-size: 1.3em;
+    }
+    h3 {
+      font-size: 1.2em;
+    }
+    h4 {
+      font-size: 1.1em;
+    }
+    h5 {
+      font-size: 1em;
+    }
+    h6 {
+      font-size: 0.9em;
+    }
     &__title {
       background: rgba(0, 0, 0, 0.3);
       padding: 6px 0;
@@ -22,6 +41,14 @@
       flex: 1 1 auto;
       text-align: left;
       overflow-y: auto;
+    }
+  }
+  @media (max-width: 720px) {
+    .blog {
+      font-size: 10px;
+      ul, ol {
+          padding-left: 10px;
+      }
     }
   }
 }
