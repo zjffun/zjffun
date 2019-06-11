@@ -5,9 +5,10 @@ import React from 'react';
 import { randomPickPage } from '@/utilities/content-utils';
 
 // Import Components
-import styles from './Blog.scss';
 import Markdown from '@/components/Markdown/Markdown';
 import importBlog from '@/importBlog';
+
+import styles from './Blog.scss';
 
 // Load Content Tree
 import Content from '@/blogs/_blogs.json';
@@ -26,33 +27,27 @@ class Blog extends React.Component {
   }
 
   fetchPage = () => {
-    try {
-      const page = randomPickPage(Content);
-      const content = importBlog(page.path.replace('src/blogs/', ''));
-      if (content instanceof Promise) {
-        content
-          .then(module =>
-            this.setState({
-              content: module.default || module,
-              contentLoading: true
-            })
-          )
-          .catch(error =>
-            this.setState({
-              content: 'Error loading content.'
-            })
-          )
-          .finally(_ => {
-            this.setState({
-              page,
-              contentLoading: false
-            });
+    const page = randomPickPage(Content);
+    const content = importBlog(page.path.replace('src/blogs/', ''));
+    if (content instanceof Promise) {
+      content
+        .then(module =>
+          this.setState({
+            content: module.default || module,
+            contentLoading: true
+          })
+        )
+        .catch(error =>
+          this.setState({
+            content: 'Error loading content.'
+          })
+        )
+        .finally(_ => {
+          this.setState({
+            page,
+            contentLoading: false
           });
-      }
-    } catch (e) {
-      this.setState({
-        content: e.toString()
-      });
+        });
     }
   };
 

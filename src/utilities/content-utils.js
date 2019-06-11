@@ -95,6 +95,6 @@ export const getPageTitle = (tree, path) => {
  */
 export const randomPickPage = tree => {
   let list = extractPages(tree);
-
-  return list[Math.floor(Math.random() * (list.length - 1))];
+  // random: range [0, 1) (inclusive of 0, but not 1)
+  return list[Math.floor(Math.random() * list.length)];
 };
