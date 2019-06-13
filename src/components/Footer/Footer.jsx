@@ -10,26 +10,25 @@ const Footer = () => (
   <footer className="footer">
     <Container className="footer__inner">
       <section className="footer__left">
-        <Link className="footer__link" to="">友情链接1</Link>
-        <Link className="footer__link" to="">友情链接9</Link>
+        <Link className="footer__link" to="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802028993">京公网安备 11010802028993号</Link>
       </section>
 
       <section className="footer__middle">
         <Link to="/" className="footer__icon">
-          <img src={ Icon } alt="webpack icon" />
+          <img src={Icon} alt="webpack icon" />
         </Link>
       </section>
 
       <section className="footer__right">
-        <Link className="footer__link" to="">聊天</Link>
-        <Link className="footer__link" to="">大事记录</Link>
+        <Link className="footer__link" to="">
+          聊天
+        </Link>
+        <Link className="footer__link" to="">
+          大事记录
+        </Link>
         <Link className="footer__link footer__license" to="/license">
-          <img
-            alt="Creative Commons License"
-            src={ CC } />
-          <img
-            alt="Creative Commons License"
-            src={ BY } />
+          <img alt="Creative Commons License" src={CC} />
+          <img alt="Creative Commons License" src={BY} />
         </Link>
       </section>
     </Container>
