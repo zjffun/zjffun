@@ -182,7 +182,7 @@
 .navigation-sub {
   display: block;
   background: getColor(concrete);
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .navigation-sub__inner {
