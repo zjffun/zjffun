@@ -4,6 +4,10 @@ import React from 'react';
 import animeMusic from './anime-music';
 import './BGM.scss';
 
+import BGMList from './list.json';
+
+const BASIC_URL = 'http://155.138.228.245:8848/';
+
 class Blog extends React.Component {
   state = {
     name: '',
@@ -19,17 +23,17 @@ class Blog extends React.Component {
 
   componentDidMount() {
     const _this = this;
+    const fname = BGMList[0];
+
+    this.setState({
+      name: fname.substring(0, fname.lastIndexOf('.'))
+    });
+
     animeMusic.onProgress = function(per, now, all) {
       //监听播放进度事件,返回的依次为播放百分比（Number）， 当前播放时间（MM:SS），总长度（MM:SS）
       _this.setState({
         progress: per,
         time: `${now}/${all}`
-      });
-    };
-
-    animeMusic.onLoaded = function(res) {
-      _this.setState({
-        name: res.title
       });
     };
 
@@ -47,7 +51,7 @@ class Blog extends React.Component {
 
     animeMusic.bindPlayTo(this.progressRef.current);
 
-    animeMusic.Next();
+    animeMusic.Next(`${BASIC_URL}旅.ogg`);
   }
 
   handlePlay = () => {
@@ -55,7 +59,11 @@ class Blog extends React.Component {
   };
 
   handleNext = () => {
-    animeMusic.Next();
+    const fname = BGMList[Math.floor(Math.random() * BGMList.length)];
+    this.setState({
+      name: fname.substring(0, fname.lastIndexOf('.'))
+    });
+    animeMusic.Next(`${BASIC_URL}${fname}`);
   };
 
   render() {

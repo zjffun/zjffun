@@ -43,13 +43,9 @@ const animeMusic = {
       animeMusic.onPaused();
     }, 1100);
   },
-  Next: function() {
-    animeMusic.onLoaded({
-      title: 'Rewrite'
-    });
+  Next: function(src) {
     animeMusic.Pause();
-    animeMusic._anime_music_player.src =
-      'http://ps7z8p0in.bkt.clouddn.com/BGM016.ogg';
+    animeMusic._anime_music_player.src = src;
     animeMusic._now_load_time = 0;
   },
   progress: function() {
