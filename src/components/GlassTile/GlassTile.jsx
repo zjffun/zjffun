@@ -25,7 +25,13 @@ const GlassTile = () => (
         </ErrorBoundary>
       </li>
       <li className="tile tool1">
-        <h2 className="tile-title">在线工具1</h2>
+        <a
+          className="tile__contianer"
+          href="https://github.com/zjffun/cnblogs-helper"
+        >
+          <h3>cnblogs-helper</h3>
+          <p>一个同步博客园随笔的工具。😉</p>
+        </a>
       </li>
       <li className="tile tool2">
         <h2 className="tile-title">在线工具2</h2>
