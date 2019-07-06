@@ -1,10 +1,10 @@
 // Import External Dependencies
-import React from '@/components/GlassTile/components/Music/react';
+import React from 'react';
 
 import animeMusic from './anime-music';
 import './Music.scss';
 
-import MusicList from './list.json.js';
+import MusicList from './list.json';
 
 const BASIC_URL = 'http://music.zjffun.com/';
 
