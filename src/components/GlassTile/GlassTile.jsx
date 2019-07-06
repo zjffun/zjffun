@@ -2,7 +2,7 @@
 import React from 'react';
 
 import ErrorBoundary from '../ErrorBoundary';
-import { Blog, BGM, Sentence } from './components';
+import { Blog, Music, Sentence } from './components';
 
 import './GlassTile.scss';
 
@@ -16,7 +16,7 @@ const GlassTile = () => (
       </li>
       <li className="tile music">
         <ErrorBoundary>
-          <BGM />
+          <Music />
         </ErrorBoundary>
       </li>
       <li className="tile motto">

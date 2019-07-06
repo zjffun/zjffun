@@ -1,14 +1,14 @@
 // Import External Dependencies
-import React from 'react';
+import React from '@/components/GlassTile/components/Music/react';
 
 import animeMusic from './anime-music';
-import './BGM.scss';
+import './Music.scss';
 
-import BGMList from './list.json';
+import MusicList from './list.json.js';
 
 const BASIC_URL = 'http://155.138.228.245:8848/';
 
-class Blog extends React.Component {
+class Music extends React.Component {
   state = {
     name: '',
     time: '00:00/00:00',
@@ -23,7 +23,7 @@ class Blog extends React.Component {
 
   componentDidMount() {
     const _this = this;
-    const fname = BGMList[0];
+    const fname = MusicList[0];
 
     this.setState({
       name: fname.substring(0, fname.lastIndexOf('.'))
@@ -59,7 +59,7 @@ class Blog extends React.Component {
   };
 
   handleNext = () => {
-    const fname = BGMList[Math.floor(Math.random() * BGMList.length)];
+    const fname = MusicList[Math.floor(Math.random() * MusicList.length)];
     this.setState({
       name: fname.substring(0, fname.lastIndexOf('.'))
     });
@@ -87,4 +87,4 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog;
+export default Music;
