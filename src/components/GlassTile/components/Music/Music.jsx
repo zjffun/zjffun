@@ -6,7 +6,7 @@ import './Music.scss';
 
 import MusicList from './list.json.js';
 
-const BASIC_URL = 'http://155.138.228.245:8848/';
+const BASIC_URL = 'http://music.zjffun.com/';
 
 class Music extends React.Component {
   state = {
