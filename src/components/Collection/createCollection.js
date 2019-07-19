@@ -14,6 +14,13 @@ export default function createCollection(node, title = '', path = '') {
           key,
           name: title
         });
+      } else if (typeof element._url === 'string') {
+        items.push({
+          link: element._url,
+          desc: element._desc,
+          key,
+          name: title
+        });
       } else {
         childrens.push([key, createCollection(element, title, key)]);
       }

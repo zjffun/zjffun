@@ -27,7 +27,10 @@ export default class Collection extends React.Component {
             <ul>
               {items.map(d => (
                 <a href={d.link} key={d.key}>
-                  <li className="collection-item">{d.name}</li>
+                  <li className="collection-item">
+                    {d.name}
+                    <p className="small">{d.desc}</p>
+                  </li>
                 </a>
               ))}
             </ul>
