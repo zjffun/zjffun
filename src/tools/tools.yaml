@@ -26,6 +26,10 @@
   CSS 效果:
     CSSFX: https://cssfx.dev/
     CSS Tricks: https://qishaoxuan.github.io/css_tricks/landscapeScreen/
+  Mock:
+    Mocky:
+      _url: https://www.mocky.io/
+      _desc: Mock your HTTP responses to test your REST API
 CS:
   正则表达式:
     regular expressions 101: https://regex101.com/
