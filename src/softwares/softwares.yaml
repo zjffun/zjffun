@@ -13,3 +13,11 @@
 
 图像处理:
   GIMP(GNU Image Manipulation Program): https://www.gimp.org/
+
+隐私保护:
+  V2Ray:
+    _desc: A platform for building proxies to bypass network restrictions.
+    _url: https://github.com/V2Ray/v2ray-core
+  Shadowsocks:
+    _desc: A secure socks5 proxy, designed to protect your Internet traffic.
+    _url: https://github.com/shadowsocks
