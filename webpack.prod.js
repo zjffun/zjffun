@@ -5,6 +5,7 @@ const RedirectWebpackPlugin = require('redirect-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const flattenContentTree = require('./src/utilities/flatten-content-tree');
 const contentTree = require('./src/blogs/_blogs.json');
+const notesContentTree = require('./src/notes/_notes.json');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
@@ -19,7 +20,8 @@ const paths = [
   '/docs',
   '/softwares',
   '/acg',
-  ...flattenContentTree(contentTree)
+  ...flattenContentTree(contentTree),
+  ...flattenContentTree(notesContentTree)
 ];
 
 // Prod only config

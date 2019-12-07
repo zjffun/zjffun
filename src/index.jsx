@@ -6,7 +6,7 @@ import { BrowserRouter as AnalyticsRouter } from 'react-g-analytics';
 
 // Import Components
 import Site from './components/Site/Site';
-import importBlog from './importBlog';
+import { importBlog, importNote } from './mdImport';
 
 // Import helpers
 const Router =
@@ -20,7 +20,7 @@ render(
     <Route
       path="/"
       render={props => (
-        <Site {...props} import={importBlog} />
+        <Site {...props} import={importBlog} importNote={importNote} />
       )}
     />
   </Router>,

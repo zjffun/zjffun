@@ -37,6 +37,16 @@ module.exports = env =>
         },
         filter,
         sort
+      }),
+      new DirectoryTreePlugin({
+        dir: 'src/notes',
+        path: 'src/notes/_notes.json',
+        extensions: /\.mdx?/,
+        enhance(item, option) {
+          enhance(item, { ...option, ...{ dir: './src' } });
+        },
+        filter,
+        sort
       })
     ],
     devServer: {

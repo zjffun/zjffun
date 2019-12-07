@@ -6,7 +6,7 @@ import { randomPickPage } from '@/utilities/content-utils';
 
 // Import Components
 import Markdown from '@/components/Markdown/Markdown';
-import importBlog from '@/importBlog';
+import { importBlog } from '@/mdImport';
 
 import styles from './Blog.scss';
 

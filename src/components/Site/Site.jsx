@@ -35,16 +35,24 @@ import '../../styles/icon.font.js';
 import './Site.scss';
 
 // Load Content Tree
-import Content from '../../blogs/_blogs.json';
+import blogsContent from '../../blogs/_blogs.json';
+import notesContent from '../../notes/_notes.json';
 
-const sections = extractSections(Content);
+const blogsSections = extractSections(blogsContent);
+const notesSections = extractSections(notesContent);
 
 const links = [
   {
     content: 'Blog',
     url: '/blogs',
     isActive: url => /^\/(blogs)/.test(url),
-    children: _strip(sections)
+    children: _strip(blogsSections)
+  },
+  {
+    content: 'Note',
+    url: '/notes',
+    isActive: url => /^\/(notes)/.test(url),
+    children: _strip(notesSections)
   },
   { content: '在线工具', url: '/tools' },
   { content: '常用文档', url: '/docs' },
@@ -60,12 +68,14 @@ class Site extends React.Component {
   render() {
     let { location } = this.props;
     let { mobileSidebarOpen } = this.state;
+    let sections = [...blogsSections, ...notesSections];
     let section = sections.find(({ url }) => location.pathname.startsWith(url));
-    let pages = extractPages(Content);
+    let blogsPages = extractPages(blogsContent);
+    let notesPages = extractPages(notesContent);
 
     return (
       <div className="site">
-        <DocumentTitle title={getPageTitle(Content, location.pathname)} />
+        <DocumentTitle title={getPageTitle(blogsContent, location.pathname)} />
         {/* <NotificationBar /> */}
         <Navigation
           pathname={location.pathname}
@@ -90,23 +100,46 @@ class Site extends React.Component {
                   <Route
                     exact
                     path="/blogs"
-                    render={() => <Blogs sections={sections} section={Content} />}
+                    render={() => (
+                      <Blogs sections={blogsSections} section={blogsContent} />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/notes"
+                    render={() => (
+                      <Blogs sections={notesSections} section={notesContent} />
+                    )}
                   />
                   <Route exact path="/tools" component={Tools} />
                   <Route exact path="/docs" component={Docs} />
                   <Route exact path="/softwares" component={Softwares} />
                   <Route path="/organization" component={Organization} />
-                  {sections.map(section => (
+                  {blogsSections.map(section => (
                     <Route
                       key={section.url}
                       exact
                       path={section.url}
                       render={() => {
-                        return <Blogs sections={sections} section={section} />;
+                        return (
+                          <Blogs sections={blogsSections} section={section} />
+                        );
                       }}
                     />
                   ))}
-                  {pages.map(page => (
+                  {notesSections.map(section => (
+                    <Route
+                      key={section.url}
+                      exact
+                      path={section.url}
+                      render={() => {
+                        return (
+                          <Blogs sections={notesSections} section={section} />
+                        );
+                      }}
+                    />
+                  ))}
+                  {blogsPages.map(page => (
                     <Route
                       key={page.url}
                       exact
@@ -124,7 +157,40 @@ class Site extends React.Component {
                               pages={_strip(
                                 section
                                   ? section.children
-                                  : Content.children.filter(
+                                  : blogsContent.children.filter(
+                                      item =>
+                                        item.type !== 'directory' &&
+                                        item.url !== '/'
+                                    )
+                              )}
+                              section={section}
+                              page={page}
+                            />
+                            <Page {...page} content={content} />
+                          </React.Fragment>
+                        );
+                      }}
+                    />
+                  ))}
+                  {notesPages.map(page => (
+                    <Route
+                      key={page.url}
+                      exact
+                      path={page.url}
+                      render={props => {
+                        let path = page.path.replace('src/notes/', '');
+                        let content = this.props.importNote(path);
+
+                        return (
+                          <React.Fragment>
+                            <Sponsors />
+                            <Sidebar
+                              className="site__sidebar"
+                              currentPage={location.pathname}
+                              pages={_strip(
+                                section
+                                  ? section.children
+                                  : notesContent.children.filter(
                                       item =>
                                         item.type !== 'directory' &&
                                         item.url !== '/'
