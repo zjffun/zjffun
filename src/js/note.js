@@ -1,4 +1,4 @@
-import { createElement } from "./utility/zdom";
+import { createElement } from "./util/zdom";
 var unified = require("unified");
 var markdown = require("remark-parse");
 var html = require("remark-html");

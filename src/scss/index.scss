@@ -1,0 +1,27 @@
+@import url(../reset.css);
+header {
+  height: 50px;
+  padding: 0 10px;
+  line-height: 50px;
+  background: aqua;
+}
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > li {
+      background: lightpink;
+      height: 150px;
+      margin: 10px;
+      flex: 1 1 200px;
+      > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
