@@ -5,6 +5,10 @@ const koaLogger = require("koa-logger");
 const router = require("koa-router")();
 const koaBody = require("koa-body");
 const Koa = require("koa");
+const cors = require("@koa/cors");
+const send = require("koa-send");
+
+const noteDir = "C:\\Users\\zjffu\\github\\note";
 
 const app = (module.exports = new Koa());
 
@@ -14,45 +18,53 @@ app.use(koaLogger());
 
 app.use(koaBody());
 
+app.use(cors());
+
 // route definitions
 
-router.get("/note/list", list);
+router.get("/api/note/list", list);
+router.get("/api/note/get/(.*)", getNote);
 
 app.use(router.routes());
 
 async function list(ctx) {
-  const dir = "C:\\Users\\zjffu\\github\\note";
+  const dir = noteDir;
 
   const json = getFileAndDirRecursively(dir);
 
   function getFileAndDirRecursively(pathPara) {
-    const json = {};
+    const obj = {};
     const stat = fs.statSync(pathPara);
-    json.name = path.basename(pathPara);
+    obj.name = path.basename(pathPara);
 
     if (stat.isDirectory()) {
-      json.children = [];
-      json.type = "dir";
+      obj.children = [];
+      obj.type = "dir";
 
       const paths = fs.readdirSync(pathPara);
       paths.forEach(p => {
-        if (p.indexOf(".") !== 0 && p !== 'node_modules') {
-          const tjson = getFileAndDirRecursively(path.join(pathPara, p));
-          if (tjson.type === "dir" || tjson.ext === ".md") {
-            json.children.push(tjson);
+        if (p.indexOf(".") !== 0 && p !== "node_modules") {
+          const tobj = getFileAndDirRecursively(path.join(pathPara, p));
+          if (tobj.type === "dir" || tobj.ext === ".md") {
+            obj.children.push(tobj);
           }
         }
       });
     } else {
-      json.type = "file";
-      json.ext = path.extname(pathPara);
+      obj.type = "file";
+      obj.ext = path.extname(pathPara);
     }
 
-    return json;
+    return obj;
   }
 
   ctx.body = json;
 }
 
+async function getNote(ctx) {
+  const basePath = path.join("/api/note/get", path.basename(noteDir));
+  let relPath = path.relative(basePath, ctx.path) || "/";
+  await send(ctx, relPath, { root: noteDir });
+}
 // listen
 if (!module.parent) app.listen(3000);
