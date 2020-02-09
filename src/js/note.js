@@ -1,9 +1,38 @@
 import { createElement } from "./util/zdom";
+import replaceImgURL from "./node/replace-img-url";
 var unified = require("unified");
 var markdown = require("remark-parse");
 var html = require("remark-html");
 
 const BASE_URL = "http://localhost:3000";
+const catalogue = document.querySelector(".catalogue");
+const content = document.querySelector(".content");
+
+/* onload */
+fetch(BASE_URL + "/api/note/list")
+  .then(d => d.json())
+  .then(d => {
+    document
+      .querySelector(".catalogue")
+      .append(createCatalogue(d, "/").querySelector("ul"));
+  });
+
+show("catalogue");
+
+/* envet listener */
+catalogue.addEventListener("click", function(e) {
+  e.preventDefault();
+  const target = e.target;
+  const href = target.getAttribute("href");
+  if (href) {
+    renderContent(href);
+    show("content");
+  }
+});
+document.querySelector(".js-back").addEventListener("click", function(e) {
+  e.preventDefault();
+  show("catalogue");
+});
 
 function createCatalogue(d, path) {
   const children = [];
@@ -25,32 +54,31 @@ function createCatalogue(d, path) {
   }
   return createElement("li", {}, children);
 }
-fetch(BASE_URL + "/api/note/list")
-  .then(d => d.json())
-  .then(d => {
-    document
-      .querySelector(".catalogue")
-      .append(createCatalogue(d, "/").querySelector("ul"));
-  });
-
-document.querySelector(".catalogue").addEventListener("click", function(e) {
-  e.preventDefault();
-  const target = e.target;
-  const href = target.getAttribute("href");
-  if (href) {
-    renderContent(href);
-  }
-});
 
 function renderContent(url) {
   fetch(url)
     .then(d => d.text())
     .then(d => {
+      console.log(d);
       unified()
         .use(markdown)
+        .use(replaceImgURL, { prefix: url + "/../" })
         .use(html)
         .process(d, function(err, file) {
-          document.querySelector(".content").innerHTML = String(file);
+          content.querySelector(".js-note-content").innerHTML = String(file);
         });
     });
+}
+
+function show(name) {
+  switch (name) {
+    case "catalogue":
+      catalogue.style.display = "block";
+      content.style.display = "none";
+      break;
+    default:
+      catalogue.style.display = "none";
+      content.style.display = "block";
+      break;
+  }
 }
