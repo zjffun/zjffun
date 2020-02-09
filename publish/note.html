@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+
+    <style>
+      .note {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .note__toc {
+        flex: 2 2 200px;
+        padding: 0 10px;
+        border-right: 1px solid #000;
+      }
+      .note__content {
+        flex: 5 5 500px;
+        padding: 0 10px;
+      }
+      .note * {
+        box-sizing: border-box;
+      }
+    </style>
   </head>
   <body>
     <div class="catalogue"></div>
     <div class="content">
       <div><a class="js-back" href="./note.html">返回目录</a></div>
-      <div class="js-note-content"></div>
+      <div class="note">
+        <div class="note__toc js-note-toc"></div>
+        <div class="note__content js-note-content"></div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,12 +1,15 @@
 import { createElement } from "./util/zdom";
-import replaceImgURL from "./node/replace-img-url";
+import replaceImgURL from "./note/replace-img-url";
+import generateTOC from "./note/generate-toc";
 var unified = require("unified");
 var markdown = require("remark-parse");
 var html = require("remark-html");
+var slug = require("remark-slug");
 
 const BASE_URL = "http://localhost:3000";
 const catalogue = document.querySelector(".catalogue");
 const content = document.querySelector(".content");
+const toc = content.querySelector(".js-note-toc");
 
 /* onload */
 fetch(BASE_URL + "/api/note/list")
@@ -59,10 +62,11 @@ function renderContent(url) {
   fetch(url)
     .then(d => d.text())
     .then(d => {
-      console.log(d);
       unified()
         .use(markdown)
         .use(replaceImgURL, { prefix: url + "/../" })
+        .use(slug)
+        .use(generateTOC, { dom: toc })
         .use(html)
         .process(d, function(err, file) {
           content.querySelector(".js-note-content").innerHTML = String(file);
