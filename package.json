@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/zjffun/zjffun#readme",
   "dependencies": {
+    "github-markdown-css": "^3.0.1",
+    "highlight.js": "^9.18.1",
     "mdast-util-toc": "^5.0.1",
     "remark-html": "^10.0.0",
     "remark-parse": "^7.0.2",

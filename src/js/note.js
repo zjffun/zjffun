@@ -1,3 +1,4 @@
+import hljs from "highlight.js";
 import { createElement } from "./util/zdom";
 import replaceImgURL from "./note/replace-img-url";
 import generateTOC from "./note/generate-toc";
@@ -5,6 +6,10 @@ var unified = require("unified");
 var markdown = require("remark-parse");
 var html = require("remark-html");
 var slug = require("remark-slug");
+
+/* css */
+import "github-markdown-css";
+import "highlight.js/styles/github.css";
 
 const BASE_URL = "http://localhost:3000";
 const catalogue = document.querySelector(".catalogue");
@@ -70,6 +75,9 @@ function renderContent(url) {
         .use(html)
         .process(d, function(err, file) {
           content.querySelector(".js-note-content").innerHTML = String(file);
+          content.querySelectorAll("pre code").forEach(block => {
+            hljs.highlightBlock(block);
+          });
         });
     });
 }
