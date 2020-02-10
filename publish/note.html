@@ -15,6 +15,9 @@
         flex: 1 2 200px;
         padding: 0 10px;
       }
+      .note__toc p {
+        margin: 0;
+      }
       .note__content {
         flex: 5 5 500px;
         padding: 0 10px;
@@ -30,7 +33,10 @@
         <div class="note__toc">
           <div class="js-note-toc"></div>
         </div>
-        <div class="note__content markdown-body js-note-content"></div>
+        <div class="note__content markdown-body ">
+          <h1 class="js-note-title"></h1>
+          <div class="js-note-content"></div>
+        </div>
       </div>
     </div>
   </body>

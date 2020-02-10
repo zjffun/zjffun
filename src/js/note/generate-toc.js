@@ -7,6 +7,8 @@ export default function attacher(options) {
     const node = toc(tree).map;
     if (node && dom) {
       dom.innerHTML = new html().Compiler(node, {});
+    } else {
+      dom.innerHTML = "";
     }
   };
 }
