@@ -17,6 +17,7 @@ const content = document.querySelector(".content");
 const toc = content.querySelector(".js-note-toc");
 const noteContent = content.querySelector(".js-note-content");
 const noteTitle = content.querySelector(".js-note-title");
+const backToTop = document.querySelector(".js-back-to-top");
 
 /* onload */
 fetch(BASE_URL + "/api/note/list")
@@ -49,6 +50,17 @@ document.querySelector(".js-back").addEventListener("click", function(e) {
   e.preventDefault();
   window.history.pushState("", "", location.origin + location.pathname);
   render();
+});
+backToTop.addEventListener("click", function(e) {
+  window.scrollTo(0, 0);
+});
+document.addEventListener("scroll", function() {
+  let scrollTop = window.scrollY;
+  if (scrollTop > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
 });
 
 function render() {
@@ -95,8 +107,10 @@ function renderContent(path) {
         .use(generateTOC, { dom: toc })
         .use(html)
         .process(d, function(err, file) {
+          let title = path.replace(/^.*\/([^\/]*).md$/, "$1");
           noteContent.innerHTML = String(file);
-          noteTitle.innerText = path.replace(/^.*\/([^\/]*).md$/, "$1");
+          noteTitle.innerText = title;
+          document.title = title;
           content.querySelectorAll("pre code").forEach(block => {
             hljs.highlightBlock(block);
           });
@@ -107,6 +121,7 @@ function renderContent(path) {
 function show(name) {
   switch (name) {
     case "catalogue":
+      document.title = "笔记目录";
       catalogue.style.display = "block";
       content.style.display = "none";
       break;

@@ -12,7 +12,11 @@ export default function attacher(options) {
 
 function visitor(prefix) {
   return function(node) {
-    if (is(node, "image") && isImgExt(node.url)) {
+    if (
+      is(node, "image") &&
+      isImgExt(node.url) &&
+      !/^(https?)|(ftp):\/\//.test(node.url)
+    ) {
       node.url = prefix + node.url;
     }
   };
