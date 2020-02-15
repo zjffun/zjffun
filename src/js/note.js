@@ -13,19 +13,34 @@ import "highlight.js/styles/github.css";
 
 const BASE_URL = "http://localhost:3000";
 const catalogue = document.querySelector(".catalogue");
+const catalogueContent = document.querySelector(".js-catalogue-content");
+const catalogueNav = document.querySelector(".js-catalogue-nav");
 const content = document.querySelector(".content");
 const toc = content.querySelector(".js-note-toc");
 const noteContent = content.querySelector(".js-note-content");
 const noteTitle = content.querySelector(".js-note-title");
 const backToTop = document.querySelector(".js-back-to-top");
+const imgDirName = ["img", "images"];
 
 /* onload */
 fetch(BASE_URL + "/api/note/list")
   .then(d => d.json())
   .then(d => {
-    document
-      .querySelector(".catalogue")
-      .append(createCatalogue(d, "/").querySelector("ul"));
+    console.log(d);
+    catalogueContent.append(createCatalogue(d, "/").querySelector("ul"));
+    catalogueNav.append(
+      createElement(
+        "ul",
+        {},
+        d.children.map(d =>
+          createElement(
+            "li",
+            {},
+            createElement("a", { href: "#" + d.name }, d.name)
+          )
+        )
+      )
+    );
   });
 
 render();
@@ -37,7 +52,7 @@ window.addEventListener("popstate", function({ state }) {
     render();
   }
 });
-catalogue.addEventListener("click", function(e) {
+catalogueContent.addEventListener("click", function(e) {
   e.preventDefault();
   const target = e.target;
   const href = target.getAttribute("href");
@@ -76,9 +91,9 @@ function render() {
 
 function createCatalogue(d, path) {
   const children = [];
-  if (d.type === "dir") {
+  if (d.type === "dir" && !~imgDirName.indexOf(d.name)) {
     const lis = [];
-    children.push(createElement("a", {}, d.name));
+    children.push(createElement("a", { id: d.name }, d.name));
     d.children.forEach(child => {
       lis.push(createCatalogue(child, path + d.name + "/"));
     });
