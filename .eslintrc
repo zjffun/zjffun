@@ -1,0 +1,11 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "linebreak-style": "off",
+    "arrow-body-style": "off"
+  },
+  "ignorePatterns": ["publish/*.html"]
+}

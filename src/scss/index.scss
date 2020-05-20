@@ -1,10 +1,38 @@
 @import url(../reset.css);
-header {
-  height: 50px;
-  padding: 0 10px;
-  line-height: 50px;
-  background: aqua;
+
+:root {
+  --text-color: #ccc;
 }
+
+html {
+  color: #6a737d;
+  background: #24292e;
+}
+
+header {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  .logo {
+    padding: 0 20px;
+    position: relative;
+    a {
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: var(--text-color);
+      &::before {
+        background-image: linear-gradient(270deg, #ff8a00, #e52e71);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+      }
+    }
+  }
+}
+
 main {
   margin: 0 auto;
   max-width: 1200px;
@@ -13,14 +41,28 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     > li {
-      background: lightpink;
+      flex: 1 1 200px;
       height: 150px;
       margin: 10px;
-      flex: 1 1 200px;
+      border-radius: 16px;
+      background-image: linear-gradient(0deg, #ff8a00, #e52e71);
       > a {
         display: block;
+        padding: 90px 0 0 30px;
         width: 100%;
         height: 100%;
+        color: #24292e;
+        font-size: 1.3rem;
+        text-decoration: none;
+      }
+      &:hover {
+        box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
+      }
+      &:nth-child(2) {
+        background-image: linear-gradient(0deg, #fff766, #138535);
+      }
+      &:nth-child(3) {
+        background-image: linear-gradient(0deg, #60c5f1, #7a297b);
       }
     }
   }

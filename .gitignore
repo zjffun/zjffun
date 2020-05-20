@@ -1,6 +1,5 @@
-/note
-
 node_modules
+yarn.lock
 .vscode
 
 dist

@@ -81,3 +81,45 @@ td:not([align]),
 th:not([align]) {
   text-align: left;
 }
+
+/* global styles */
+
+body {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    helvetica neue, Arial, noto sans, sans-serif, apple color emoji,
+    segoe ui emoji, segoe ui symbol, noto color emoji;
+}
+
+/* 
+  color.css 's color
+
+   VARIABLES
+
+   - Cool
+   - Warm
+   - Gray Scale
+
+*/
+
+:root {
+  --aqua: #7fdbff;
+  --blue: #0074d9;
+  --navy: #001f3f;
+  --teal: #39cccc;
+  --green: #2ecc40;
+  --olive: #3d9970;
+  --lime: #01ff70;
+
+  --yellow: #ffdc00;
+  --orange: #ff851b;
+  --red: #ff4136;
+  --fuchsia: #f012be;
+  --purple: #b10dc9;
+  --maroon: #85144b;
+
+  --white: #ffffff;
+  --silver: #dddddd;
+  --gray: #aaaaaa;
+  --black: #111111;
+}
