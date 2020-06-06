@@ -1,9 +1,12 @@
 {
     int i;
     int j;
-    float[100] a;
-    float v;
-    float x;
+    int v;
+    int x;
+    i = 1;
+    j = 1;
+    v = 1;
+    x = 1;
     while(true) {
         do j = i + 1; while(a[i] < v);
         do j = j - 1; while(a[j] > v);

@@ -68,20 +68,13 @@ export default class Lexer {
 
   private scan(): Token {
     // 空白符
-    while (this.test(/[ \t]/, this.peek)) {
-      this.nextChar();
-    }
-
-    while (this.peek === '\r') {
-      this.nextChar();
-    }
-
-    while (this.test(/\n/, this.peek)) {
+    while (this.test(/[ \t\r\n]/, this.peek)) {
       this.nextChar();
     }
 
     // 注释
     if (this.peek === '/') {
+      const { line, column } = this;
       if (this.forward === '/') {
         let comment = '//';
         this.nextChar();
@@ -91,7 +84,7 @@ export default class Lexer {
           comment += this.peek;
           this.nextChar();
         }
-        return new Word(Tag.COMMENT, comment);
+        return new Word(Tag.COMMENT, comment, line, column);
       }
 
       if (this.forward === '*') {
@@ -101,7 +94,7 @@ export default class Lexer {
 
         while (!(this.peek === '*' && this.forward === '/')) {
           if (this.peek === undefined) {
-            return new Word(Tag.COMMENT, comment);
+            return new Word(Tag.COMMENT, comment, line, column);
           }
           comment += this.peek;
           this.nextChar();
@@ -110,12 +103,13 @@ export default class Lexer {
         this.nextChar();
         this.nextChar();
 
-        return new Word(Tag.COMMENT, comment);
+        return new Word(Tag.COMMENT, comment, line, column);
       }
     }
 
     // 数字
     if (this.test(/\d/, this.peek)) {
+      const { line, column } = this;
       let integer = parseInt(this.peek);
       let decimal = 0;
       this.nextChar();
@@ -132,38 +126,40 @@ export default class Lexer {
           this.nextChar();
         }
       }
-      return new Num(integer + decimal);
+      return new Num(integer + decimal, line, column);
     }
 
     // 变量和关键字
     if (this.test(/\w/, this.peek)) {
+      const { line, column } = this;
       let str = this.peek;
       this.nextChar();
       while (this.test(/\w/, this.peek)) {
         str += this.peek;
         this.nextChar();
       }
-      let word = this.words.get(str);
 
-      if (!word) {
-        word = new Word(Tag.ID, str);
-      }
+      let word = new Word(Tag.ID, str, line, column);
 
-      this.words.set(str, word);
       return word;
     }
 
     // 运算符
     if (this.test(/[><=!]/, this.peek)) {
       if (this.forward === '=') {
-        let word = new Word(Tag.REL, this.peek + this.forward);
+        let word = new Word(
+          Tag.REL,
+          this.peek + this.forward,
+          this.line,
+          this.column,
+        );
         this.nextChar();
         this.nextChar();
         return word;
       }
     }
 
-    let token = new Token(this.peek.charCodeAt(0));
+    let token = new Char(this.peek, this.line, this.column);
     this.nextChar();
     return token;
   }
@@ -184,28 +180,40 @@ export class Tag {
   static CONTINUE = 267;
   static COMMENT = 268;
   static REL = 269;
+  static INT = 270;
 }
 
 export class Token {
   public tag;
-  constructor(t: Number) {
-    this.tag = t;
+  public startLine;
+  public startCol;
+  constructor(tag, startLine?: number, startCol?: number) {
+    this.tag = tag;
+    this.startLine = startLine;
+    this.startCol = startCol;
   }
 }
 
 export class Num extends Token {
   public value;
-  constructor(v: Number) {
-    super(Tag.NUM);
+  constructor(v: Number, startLine, startCol) {
+    super(Tag.NUM, startLine, startCol);
     this.value = v;
   }
 }
 
 export class Word extends Token {
   public lexeme;
-  constructor(t: Number, s: String) {
-    super(t);
+  constructor(t: Number, s: String, startLine?: number, startCol?: number) {
+    super(t, startLine, startCol);
     this.lexeme = s;
   }
-  while(condition) {}
+}
+
+export class Char extends Token {
+  public row;
+  constructor(s: String, startLine, startCol) {
+    super(s.charCodeAt(0), startLine, startCol);
+    this.row = s;
+  }
 }

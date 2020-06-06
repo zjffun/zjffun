@@ -1,5 +1,5 @@
 /**
- * %token ID, IF, ELSE, WHILE, DO, FOR, REL
+ * %token ID, INT, IF, ELSE, WHILE, DO, FOR, REL
  *
  * optexpr: expr | eps
  * expr: assign
@@ -13,6 +13,8 @@
  *  | WHILE '(' expr ')' stmt
  *  | DO stmt WHILE '(' expr ')' ';'
  *  | FOR '(' optexpr ';' optexpr ';' optexpr ')' stmt
+ *  | INT ID ';'
+ *  | expr ';'
  *  | '{' stmts '}'
  * stmts: stmts stmt
  *  | eps
@@ -38,74 +40,105 @@ export default class Parser {
   private lexer = null;
   private token = null;
 
-  constructor(l) {
-    this.lexer = l;
-    this.token = l.getNextToken();
+  constructor(lexer) {
+    this.lexer = lexer;
+    this.token = lexer.getNextToken();
   }
+
   private nextToken() {
     this.token = this.lexer.getNextToken();
   }
-  private checkTag(tag: number, reportErr?: boolean) {
+
+  private mustToBe(tag: number) {
     if (this.token.tag === tag) {
       this.nextToken();
+    } else {
+      this.logError('语法错误');
+    }
+  }
+
+  private checkTag(tag: number, nextToken?: boolean) {
+    if (this.token.tag === tag) {
+      if (nextToken) {
+        this.nextToken();
+      }
       return true;
     } else {
-      if (reportErr) {
-        this.logError('语法错误');
-      }
       return false;
     }
   }
+
   stmt() {
-    if (this.checkTag(Tag.IF)) {
-      this.checkTag(charMap.leftBracket, true);
+    if (this.checkTag(Tag.IF, true)) {
+      this.mustToBe(charMap.leftBracket);
       this.expr();
-      this.checkTag(charMap.rightBracker, true);
+      this.mustToBe(charMap.rightBracker);
       this.stmt();
     }
 
-    if (this.checkTag(Tag.WHILE)) {
-      this.checkTag(charMap.leftBracket, true);
+    if (this.checkTag(Tag.WHILE, true)) {
+      this.mustToBe(charMap.leftBracket);
       this.expr();
-      this.checkTag(charMap.rightBracker, true);
+      this.mustToBe(charMap.rightBracker);
       this.stmt();
     }
 
-    if (this.checkTag(Tag.DO)) {
+    if (this.checkTag(Tag.DO, true)) {
       this.stmt();
-      this.checkTag(Tag.WHILE, true);
-      this.checkTag(charMap.leftBracket, true);
+      this.mustToBe(Tag.WHILE);
+      this.mustToBe(charMap.leftBracket);
       this.expr();
-      this.checkTag(charMap.rightBracker, true);
-      this.checkTag(charMap.semiColon, true);
+      this.mustToBe(charMap.rightBracker);
+      this.mustToBe(charMap.semiColon);
     }
 
-    if (this.checkTag(Tag.FOR)) {
-      this.checkTag(charMap.leftBracket, true);
+    if (this.checkTag(Tag.FOR, true)) {
+      this.mustToBe(charMap.leftBracket);
       this.optexpr();
-      this.checkTag(charMap.semiColon, true);
+      this.mustToBe(charMap.semiColon);
       this.optexpr();
-      this.checkTag(charMap.semiColon, true);
+      this.mustToBe(charMap.semiColon);
       this.optexpr();
-      this.checkTag(charMap.rightBracker, true);
+      this.mustToBe(charMap.rightBracker);
       this.stmt();
     }
 
-    if (this.checkTag(charMap.leftBrace)) {
+    if (this.checkTag(Tag.INT, true)) {
+      this.mustToBe(Tag.ID);
+      this.mustToBe(charMap.semiColon);
+    }
+
+    if (this.checkTag(charMap.leftBrace, true)) {
       this.stmts();
-      this.checkTag(charMap.rightBrace, true);
+      this.mustToBe(charMap.rightBrace);
     }
+
+    // expr
+    if (
+      this.checkTag(Tag.ID) ||
+      this.checkTag(Tag.NUM) ||
+      this.checkTag(charMap.leftBracket)
+    ) {
+      this.expr();
+    }
+
     this.logError('语法错误');
   }
 
   private optexpr() {
-    // eps 处理
-    this.expr();
+    // eps 涉及前缀: expr(ID), rel, op2, op1, factor(ID, NUM, leftBracket)
+    if (
+      this.checkTag(Tag.ID) ||
+      this.checkTag(Tag.NUM) ||
+      this.checkTag(charMap.leftBracket)
+    ) {
+      this.expr();
+    }
   }
 
   private expr() {
-    if (this.checkTag(Tag.ID)) {
-      this.checkTag(charMap.equal, true);
+    if (this.checkTag(Tag.ID, true)) {
+      this.mustToBe(charMap.equal);
       this.rel();
     } else {
       this.rel();
@@ -118,15 +151,15 @@ export default class Parser {
   }
 
   private relR() {
-    // if
     if (
       this.checkTag(Tag.REL) ||
       this.checkTag(charMap.lessThan) ||
       this.checkTag(charMap.greatThan)
     ) {
+      this.nextToken();
+      this.op2();
       this.relR();
     }
-    // eps
   }
 
   private op2() {
@@ -136,9 +169,10 @@ export default class Parser {
 
   private op2R() {
     if (this.checkTag(charMap.plus) || this.checkTag(charMap.minus)) {
+      this.nextToken();
+      this.op1();
       this.op2R();
     }
-    // eps
   }
 
   private op1() {
@@ -148,9 +182,10 @@ export default class Parser {
 
   private op1R() {
     if (this.checkTag(charMap.multiply) || this.checkTag(charMap.divide)) {
+      this.nextToken();
+      this.factor();
       this.op1R();
     }
-    // eps
   }
 
   private factor() {
@@ -168,9 +203,17 @@ export default class Parser {
   }
 
   private stmts() {
-    // eps 处理
-    this.stmt();
-    this.stmts();
+    // 左递归但不用添加非终结符号, eps 涉及前缀 stmt
+    if (
+      this.checkTag(Tag.IF) ||
+      this.checkTag(Tag.WHILE) ||
+      this.checkTag(Tag.DO) ||
+      this.checkTag(Tag.FOR) ||
+      this.checkTag(charMap.leftBrace)
+    ) {
+      this.stmt();
+      this.stmts();
+    }
   }
 
   private logError(msg: string) {

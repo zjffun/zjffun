@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "tsc -w -t ESNEXT --outDir ./dist ./lexer.ts ./parser.ts",
-    "test": "babel-node --presets @babel/env ./test/lexer.test.js --inspect-brk"
+    "dev-cjs": "tsc -w --outDir ./dist ./lexer.ts ./parser.ts",
+    "test": "babel-node --presets @babel/env ./test/lexer.test.js --inspect-brk",
+    "test-cjs": "node --inspect-brk ./test/lexer.test.js"
   },
   "author": "zjf",
   "dependencies": {},
