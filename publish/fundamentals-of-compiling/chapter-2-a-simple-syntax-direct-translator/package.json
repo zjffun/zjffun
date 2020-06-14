@@ -1,0 +1,17 @@
+{
+  "name": "chapter-2-a-simple-syntax-direct-translator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc -w -t ESNEXT --outDir ./dist ./lexer.ts ./parser.ts",
+    "test": "babel-node --presets @babel/env ./test/lexer.test.js --inspect-brk"
+  },
+  "author": "zjf",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "typescript": "^3.9.5"
+  }
+}
