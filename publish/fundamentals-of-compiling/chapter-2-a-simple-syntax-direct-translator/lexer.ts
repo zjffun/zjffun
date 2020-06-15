@@ -27,6 +27,13 @@ export default class Lexer {
     this.reserve(new Word(Tag.CONTINUE, 'continue'));
   }
 
+  getNextToken() {
+    if (this.index < this.code.length) {
+      return this.scan();
+    }
+    return undefined;
+  }
+
   getTokens() {
     let tokens = [];
     while (this.index < this.code.length) {

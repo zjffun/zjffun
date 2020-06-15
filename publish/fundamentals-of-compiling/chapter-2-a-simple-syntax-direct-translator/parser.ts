@@ -17,7 +17,7 @@
  * stmts: stmts stmt
  *  | eps
  */
-import { Token, Num, Word, Tag } from './lexer';
+import Lexer, { Token, Num, Word, Tag } from './lexer';
 
 const charMap = {
   leftBrace: 123,
@@ -26,23 +26,27 @@ const charMap = {
   rightBracker: 41,
   semiColon: 59,
   equal: 61,
+  greatThan: 62,
+  lessThan: 60,
+  plus: 43,
+  minus: 45,
+  multiply: 42,
+  divide: 47,
 };
 
 export default class Parser {
-  private tokens = [];
-  private index = 0;
+  private lexer = null;
+  private token = null;
 
-  private get peek() {
-    return this.tokens[this.index];
-  }
-  constructor(t) {
-    this.tokens = t;
+  constructor(l) {
+    this.lexer = l;
+    this.token = l.getNextToken();
   }
   private nextToken() {
-    this.index++;
+    this.token = this.lexer.getNextToken();
   }
   private checkTag(tag: number, reportErr?: boolean) {
-    if (this.peek.tag === tag) {
+    if (this.token.tag === tag) {
       this.nextToken();
       return true;
     } else {
@@ -106,6 +110,61 @@ export default class Parser {
     } else {
       this.rel();
     }
+  }
+
+  private rel() {
+    this.op2();
+    this.relR();
+  }
+
+  private relR() {
+    // if
+    if (
+      this.checkTag(Tag.REL) ||
+      this.checkTag(charMap.lessThan) ||
+      this.checkTag(charMap.greatThan)
+    ) {
+      this.relR();
+    }
+    // eps
+  }
+
+  private op2() {
+    this.op1();
+    this.op2R();
+  }
+
+  private op2R() {
+    if (this.checkTag(charMap.plus) || this.checkTag(charMap.minus)) {
+      this.op2R();
+    }
+    // eps
+  }
+
+  private op1() {
+    this.factor();
+    this.op1R();
+  }
+
+  private op1R() {
+    if (this.checkTag(charMap.multiply) || this.checkTag(charMap.divide)) {
+      this.op1R();
+    }
+    // eps
+  }
+
+  private factor() {
+    if (this.checkTag(Tag.ID)) {
+    }
+    if (this.checkTag(Tag.NUM)) {
+    }
+    if (this.checkTag(charMap.leftBracket)) {
+      this.expr();
+      if (!this.checkTag(charMap.rightBracker)) {
+        this.logError('语法错误');
+      }
+    }
+    this.logError('语法错误');
   }
 
   private stmts() {
