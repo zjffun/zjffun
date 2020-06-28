@@ -74,6 +74,7 @@ export default class Parser {
       this.expr();
       this.mustToBe(charMap.rightBracker);
       this.stmt();
+      return;
     }
 
     if (this.checkTag(Tag.WHILE, true)) {
@@ -81,6 +82,7 @@ export default class Parser {
       this.expr();
       this.mustToBe(charMap.rightBracker);
       this.stmt();
+      return;
     }
 
     if (this.checkTag(Tag.DO, true)) {
@@ -90,6 +92,7 @@ export default class Parser {
       this.expr();
       this.mustToBe(charMap.rightBracker);
       this.mustToBe(charMap.semiColon);
+      return;
     }
 
     if (this.checkTag(Tag.FOR, true)) {
@@ -101,16 +104,19 @@ export default class Parser {
       this.optexpr();
       this.mustToBe(charMap.rightBracker);
       this.stmt();
+      return;
     }
 
     if (this.checkTag(Tag.INT, true)) {
       this.mustToBe(Tag.ID);
       this.mustToBe(charMap.semiColon);
+      return;
     }
 
     if (this.checkTag(charMap.leftBrace, true)) {
       this.stmts();
       this.mustToBe(charMap.rightBrace);
+      return;
     }
 
     // expr
@@ -120,6 +126,7 @@ export default class Parser {
       this.checkTag(charMap.leftBracket)
     ) {
       this.expr();
+      return;
     }
 
     this.logError('语法错误');
@@ -189,15 +196,18 @@ export default class Parser {
   }
 
   private factor() {
-    if (this.checkTag(Tag.ID)) {
+    if (this.checkTag(Tag.ID, true)) {
+      return;
     }
-    if (this.checkTag(Tag.NUM)) {
+    if (this.checkTag(Tag.NUM, true)) {
+      return;
     }
-    if (this.checkTag(charMap.leftBracket)) {
+    if (this.checkTag(charMap.leftBracket, true)) {
       this.expr();
-      if (!this.checkTag(charMap.rightBracker)) {
+      if (!this.checkTag(charMap.rightBracker, true)) {
         this.logError('语法错误');
       }
+      return;
     }
     this.logError('语法错误');
   }
@@ -209,6 +219,10 @@ export default class Parser {
       this.checkTag(Tag.WHILE) ||
       this.checkTag(Tag.DO) ||
       this.checkTag(Tag.FOR) ||
+      this.checkTag(Tag.INT) ||
+      this.checkTag(Tag.ID) ||
+      this.checkTag(Tag.NUM) ||
+      this.checkTag(charMap.leftBracket) ||
       this.checkTag(charMap.leftBrace)
     ) {
       this.stmt();

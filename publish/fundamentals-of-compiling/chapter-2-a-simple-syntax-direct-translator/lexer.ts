@@ -25,6 +25,7 @@ export default class Lexer {
     this.reserve(new Word(Tag.SWITCH, 'switch'));
     this.reserve(new Word(Tag.BREAK, 'break'));
     this.reserve(new Word(Tag.CONTINUE, 'continue'));
+    this.reserve(new Word(Tag.INT, 'int'));
   }
 
   getNextToken() {
@@ -139,9 +140,15 @@ export default class Lexer {
         this.nextChar();
       }
 
-      let word = new Word(Tag.ID, str, line, column);
+      let word = this.words.get(str);
 
-      return word;
+      if (!word) {
+        word = new Word(Tag.ID, str);
+      }
+
+      this.words.set(str, word);
+
+      return new Word(Tag.ID, str, line, column);
     }
 
     // 运算符
