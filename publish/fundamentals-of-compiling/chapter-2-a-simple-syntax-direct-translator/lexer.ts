@@ -1,5 +1,5 @@
 export default class Lexer {
-  private words = new Map();
+  private words: Map<string, Word> = new Map();
   private code = '';
   private line = 1;
   private column = 1;
@@ -148,7 +148,7 @@ export default class Lexer {
 
       this.words.set(str, word);
 
-      return new Word(Tag.ID, str, line, column);
+      return new Word(word.tag, word.lexeme, line, column);
     }
 
     // 运算符

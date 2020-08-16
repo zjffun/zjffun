@@ -7,7 +7,7 @@
     j = 1;
     v = 1;
     x = 1;
-    while(true) {
+    while(i > 0) {
         do j = i + 1; while(a[i] < v);
         do j = j - 1; while(a[j] > v);
         if(i >= j) break;

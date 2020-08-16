@@ -126,6 +126,7 @@ export default class Parser {
       this.checkTag(charMap.leftBracket)
     ) {
       this.expr();
+      this.mustToBe(charMap.semiColon);
       return;
     }
 
@@ -144,10 +145,13 @@ export default class Parser {
   }
 
   private expr() {
-    if (this.checkTag(Tag.ID, true)) {
-      this.mustToBe(charMap.equal);
-      this.rel();
-    } else {
+    // TODO: look forward
+    if (this.checkTag(Tag.ID)) {
+      if (this.checkTag(charMap.equal)) {
+        this.nextToken();
+        this.nextToken();
+        this.rel();
+      }
       this.rel();
     }
   }
@@ -231,7 +235,9 @@ export default class Parser {
   }
 
   private logError(msg: string) {
-    const err = new SyntaxError(msg);
+    const err = new SyntaxError(
+      `${msg}, at (${this.token.startLine},${this.token.startCol})`,
+    );
     throw err;
   }
 }
