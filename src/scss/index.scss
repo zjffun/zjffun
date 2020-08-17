@@ -22,7 +22,7 @@ header {
       color: var(--text-color);
       &::before {
         background-image: linear-gradient(270deg, #ff8a00, #e52e71);
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -41,11 +41,10 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     > li {
-      flex: 1 1 200px;
+      flex: 1 1 300px;
       height: 150px;
       margin: 10px;
       border-radius: 16px;
-      background-image: linear-gradient(0deg, #ff8a00, #e52e71);
       > a {
         display: block;
         padding: 90px 0 0 30px;
@@ -58,10 +57,13 @@ main {
       &:hover {
         box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
       }
-      &:nth-child(2) {
+      &:nth-child(3n + 1) {
+        background-image: linear-gradient(0deg, #ff8a00, #e52e71);
+      }
+      &:nth-child(3n + 2) {
         background-image: linear-gradient(0deg, #fff766, #138535);
       }
-      &:nth-child(3) {
+      &:nth-child(3n) {
         background-image: linear-gradient(0deg, #60c5f1, #7a297b);
       }
     }
