@@ -1,0 +1,26 @@
+Vim:
+  official: http://vimdoc.sourceforge.net/htmldoc/usr_toc.html
+SQLite:
+  official: https://sqlite.org/lang.html
+JSON:
+  official: https://www.json.org/
+正则表达式:
+  docs: 
+    百度百科: https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1700215?fr=aladdin#7
+规范:
+  编码风格:
+    docs:
+      Googel styleguide: https://github.com/google/styleguide
+      EditorConfig: https://editorconfig.org/
+前端:
+  最佳实践:
+    docs:
+      Google Web fundamentals: https://developers.google.com/web/fundamentals/
+  JS:
+    运算符优先级:
+      docs:
+        MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table
+  Node.js:
+    official: https://nodejs.org/dist/latest-v10.x/docs/api/
+  TypeScript:
+    official: https://www.typescriptlang.org/docs/home.html

@@ -1,0 +1,109 @@
+前端:
+  静态网站:
+    netlify: https://www.netlify.com/
+  优化:
+    分析:
+      页面加载速度:
+        PageSpeed Insights: https://developers.google.com/speed/pagespeed/insights/
+    图片压缩:
+      Squoosh: https://squoosh.app/
+  图片转ICO:
+    ICO converter: https://www.icoconverter.com/
+    easyicon covert: https://www.easyicon.net/covert/
+  图标素材:
+    Iconfont: https://www.iconfont.cn/
+    FLATICON: https://www.flaticon.com/
+    easyicon: https://www.easyicon.net/
+    SuperTinyIcons:
+      _url: https://github.com/edent/SuperTinyIcons/
+      _desc: Under 1KB each! Super Tiny Icons are miniscule SVG versions of your favourite website and app logos
+  图片占位符:
+    PLACEHOLDER.COM: https://placeholder.com/
+  JS美化:
+    Online JavaScript Beautifier: https://beautifier.io/
+  图标制作:
+    Iconfinder • Editor: https://www.iconfinder.com/editor/
+  CSS 效果:
+    CSSFX: https://cssfx.dev/
+    CSS Tricks: https://qishaoxuan.github.io/css_tricks/landscapeScreen/
+  Mock:
+    Mocky:
+      _url: https://www.mocky.io/
+      _desc: Mock your HTTP responses to test your REST API
+CS:
+  正则表达式:
+    regular expressions 101: https://regex101.com/
+  抽象语法树:
+    AST Explorer: https://astexplorer.net/
+  HTTP:
+    测试:
+      REDbot: https://redbot.org/
+  转换:
+    Convertcsv.com:
+      _url: http://www.convertcsv.com/
+      _desc: Convert CSV To JSON, XML, SQL, ...
+    CSVJSON:
+      _url: https://www.csvjson.com/csv2json
+      _desc: Online tool to convert your CSV or TSV formatted data to JSON.
+  流程图:
+    mermaid:
+      _url: https://github.com/knsv/mermaid
+      _desc: Generation of diagram and flowchart from text in a similar manner as markdown
+存储:
+  图床:
+    SM.MS: https://sm.ms/
+项目:
+  持续集成:
+    AppVeyor: https://www.appveyor.com/
+  云:
+    Firebase（墙外）: https://firebase.google.com/
+    Bmob: https://www.bmob.cn/
+  UML图:
+    PlantUML Editor: http://haha98k.com/
+  本地化管理工具:
+    crowdin: https://crowdin.com/
+  接口管理工具:
+    RAP2: http://rap2.taobao.org/
+  问题需求跟踪工具:
+    ActionView: http://www.actionview.cn/
+  文档生成:
+    readme-md-generator:
+      _url: https://github.com/kefranabg/readme-md-generator
+      _desc: CLI that generates beautiful README.md files
+办公:
+  文件同步:
+    Dropbox: https://www.dropbox.com/
+  图像处理:
+    在线PS软件（无法导出透明的png）: https://www.uupoop.com/
+  模板:
+    PPT:
+      优品PPT: http://www.ypppt.com/
+      51PPT模板: http://www.51pptmoban.com/
+  转换:
+    cloudconvert: https://cloudconvert.com/
+    PDF:
+      Smallpdf: https://smallpdf.com/
+  软件下载:
+    SOURCEFORGE: https://sourceforge.net/
+英语:
+  英语朗读:
+    entts 英语在线发音: https://www.entts.com/
+数学:
+  数字帝国: https://zh.numberempire.com/
+  可视化:
+    Wolfram|Alpha Computational Intelligence: https://www.wolframalpha.com/
+  Latex:
+    手写:
+      Detexify: http://detexify.kirelabs.org/classify.html
+    编辑:
+      CODECOGS: https://www.codecogs.com/latex/eqneditor.php
+地信（GIS）:
+  GeoJSON:
+    编辑:
+      geojson.io: http://geojson.io/
+不知道该归到哪里，很好用就是了:
+  ASCII码绘图:
+    ASCIIFlow Infinity: http://asciiflow.com/
+工具箱:
+  在线工具: https://tool.lu/
+  爱资料在线工具: https://www.toolnb.com/

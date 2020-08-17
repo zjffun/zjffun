@@ -1,0 +1,39 @@
+.collection {
+  &-container {
+    display: flex;
+    max-width: 1024px;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+  }
+  &-warp{
+    border: 1px dotted #000;
+    padding: 10px;
+    flex: 1 1 auto;
+  }
+  &-title {
+    position: absolute;
+    background: #fff;
+    padding: 0 6px;
+    left: 20px;
+    top: 0;
+  }
+  &-items{
+    margin-top: 6px;
+  }
+  &-item{
+    display: inline-block;
+    background: #1c262b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+    color: #ffffff;
+    .small{
+      font-size: 12px;
+      color: #7ab71b;
+    }
+  }
+  &-children{
+    margin-top: 6px;
+  }
+}
