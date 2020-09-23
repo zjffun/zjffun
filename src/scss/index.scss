@@ -1,33 +1,70 @@
 @import url(../reset.css);
 
 :root {
-  --text-color: #ccc;
+  --twilight-sparkle: #da9cee;
+  --rarity: #eaedf4;
+  --flutter-shy: #fdf7ac;
+  --rainbow-dash: #9bddf6;
+  --apple-jack: #fabb66;
+  --pinkie-pie: #f3b9d0;
+  --ditzy-doo: #c0c7d4;
+  --princess-luna: #363d80;
 }
 
+$top-and-bottom: linear-gradient(
+  to right,
+  var(--twilight-sparkle),
+  var(--rainbow-dash)
+);
+
 html {
-  color: #6a737d;
-  background: #24292e;
+  color: var(--princess-luna);
+  background: var(--rarity);
+  height: 100%;
+  &::after {
+    display: block;
+    background-image: $top-and-bottom;
+    height: 5px;
+    content: '';
+  }
+}
+
+body {
+  min-height: calc(100% - 5px);
 }
 
 header {
   display: flex;
-  height: 50px;
   line-height: 50px;
+  border-bottom: 1px solid var(--pinkie-pie);
   .logo {
     padding: 0 20px;
     position: relative;
     a {
       font-size: 1.3rem;
       text-decoration: none;
-      color: var(--text-color);
       &::before {
-        background-image: linear-gradient(270deg, #ff8a00, #e52e71);
-        content: '';
+        background-image: $top-and-bottom;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 5px;
+        content: '';
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    line-height: 1;
+    .logo {
+      padding: 10px 0;
+      width: 100%;
+      a {
+        width: 100%;
+        font-size: 1rem;
       }
     }
   }
@@ -38,33 +75,42 @@ main {
   max-width: 1200px;
   > ul {
     display: flex;
+    margin-top: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
+    background: url(../assets/images/mlp.jpg) center bottom/cover
+      var(--pinkie-pie);
     > li {
-      flex: 1 1 300px;
+      flex: 1 1 350px;
       height: 150px;
-      margin: 10px;
-      border-radius: 16px;
+      border: 5px solid var(--rarity);
       > a {
+        position: relative;
         display: block;
-        padding: 90px 0 0 30px;
         width: 100%;
         height: 100%;
-        color: #24292e;
         font-size: 1.3rem;
         text-decoration: none;
-      }
-      &:hover {
-        box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
-      }
-      &:nth-child(3n + 1) {
-        background-image: linear-gradient(0deg, #ff8a00, #e52e71);
-      }
-      &:nth-child(3n + 2) {
-        background-image: linear-gradient(0deg, #fff766, #138535);
-      }
-      &:nth-child(3n) {
-        background-image: linear-gradient(0deg, #60c5f1, #7a297b);
+        color: var(--rarity);
+        .main-list__item__content {
+          position: absolute;
+          left: 20px;
+          bottom: 20px;
+          padding: 2px 4px;
+          color: var(--rarity);
+          background: var(--princess-luna);
+          font-weight: bold;
+          // mix-blend-mode: difference;
+        }
+        &:hover {
+          box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
+        }
+        &:not([href]) {
+          &:hover {
+            box-shadow: none;
+          }
+          filter: blur(1px);
+        }
       }
     }
   }
