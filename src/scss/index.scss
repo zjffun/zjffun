@@ -60,7 +60,7 @@ header {
   header {
     line-height: 1;
     .logo {
-      padding: 10px 0;
+      padding: 10px 0 0 10px;
       width: 100%;
       a {
         width: 100%;
@@ -73,9 +73,9 @@ header {
 main {
   margin: 0 auto;
   max-width: 1200px;
+  padding: 10px 5px;
   > ul {
     display: flex;
-    margin-top: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
     background: url(../assets/images/mlp.jpg) center bottom/cover
@@ -110,6 +110,9 @@ main {
             box-shadow: none;
           }
           filter: blur(1px);
+        }
+        @media screen and (max-width: 576px) {
+          font-size: 1rem;
         }
       }
     }
