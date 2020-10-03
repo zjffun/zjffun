@@ -73,13 +73,14 @@ header {
 main {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 10px 5px;
+  padding: 20px 20px;
+
   > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: url(../assets/images/mlp.jpg) center bottom/cover
-      var(--pinkie-pie);
+    background: url(../assets/images/mlp.jpg) center bottom/cover;
+    background-color: var(--pinkie-pie);
     > li {
       flex: 1 1 350px;
       height: 150px;
@@ -89,27 +90,32 @@ main {
         display: block;
         width: 100%;
         height: 100%;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         text-decoration: none;
-        color: var(--rarity);
         .main-list__item__content {
           position: absolute;
-          left: 20px;
-          bottom: 20px;
-          padding: 2px 4px;
-          color: var(--rarity);
-          background: var(--princess-luna);
-          font-weight: bold;
-          // mix-blend-mode: difference;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 0;
+          padding: 4px 2px;
+          background: hsla(0, 0%, 100%, 0.5);
+          text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.3);
         }
-        &:hover {
+        &:visited {
+          color: var(--princess-luna);
+        }
+        &:focus,
+        &:hover,
+        &:active {
+          color: var(--twilight-sparkle);
           box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
         }
         &:not([href]) {
           &:hover {
             box-shadow: none;
           }
-          filter: blur(1px);
+          color: var(--rarity);
         }
         @media screen and (max-width: 576px) {
           font-size: 1rem;
