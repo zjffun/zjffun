@@ -48,6 +48,8 @@ CS:
   HTTP:
     测试:
       REDbot: https://redbot.org/
+  改 Hosts:
+    SwitchHosts: https://oldj.github.io/SwitchHosts/
   转换:
     Convertcsv.com:
       _url: http://www.convertcsv.com/
