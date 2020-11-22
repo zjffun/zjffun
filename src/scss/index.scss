@@ -60,7 +60,7 @@ header {
   header {
     line-height: 1;
     .logo {
-      padding: 10px 0 0 10px;
+      padding: 15px 10px 10px;
       width: 100%;
       a {
         width: 100%;
@@ -72,7 +72,7 @@ header {
 
 main {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1600px;
   padding: 20px 20px;
 
   > ul {
@@ -83,7 +83,8 @@ main {
     background-color: var(--pinkie-pie);
     > li {
       flex: 1 1 350px;
-      height: 150px;
+      height: 30vh;
+      min-height: 150px;
       border: 5px solid var(--rarity);
       > a {
         position: relative;

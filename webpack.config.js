@@ -79,9 +79,10 @@ module.exports = {
       {
         path: path.resolve(__dirname, 'publish/partials/analytics.html'),
         priority: 'high',
-        location: 'head'
-      }
-    ])
+        location: 'head',
+        template_filename: ['index.html', 'docs.html', 'tools.html'],
+      },
+    ]),
   ],
   optimization: {
     splitChunks: {
