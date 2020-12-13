@@ -9,6 +9,7 @@
   --pinkie-pie: #f3b9d0;
   --ditzy-doo: #c0c7d4;
   --princess-luna: #363d80;
+  --rarity2: #726abe;
 }
 
 $top-and-bottom: linear-gradient(
@@ -65,7 +66,8 @@ header {
 @media screen and (max-width: 576px) {
   header {
     .logo {
-      padding: 15px 10px 10px;
+      padding-left: 10px;
+      padding-right: 10px;
       width: 100%;
       a {
         width: 100%;
@@ -84,35 +86,49 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 -5px;
     > li {
       flex: 1 1 350px;
       min-height: 150px;
-      border: 5px solid var(--rarity);
+      margin: 5px;
       background: var(--ditzy-doo);
       &:nth-child(1) {
         background: var(--twilight-sparkle);
       }
       &:nth-child(2) {
-        background: var(--rarity);
+        background: var(--rarity2);
+        > a {
+          color: var(--rarity);
+        }
       }
       &:nth-child(3) {
         background: var(--apple-jack);
       }
       &:nth-child(4) {
-        background: var(--ditzy-doo);
+        background: var(--pinkie-pie);
       }
       &:nth-child(5) {
         background: var(--rainbow-dash);
       }
       > a {
+        $img-height: 60px;
+        position: relative;
         display: block;
         width: 100%;
         height: 100%;
-        font-size: 1.2rem;
+        padding: 10px;
+        padding-bottom: $img-height;
+        color: var(--princess-luna);
         text-decoration: none;
         .main-list__item__title {
-          background: hsla(0, 0%, 100%, 0.5);
+          font-size: 1.2rem;
           text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.3);
+        }
+        .main-list__item__img {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          height: $img-height;
         }
         &:visited {
           color: var(--princess-luna);
@@ -120,7 +136,7 @@ main {
         &:focus,
         &:hover,
         &:active {
-          color: var(--twilight-sparkle);
+          // color: var(--twilight-sparkle);
           box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
         }
         &:not([href]) {
