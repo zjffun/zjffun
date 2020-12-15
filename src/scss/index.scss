@@ -9,6 +9,7 @@
   --pinkie-pie: #f3b9d0;
   --ditzy-doo: #c0c7d4;
   --princess-luna: #363d80;
+  --rarity2: #726abe;
 }
 
 $top-and-bottom: linear-gradient(
@@ -35,14 +36,15 @@ body {
 
 header {
   display: flex;
-  line-height: 50px;
   border-bottom: 1px solid var(--pinkie-pie);
   .logo {
-    padding: 0 20px;
+    padding: 14px 20px;
     position: relative;
     a {
       font-size: 1.3rem;
       text-decoration: none;
+      color: var(--princess-luna);
+      letter-spacing: 0.05em;
       &::before {
         background-image: $top-and-bottom;
         position: absolute;
@@ -52,15 +54,20 @@ header {
         height: 5px;
         content: '';
       }
+      &:focus,
+      &:hover,
+      &:active {
+        color: var(--princess-luna);
+      }
     }
   }
 }
 
 @media screen and (max-width: 576px) {
   header {
-    line-height: 1;
     .logo {
-      padding: 15px 10px 10px;
+      padding-left: 10px;
+      padding-right: 10px;
       width: 100%;
       a {
         width: 100%;
@@ -75,52 +82,93 @@ main {
   max-width: 1600px;
   padding: 20px 20px;
 
-  > ul {
+  .main-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: url(../assets/images/mlp.jpg) center bottom/cover;
-    background-color: var(--pinkie-pie);
-    > li {
+    margin: 0 -5px;
+    &__item {
+      $img-height: 60px;
       flex: 1 1 350px;
-      height: 30vh;
       min-height: 150px;
-      border: 5px solid var(--rarity);
-      > a {
+      margin: 5px;
+      background: var(--ditzy-doo);
+      &:nth-child(1) {
+        background: var(--twilight-sparkle);
+      }
+      &:nth-child(2) {
+        background: var(--rarity2);
+        > a {
+          color: var(--rarity);
+        }
+      }
+      &:nth-child(3) {
+        background: var(--apple-jack);
+      }
+      &:nth-child(4) {
+        background: var(--pinkie-pie);
+      }
+      &:nth-child(5) {
+        background: var(--rainbow-dash);
+      }
+
+      &__title {
+        padding-bottom: 0.2em;
+        font-size: 1.2rem;
+        text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.3);
+      }
+      &__img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: $img-height;
+      }
+
+      & > a,
+      &-container {
         position: relative;
         display: block;
         width: 100%;
         height: 100%;
-        font-size: 1.2rem;
+        padding: 10px;
+        padding-bottom: $img-height;
+        color: var(--princess-luna);
         text-decoration: none;
-        .main-list__item__content {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          z-index: 0;
-          padding: 4px 2px;
-          background: hsla(0, 0%, 100%, 0.5);
-          text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.3);
+
+        @media screen and (max-width: 576px) {
+          font-size: 1rem;
         }
+      }
+
+      & > a {
         &:visited {
           color: var(--princess-luna);
         }
         &:focus,
         &:hover,
         &:active {
-          color: var(--twilight-sparkle);
+          // color: var(--twilight-sparkle);
           box-shadow: -2px -2px 4px #77777777, 2px 2px 4px #ffffff77;
         }
         &:not([href]) {
           &:hover {
             box-shadow: none;
           }
-          color: var(--rarity);
         }
-        @media screen and (max-width: 576px) {
-          font-size: 1rem;
-        }
+      }
+    }
+  }
+
+  .site-record {
+    p {
+      line-height: 2em;
+    }
+    a {
+      color: var(--princess-luna);
+      img {
+        width: 1.4em;
+        vertical-align: middle;
+        padding-right: 0.2em;
       }
     }
   }
