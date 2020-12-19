@@ -3,7 +3,6 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -42,10 +41,13 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              esModule: false,
+            },
           },
         ],
       },
@@ -75,14 +77,6 @@ module.exports = {
       template: path.resolve(__dirname, 'publish/tools.html'),
       chunks: ['react', 'tools'],
     }),
-    new HtmlWebpackPartialsPlugin([
-      {
-        path: path.resolve(__dirname, 'publish/partials/analytics.html'),
-        priority: 'high',
-        location: 'head',
-        template_filename: ['index.html', 'docs.html', 'tools.html'],
-      },
-    ]),
   ],
   optimization: {
     splitChunks: {

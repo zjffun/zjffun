@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <%= require('!!raw-loader!./common/analytics.html').default %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>zjffun</title>
@@ -26,7 +27,7 @@
               笔记
             </h2>
             <p>这个问题搞了好久记一下。我去，之前记过了@_@</p>
-            <img class="main-list__item__img" src="../src/assets/images/twilight.svg" alt="">
+            <img class="main-list__item__img" src="<%= require('../src/assets/images/twilight.svg') %>" alt="">
           </section>
         </a>
       </li>
@@ -37,7 +38,7 @@
               博客
             </h2>
             <p>太矫情了，删了删了T_T</p>
-            <img class="main-list__item__img" src="../src/assets/images/rarity.svg" alt="">
+            <img class="main-list__item__img" src="<%= require('../src/assets/images/rarity.svg') %>" alt="">
           </section>
         </a>
       </li>
@@ -48,7 +49,7 @@
               工具汇总
             </h2>
             <p>在线工具 & 装机必备</p>
-            <img class="main-list__item__img" src="../src/assets/images/applejack.svg" alt="">
+            <img class="main-list__item__img" src="<%= require('../src/assets/images/applejack.svg') %>" alt="">
           </section>
         </a>
       </li>
@@ -59,7 +60,7 @@
               文档汇总
             </h2>
             <p>不如谷歌，再简单不如谷歌。</p>
-            <img class="main-list__item__img" src="../src/assets/images/pinkiepie.svg" alt="">
+            <img class="main-list__item__img" src="<%= require('../src/assets/images/pinkiepie.svg') %>" alt="">
           </section>
         </a>
       </li>
@@ -70,7 +71,7 @@
               云顶之弈助手
             </h2>
             <p>已经不玩了</p>
-            <img class="main-list__item__img" src="../src/assets/images/rainbowdash.svg" alt="">
+            <img class="main-list__item__img" src="<%= require('../src/assets/images/rainbowdash.svg') %>" alt="">
           </section>
         </a>
       </li>
@@ -80,7 +81,7 @@
             <p>
               友谊是魔法
             </p>
-            <img class="main-list__item__img" src="../src/assets/images/fluttershy.svg" alt="">
+            <img class="main-list__item__img" src="<%= require('../src/assets/images/fluttershy.svg') %>" alt="">
           </section>
         </a>
       </li>
