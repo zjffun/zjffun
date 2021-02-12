@@ -4,6 +4,7 @@
   --twilight-sparkle: #da9cee;
   --rarity: #eaedf4;
   --flutter-shy: #fdf7ac;
+  --flutter-shy2: #fcb8d9;
   --rainbow-dash: #9bddf6;
   --apple-jack: #fabb66;
   --pinkie-pie: #f3b9d0;
@@ -37,7 +38,7 @@ body {
 header {
   display: flex;
   border-bottom: 1px solid var(--pinkie-pie);
-  .logo {
+  .header-title {
     padding: 14px 20px;
     position: relative;
     a {
@@ -110,6 +111,9 @@ main {
       }
       &:nth-child(5) {
         background: var(--rainbow-dash);
+      }
+      &:nth-child(6) {
+        background: var(--flutter-shy2);
       }
 
       &__title {
