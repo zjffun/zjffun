@@ -24,3 +24,5 @@ JSON:
     official: https://nodejs.org/dist/latest-v10.x/docs/api/
   TypeScript:
     official: https://www.typescriptlang.org/docs/home.html
+  Zone.js:
+    official: https://github.com/angular/angular/tree/master/packages/zone.js
