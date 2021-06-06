@@ -1,10 +1,18 @@
 const path = require('path');
+const fs = require('fs');
+const YAML = require('yaml');
 
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
+
+function getI18n(file) {
+  return YAML.parse(
+    fs.readFileSync(path.resolve(__dirname, `publish/i18n/${file}`)).toString(),
+  );
+}
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -66,6 +74,13 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'publish/index.html'),
       chunks: ['index'],
+      zi18n: getI18n('index.zh-CN.yaml'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.en.html',
+      template: path.resolve(__dirname, 'publish/index.html'),
+      chunks: ['index'],
+      zi18n: getI18n('index.en.yaml'),
     }),
     new HtmlWebpackPlugin({
       filename: 'docs.html',

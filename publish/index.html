@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="<%= htmlWebpackPlugin.options.zi18n.lang %>">
   <head>
     <meta charset="UTF-8" />
     <%= require('!!raw-loader!./common/analytics.html').default %>
@@ -11,12 +11,18 @@
   <body>
     <header>
       <h1 class="header-title">
-        <a href="/">
-          2021 新年快乐
+        <a href="<%= htmlWebpackPlugin.options.zi18n.mainHref %>">
+          <%= htmlWebpackPlugin.options.zi18n.title %>
+          <!-- 2021 新年快乐 -->
           <!-- 仅是一个用来自我满足的个人网站 -->
           <!-- 仅是一个希望以乐趣为核心的个人网站 -->
         </a>
       </h1>
+      <div class="flex-spring"></div>
+      <span class="header-left">
+        <a class="header-left__lang" href="./index.html"> 中文 </a>
+        <a class="header-left__lang" href="./index.en.html"> English </a>
+      </span>
     </header>
 
     <main>
@@ -24,8 +30,10 @@
         <li class="main-list__item">
           <a href="http://note.zjffun.com">
             <section>
-              <h2 class="main-list__item__title">笔记</h2>
-              <p>这个问题搞了好久记一下。我去，之前记过了@_@</p>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.note %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.noteDesc %></p>
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/twilight.svg') %>"
@@ -37,8 +45,10 @@
         <li class="main-list__item">
           <a href="http://blog.zjffun.com">
             <section>
-              <h2 class="main-list__item__title">博客</h2>
-              <p>太矫情了，删了删了T_T</p>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.blog %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/rarity.svg') %>"
@@ -50,8 +60,10 @@
         <li class="main-list__item">
           <a href="tools.html">
             <section>
-              <h2 class="main-list__item__title">工具汇总</h2>
-              <p>在线工具 & 装机必备</p>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.tools %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.toolsDesc %></p>
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/applejack.svg') %>"
@@ -63,8 +75,10 @@
         <li class="main-list__item">
           <a href="docs.html">
             <section>
-              <h2 class="main-list__item__title">文档汇总</h2>
-              <p>不如谷歌，再简单不如谷歌。</p>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.docs %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.docsDesc %></p>
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/pinkiepie.svg') %>"
@@ -76,8 +90,10 @@
         <li class="main-list__item">
           <a href="http://tft.zjffun.com">
             <section>
-              <h2 class="main-list__item__title">云顶之弈助手</h2>
-              <p>已经不玩了</p>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.tftHelper %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.tftHelperDesc %></p>
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/rainbowdash.svg') %>"
@@ -90,9 +106,9 @@
           <a href="https://zjffun.github.io/js-async-visualization/?example=0">
             <section>
               <h2 class="main-list__item__title">
-                JS asynchronous visualization
+                <%= htmlWebpackPlugin.options.zi18n.jsav %>
               </h2>
-              <p>An online tool for visualizing JS asynchronous tasks.</p>
+              <p><%= htmlWebpackPlugin.options.zi18n.jsavDesc %></p>
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/fluttershy.svg') %>"
@@ -104,22 +120,24 @@
         <li class="main-list__item">
           <a>
             <section>
-              <p>友谊是魔法</p>
-              <p>相信的心就是你的魔法</p>
+              <p><%= htmlWebpackPlugin.options.zi18n.truth1 %></p>
+              <p><%= htmlWebpackPlugin.options.zi18n.truth2 %></p>
             </section>
           </a>
         </li>
         <li class="main-list__item">
           <a>
             <section>
-              <p>平淡无奇的日常，也许就是连续的奇迹</p>
+              <p><%= htmlWebpackPlugin.options.zi18n.truth3 %></p>
             </section>
           </a>
         </li>
         <li class="main-list__item">
           <div class="main-list__item-container">
             <section class="site-record">
-              <h2 class="main-list__item__title">网站信息</h2>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.info %>
+              </h2>
               <p>
                 <a
                   target="_blank"

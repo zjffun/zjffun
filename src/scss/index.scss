@@ -19,6 +19,20 @@ $top-and-bottom: linear-gradient(
   var(--rainbow-dash)
 );
 
+.flex-spring {
+  flex: 1 1 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--princess-luna);
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--twilight-sparkle);
+  }
+}
+
 html {
   color: var(--princess-luna);
   background: var(--rarity);
@@ -59,6 +73,17 @@ header {
       &:hover,
       &:active {
         color: var(--princess-luna);
+      }
+    }
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    &__lang {
+      cursor: pointer;
+      &:not(last-child) {
+        margin-right: 10px;
       }
     }
   }
