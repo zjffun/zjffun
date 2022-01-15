@@ -1,10 +1,12 @@
-const path = require('path');
-const fs = require('fs');
-const YAML = require('yaml');
+import fs from 'fs';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import cjs from 'node-cjs';
+import path from 'path';
+import webpack from 'webpack';
+import YAML from 'yaml';
 
-const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { __dirname } = cjs(import.meta);
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -14,12 +16,10 @@ function getI18n(file) {
   );
 }
 
-module.exports = {
+export default {
   mode: process.env.NODE_ENV,
   entry: {
     index: './src/js/index.js',
-    docs: './src/js/docs.js',
-    tools: './src/js/tools.js',
   },
   resolve: {
     alias: {
@@ -81,16 +81,6 @@ module.exports = {
       template: path.resolve(__dirname, 'publish/index.html'),
       chunks: ['index'],
       zi18n: getI18n('index.en.yaml'),
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'docs.html',
-      template: path.resolve(__dirname, 'publish/docs.html'),
-      chunks: ['react', 'docs'],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'tools.html',
-      template: path.resolve(__dirname, 'publish/tools.html'),
-      chunks: ['react', 'tools'],
     }),
   ],
   optimization: {
