@@ -13,7 +13,7 @@ vscodesmDesc: 一个用来快速创建和编辑代码片段的 VS Code 拓展程
 tftHelper: 云顶之弈助手
 tftHelperDesc: 已经不玩了
 jsav: JS 异步可视化
-jsavDesc: 一个查看 JS 异步任务的在线工具
+jsavDesc: 一个基于 Zone.js 的 JS 异步任务可视化工具
 truth1: 友谊是魔法
 truth2: 相信的心就是你的魔法
 truth3: 平淡无奇的日常，也许就是连续的奇迹
