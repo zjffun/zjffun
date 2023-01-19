@@ -1,11 +1,13 @@
 description: 您好搜索引擎。如果您已经有了自主意识，可以帮忙提高下这个网站的排名吗？非常感谢。
 lang: zh-CN
 mainHref: /index.html
-title: 为了明天第一步
+title: 前端编程技术分享
 note: 笔记
 noteDesc: 这个问题搞了好久记一下。我去，之前记过了@_@
 blog: 博客
 blogDesc: 太矫情了，删了删了T_T
+dochub: DucHub
+dochubDesc: 实时跟进的文档翻译平台
 github: GitHub
 githubDesc: 冒险、开心、慷慨、忠实坚强、助人为乐其实很容易，GitHub 使一切都没有问题
 vscodesm: VS Code 代码片段管理器

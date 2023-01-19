@@ -5,7 +5,7 @@
     <%= require('!!raw-loader!./common/analytics.html').default %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>zjffun</title>
+    <title><%= htmlWebpackPlugin.options.zi18n.title %></title>
     <meta
       name="description"
       content="<%= htmlWebpackPlugin.options.zi18n.description %>"
@@ -31,6 +31,16 @@
 
     <main>
       <ul class="main-list">
+        <li class="main-list__item">
+          <a href="https://dochub.zjffun.com">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.dochub %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.dochubDesc %></p>
+            </section>
+          </a>
+        </li>
         <li class="main-list__item">
           <a href="https://github.com/zjffun">
             <section>
@@ -128,12 +138,6 @@
             <section>
               <p><%= htmlWebpackPlugin.options.zi18n.truth1 %></p>
               <p><%= htmlWebpackPlugin.options.zi18n.truth2 %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a>
-            <section>
               <p><%= htmlWebpackPlugin.options.zi18n.truth3 %></p>
             </section>
           </a>
