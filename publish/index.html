@@ -17,10 +17,7 @@
       <h1 class="header-title">
         <span style="display: none">zjffun</span>
         <a href="<%= htmlWebpackPlugin.options.zi18n.mainHref %>">
-          ZJFFUN - Zhang Ju Feng FUN 🤡 ? Zhang Just For FUN 😉 ?
-          <!-- 2021 新年快乐 -->
-          <!-- 仅是一个用来自我满足的个人网站 -->
-          <!-- 仅是一个希望以乐趣为核心的个人网站 -->
+          <%= htmlWebpackPlugin.options.zi18n.title %>
         </a>
       </h1>
       <div class="flex-spring"></div>
@@ -43,15 +40,32 @@
           </a>
         </li>
         <li class="main-list__item">
-          <a href="https://github.com/zjffun">
+          <a href="http://blog.zjffun.com">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.blog %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
+
+              <img
+                class="main-list__item__img"
+                src="<%= require('../src/assets/images/twilight.svg') %>"
+                alt=""
+              />
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a class="main-list__item__rarity" href="https://github.com/zjffun">
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.github %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.githubDesc %></p>
+
               <img
                 class="main-list__item__img"
-                src="<%= require('../src/assets/images/twilight.svg') %>"
+                src="<%= require('../src/assets/images/applejack.svg') %>"
                 alt=""
               />
             </section>
@@ -66,9 +80,10 @@
                 <%= htmlWebpackPlugin.options.zi18n.vscodesm %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.vscodesmDesc %></p>
+
               <img
                 class="main-list__item__img"
-                src="<%= require('../src/assets/images/applejack.svg') %>"
+                src="<%= require('../src/assets/images/rarity.svg') %>"
                 alt=""
               />
             </section>
@@ -83,9 +98,10 @@
                 <%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %></p>
+
               <img
                 class="main-list__item__img"
-                src="<%= require('../src/assets/images/rarity.svg') %>"
+                src="<%= require('../src/assets/images/rainbowdash.svg') %>"
                 alt=""
               />
             </section>
@@ -100,9 +116,10 @@
               <p>
                 <%= htmlWebpackPlugin.options.zi18n.vueClickToComponentDesc %>
               </p>
+
               <img
                 class="main-list__item__img"
-                src="<%= require('../src/assets/images/rainbowdash.svg') %>"
+                src="<%= require('../src/assets/images/fluttershy.svg') %>"
                 alt=""
               />
             </section>
@@ -120,45 +137,12 @@
                 <%=
                 htmlWebpackPlugin.options.zi18n.vscodeDependencyDependentDesc %>
               </p>
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/fluttershy.svg') %>"
-                alt=""
-              />
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a>
-            <section>
-              <p><%= htmlWebpackPlugin.options.zi18n.truth1 %></p>
-              <p><%= htmlWebpackPlugin.options.zi18n.truth2 %></p>
-              <p><%= htmlWebpackPlugin.options.zi18n.truth3 %></p>
+
               <img
                 class="main-list__item__img"
                 src="<%= require('../src/assets/images/pinkiepie.svg') %>"
                 alt=""
               />
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://blog.zjffun.com">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.blog %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://note.zjffun.com">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.note %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.noteDesc %></p>
             </section>
           </a>
         </li>
@@ -183,9 +167,13 @@
           </a>
         </li>
         <li class="main-list__item">
-          <div class="main-list__item-container">
-            <%= htmlWebpackPlugin.options.zi18n.title %>
-          </div>
+          <a>
+            <section>
+              <p><%= htmlWebpackPlugin.options.zi18n.truth1 %></p>
+              <p><%= htmlWebpackPlugin.options.zi18n.truth2 %></p>
+              <p><%= htmlWebpackPlugin.options.zi18n.truth3 %></p>
+            </section>
+          </a>
         </li>
       </ul>
     </main>

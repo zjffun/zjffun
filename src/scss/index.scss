@@ -132,18 +132,16 @@ main {
         }
       }
       &:nth-child(2) {
+        color: var(--rarity);
         background: var(--twilight-sparkle);
         // flip horizontally
         .main-list__item__img {
           transform: scaleX(-1);
         }
       }
-      &:nth-child(2) {
-        background: var(--twilight-sparkle);
-      }
       &:nth-child(3) {
         background: var(--rarity2);
-        > a {
+        .main-list__item__rarity.main-list__item__rarity.main-list__item__rarity {
           color: var(--rarity);
         }
       }
