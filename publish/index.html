@@ -5,7 +5,7 @@
     <%= require('!!raw-loader!./common/analytics.html').default %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title><%= htmlWebpackPlugin.options.zi18n.title %></title>
+    <title>zjffun - <%= htmlWebpackPlugin.options.zi18n.title %></title>
     <meta
       name="description"
       content="<%= htmlWebpackPlugin.options.zi18n.description %>"
@@ -15,8 +15,9 @@
   <body>
     <header>
       <h1 class="header-title">
+        <span style="display: none">zjffun</span>
         <a href="<%= htmlWebpackPlugin.options.zi18n.mainHref %>">
-          <%= htmlWebpackPlugin.options.zi18n.title %>
+          ZJFFUN - Zhang Ju Feng FUN 🤡 ? Zhang Just For FUN 😉 ?
           <!-- 2021 新年快乐 -->
           <!-- 仅是一个用来自我满足的个人网站 -->
           <!-- 仅是一个希望以乐趣为核心的个人网站 -->
@@ -50,67 +51,7 @@
               <p><%= htmlWebpackPlugin.options.zi18n.githubDesc %></p>
               <img
                 class="main-list__item__img"
-                src="<%= require('../src/assets/images/rarity.svg') %>"
-                alt=""
-              />
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://blog.zjffun.com">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.blog %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
-              <img
-                class="main-list__item__img"
                 src="<%= require('../src/assets/images/twilight.svg') %>"
-                alt=""
-              />
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://note.zjffun.com">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.note %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.noteDesc %></p>
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/applejack.svg') %>"
-                alt=""
-              />
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://tft.zjffun.com">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.tftHelper %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.tftHelperDesc %></p>
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/rainbowdash.svg') %>"
-                alt=""
-              />
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="https://zjffun.github.io/js-async-visualization/?example=0">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.jsav %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.jsavDesc %></p>
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/fluttershy.svg') %>"
                 alt=""
               />
             </section>
@@ -127,7 +68,61 @@
               <p><%= htmlWebpackPlugin.options.zi18n.vscodesmDesc %></p>
               <img
                 class="main-list__item__img"
-                src="<%= require('../src/assets/images/pinkiepie.svg') %>"
+                src="<%= require('../src/assets/images/applejack.svg') %>"
+                alt=""
+              />
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=zjffun.gotofolder"
+          >
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %></p>
+              <img
+                class="main-list__item__img"
+                src="<%= require('../src/assets/images/rarity.svg') %>"
+                alt=""
+              />
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="https://github.com/zjffun/vue-click-to-component">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.vueClickToComponent %>
+              </h2>
+              <p>
+                <%= htmlWebpackPlugin.options.zi18n.vueClickToComponentDesc %>
+              </p>
+              <img
+                class="main-list__item__img"
+                src="<%= require('../src/assets/images/rainbowdash.svg') %>"
+                alt=""
+              />
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=zjffun.dependency-dependent"
+          >
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.vscodeDependencyDependent %>
+              </h2>
+              <p>
+                <%=
+                htmlWebpackPlugin.options.zi18n.vscodeDependencyDependentDesc %>
+              </p>
+              <img
+                class="main-list__item__img"
+                src="<%= require('../src/assets/images/fluttershy.svg') %>"
                 alt=""
               />
             </section>
@@ -139,32 +134,57 @@
               <p><%= htmlWebpackPlugin.options.zi18n.truth1 %></p>
               <p><%= htmlWebpackPlugin.options.zi18n.truth2 %></p>
               <p><%= htmlWebpackPlugin.options.zi18n.truth3 %></p>
+              <img
+                class="main-list__item__img"
+                src="<%= require('../src/assets/images/pinkiepie.svg') %>"
+                alt=""
+              />
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="http://blog.zjffun.com">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.blog %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="http://note.zjffun.com">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.note %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.noteDesc %></p>
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="http://tft.zjffun.com">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.tftHelper %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.tftHelperDesc %></p>
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="https://zjffun.github.io/js-async-visualization/?example=0">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.jsav %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.jsavDesc %></p>
             </section>
           </a>
         </li>
         <li class="main-list__item">
           <div class="main-list__item-container">
-            <section class="site-record">
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.info %>
-              </h2>
-              <p>
-                <a
-                  target="_blank"
-                  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802028993"
-                >
-                  <img
-                    src="http://www.beian.gov.cn/img/new/gongan.png"
-                    alt=""
-                  />京公网安备 11010802028993号
-                </a>
-              </p>
-              <p>
-                <a href="https://beian.miit.gov.cn/" target="_blank">
-                  京ICP备2020046328号
-                </a>
-              </p>
-            </section>
+            <%= htmlWebpackPlugin.options.zi18n.title %>
           </div>
         </li>
       </ul>

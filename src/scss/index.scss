@@ -133,6 +133,10 @@ main {
       }
       &:nth-child(2) {
         background: var(--twilight-sparkle);
+        // flip horizontally
+        .main-list__item__img {
+          transform: scaleX(-1);
+        }
       }
       &:nth-child(2) {
         background: var(--twilight-sparkle);

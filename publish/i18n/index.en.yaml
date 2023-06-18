@@ -12,6 +12,12 @@ github: GitHub
 githubDesc: Big adventure, Tons of fun, A beautiful heart, Faithfull and strong, Sharing kindness It's an easy feat. And GitHub makes it all complete.
 vscodesm: VS Code Snippets Manager
 vscodesmDesc: A VS Code extension to create and edit snippets easily.
+vscodeGoToFolder: VS Code Go to Folder
+vscodeGoToFolderDesc: Quick go to folder.
+vueClickToComponent: Vue Click to Component
+vueClickToComponentDesc: Option+Click(Alt+Click) a Component in the browser to instantly goto the source in your editor.
+vscodeDependencyDependent: VS Code Dependency & Dependent
+vscodeDependencyDependentDesc: Show dependencies and dependents.
 tftHelper: TFT helper
 tftHelperDesc: Not playing anymore.
 jsav: JS asynchronous visualization

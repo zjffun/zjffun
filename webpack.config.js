@@ -1,3 +1,4 @@
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -81,6 +82,14 @@ export default {
       template: path.resolve(__dirname, 'publish/index.html'),
       chunks: ['index'],
       zi18n: getI18n('index.en.yaml'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
     }),
   ],
   optimization: {
