@@ -20,6 +20,10 @@ vscodeDependencyDependent: VS Code Dependency & Dependent
 vscodeDependencyDependentDesc: Show dependencies and dependents.
 tftHelper: TFT helper
 tftHelperDesc: Not playing anymore.
+bbEmbed: bilibili embed image overlay
+bbEmbedDesc: A tool to add more visual cue when embedding bilibili videos in GitHub.
+ytEmbed: YouTube embed image overlay
+ytEmbedDesc: A tool to add more visual cue when embedding YouTube videos in GitHub.
 jsav: JS asynchronous visualization
 jsavDesc: An online tool for visualizing JS asynchronous tasks based on Zone.js.
 truth1: Friendship is magic.

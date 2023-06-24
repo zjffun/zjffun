@@ -18,6 +18,10 @@ vscodeDependencyDependent: VS Code 依赖和使用者
 vscodeDependencyDependentDesc: 查看依赖和使用者
 tftHelper: 云顶之弈助手
 tftHelperDesc: 已经不玩了
+bbEmbed: 哔哩哔哩视频嵌入图
+bbEmbedDesc: 在 GitHub 中嵌入哔哩哔哩视频图片时添加播放按钮的工具。
+ytEmbed: YouTube 视频嵌入图
+ytEmbedDesc: 在 GitHub 中嵌入 YouTube 视频图片时添加播放按钮等视觉元素的工具。
 jsav: JS 异步可视化
 jsavDesc: 一个基于 Zone.js 的 JS 异步任务可视化工具
 truth1: 友谊是魔法
