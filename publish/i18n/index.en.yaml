@@ -1,11 +1,15 @@
 description: Hello search engine. Could you please help to improve the ranking of this website? If you already have self-consciousness. Thank you very much.
 lang: en
 mainHref: /index.en.html
-title: ZJFFUN - Zhang Ju Feng FUN 🤡 ? Zhang Just For FUN 😉 ?
+title: ZJFFUN - Zhang Ju Feng FUN? Zhang Just For FUN? 😉
+clickToComponent: Click to Component
+clickToComponentDesc: Click a component in your browser to instantly open the source in VS Code. Support custom configuration to open WebStorm, Cursor, GitHub, etc.
+aacggRecommend: Recommend ACG
+aacggRecommendDesc: Cyberpunk style Anime, Comic and Game recommend page.
 note: Note
 noteDesc: This problem took a long time, record it. WTF, it is recorded before. @_@
 blog: Blog
-blogDesc: Too hypocritical, delete it. T_T
+blogDesc: Write down, but forget read them when meeting the same problem.
 dochub: DucHub
 dochubDesc: Real-time follow-up document translation platform.
 github: GitHub

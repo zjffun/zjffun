@@ -5,6 +5,7 @@
     <%= require('!!raw-loader!./common/analytics.html').default %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./favicon.ico" />
     <title><%= htmlWebpackPlugin.options.zi18n.title %></title>
     <meta
       name="description"
@@ -30,85 +31,76 @@
     <main>
       <ul class="main-list">
         <li class="main-list__item">
-          <a href="https://dochub.zjffun.com">
+          <a href="https://ctc.zjffun.com" target="_blank">
             <section>
               <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.dochub %>
+                <%= htmlWebpackPlugin.options.zi18n.clickToComponent %>
               </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.dochubDesc %></p>
+              <p><%= htmlWebpackPlugin.options.zi18n.clickToComponentDesc %></p>
             </section>
           </a>
         </li>
         <li class="main-list__item">
-          <a href="http://blog.zjffun.com">
+          <a href="http://blog.zjffun.com" target="_blank">
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.blog %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
-
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/twilight.svg') %>"
-                alt=""
-              />
             </section>
           </a>
         </li>
         <li class="main-list__item">
-          <a class="main-list__item__rarity" href="https://github.com/zjffun">
+          <a href="https://github.com/zjffun" target="_blank">
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.github %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.githubDesc %></p>
-
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/applejack.svg') %>"
-                alt=""
-              />
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="https://aacgg.com/recommend?name=zjffun" target="_blank">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.aacggRecommend %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.aacggRecommendDesc %></p>
             </section>
           </a>
         </li>
         <li class="main-list__item">
           <a
             href="https://marketplace.visualstudio.com/items?itemName=zjffun.snippetsmanager"
+            target="_blank"
           >
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.vscodesm %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.vscodesmDesc %></p>
-
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/rarity.svg') %>"
-                alt=""
-              />
             </section>
           </a>
         </li>
         <li class="main-list__item">
           <a
             href="https://marketplace.visualstudio.com/items?itemName=zjffun.gotofolder"
+            target="_blank"
           >
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %>
               </h2>
               <p><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %></p>
-
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/rainbowdash.svg') %>"
-                alt=""
-              />
             </section>
           </a>
         </li>
         <li class="main-list__item">
-          <a href="https://github.com/zjffun/vue-click-to-component">
+          <a
+            href="https://github.com/zjffun/vue-click-to-component"
+            target="_blank"
+          >
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.vueClickToComponent %>
@@ -116,18 +108,13 @@
               <p>
                 <%= htmlWebpackPlugin.options.zi18n.vueClickToComponentDesc %>
               </p>
-
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/fluttershy.svg') %>"
-                alt=""
-              />
             </section>
           </a>
         </li>
         <li class="main-list__item">
           <a
             href="https://marketplace.visualstudio.com/items?itemName=zjffun.dependency-dependent"
+            target="_blank"
           >
             <section>
               <h2 class="main-list__item__title">
@@ -137,17 +124,21 @@
                 <%=
                 htmlWebpackPlugin.options.zi18n.vscodeDependencyDependentDesc %>
               </p>
-
-              <img
-                class="main-list__item__img"
-                src="<%= require('../src/assets/images/pinkiepie.svg') %>"
-                alt=""
-              />
             </section>
           </a>
         </li>
         <li class="main-list__item">
-          <a href="http://bb-embed.zjffun.com">
+          <a href="https://dochub.zjffun.com" target="_blank">
+            <section>
+              <h2 class="main-list__item__title">
+                <%= htmlWebpackPlugin.options.zi18n.dochub %>
+              </h2>
+              <p><%= htmlWebpackPlugin.options.zi18n.dochubDesc %></p>
+            </section>
+          </a>
+        </li>
+        <li class="main-list__item">
+          <a href="http://bb-embed.zjffun.com" target="_blank">
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.bbEmbed %>
@@ -157,7 +148,7 @@
           </a>
         </li>
         <li class="main-list__item">
-          <a href="http://yt-embed.zjffun.com">
+          <a href="http://yt-embed.zjffun.com" target="_blank">
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.ytEmbed %>
@@ -167,7 +158,7 @@
           </a>
         </li>
         <li class="main-list__item">
-          <a href="http://tft.zjffun.com">
+          <a href="http://tft.zjffun.com" target="_blank">
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.tftHelper %>
@@ -177,7 +168,10 @@
           </a>
         </li>
         <li class="main-list__item">
-          <a href="https://zjffun.github.io/js-async-visualization/?example=0">
+          <a
+            href="https://zjffun.github.io/js-async-visualization/?example=0"
+            target="_blank"
+          >
             <section>
               <h2 class="main-list__item__title">
                 <%= htmlWebpackPlugin.options.zi18n.jsav %>

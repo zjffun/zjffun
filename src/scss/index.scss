@@ -116,20 +116,6 @@ main {
           var(--twilight-sparkle),
           var(--rainbow-dash)
         );
-
-        a {
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-
-          .main-list__item__title {
-            font-size: 3em;
-          }
-          p {
-            font-size: 1.2em;
-          }
-        }
       }
       &:nth-child(2) {
         color: var(--rarity);
