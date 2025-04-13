@@ -23,8 +23,20 @@
       </h1>
       <div class="flex-spring"></div>
       <span class="header-left">
-        <a class="header-left__lang" href="./index.html"> 中文 </a>
-        <a class="header-left__lang" href="./index.en.html"> English </a>
+        <a
+          class="header-left__lang"
+          href="./index.zh.html"
+          onclick="window.localStorage.setItem('langCode', 'zh')"
+        >
+          中文
+        </a>
+        <a
+          class="header-left__lang"
+          href="./index.html"
+          onclick="window.localStorage.setItem('langCode', 'en')"
+        >
+          English
+        </a>
       </span>
     </header>
 

@@ -72,13 +72,13 @@ export default {
       filename: devMode ? '[name].css' : '[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: 'index.zh.html',
       template: path.resolve(__dirname, 'publish/index.html'),
       chunks: ['index'],
       zi18n: getI18n('index.zh-CN.yaml'),
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.en.html',
+      filename: 'index.html',
       template: path.resolve(__dirname, 'publish/index.html'),
       chunks: ['index'],
       zi18n: getI18n('index.en.yaml'),
