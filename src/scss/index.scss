@@ -68,21 +68,15 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
     transition: background 0.2s ease, color 0.2s ease;
   }
 
-  &__meta {
-    margin-top: auto; margin-bottom: 24px;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    color: var(--dim); font-size: 0.7rem; letter-spacing: 0.32em;
-  }
-  &__status { text-transform: uppercase; }
-
   &__lang {
-    display: inline-flex; flex-direction: column; align-items: center; gap: 6px;
-    font-size: 0.72rem; letter-spacing: 0.18em;
+    margin-top: auto;
+    display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em;
     a {
-      color: var(--dim); text-decoration: none; padding: 2px 0;
-      transition: color 0.15s ease;
-      &:hover { color: var(--cyan); }
+      color: var(--dim-2); text-decoration: none; padding: 2px 0;
+      transition: color 0.15s ease, text-shadow 0.15s ease;
+      &:hover { color: var(--cyan); text-shadow: 0 0 8px rgba(92, 240, 255, 0.5); }
     }
   }
 }
@@ -96,14 +90,6 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
 /* hero ------------------------------------------------ */
 .hero {
   padding: 28px 0 52px;
-
-  &__crumbs {
-    display: inline-flex; align-items: center; gap: 10px;
-    color: var(--dim); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-    margin-bottom: 28px;
-    span:last-child { color: var(--cyan); }
-  }
-  &__sep { color: var(--line-strong); }
 
   &__title {
     position: relative; display: inline-block;
@@ -252,5 +238,4 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
   .rail { padding: 14px 0; }
   .rail__mark { width: 26px; height: 26px; font-size: 0.8rem; }
   .hero { padding: 18px 0 36px; }
-  .hero__crumbs { margin-bottom: 18px; }
 }
