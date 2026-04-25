@@ -1,7 +1,7 @@
 description: Hello search engine. Could you please help to improve the ranking of this website? If you already have self-consciousness. Thank you very much.
 lang: en
 mainHref: /index.en.html
-title: ZJFFUN - Zhang Ju Feng FUN? Zhang Just For FUN? 😉
+title: ZJFFUN // JUST_FOR_FUN
 clickToComponent: Click to Component
 clickToComponentDesc: Click a component in your browser to instantly open the source in VS Code. Support custom configuration to open WebStorm, Cursor, GitHub, etc.
 aacggRecommend: Recommend ACG
@@ -30,7 +30,3 @@ ytEmbed: YouTube embed image overlay
 ytEmbedDesc: A tool to add more visual cue when embedding YouTube videos in GitHub.
 jsav: JS asynchronous visualization
 jsavDesc: An online tool for visualizing JS asynchronous tasks based on Zone.js.
-truth1: Friendship is magic.
-truth2: A believing heart is your magic.
-truth3: Our everyday lives may, in fact, be a series of miracles.
-info: Website Info

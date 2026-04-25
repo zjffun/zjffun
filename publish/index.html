@@ -5,203 +5,177 @@
     <%= require('!!raw-loader!./common/analytics.html').default %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="alternate icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
     <title><%= htmlWebpackPlugin.options.zi18n.title %></title>
     <meta
       name="description"
       content="<%= htmlWebpackPlugin.options.zi18n.description %>"
     />
+    <script type="module" src="/src/js/index.js"></script>
   </head>
 
   <body>
-    <header>
-      <h1 class="header-title">
-        <span style="display: none">zjffun</span>
-        <a href="<%= htmlWebpackPlugin.options.zi18n.mainHref %>">
-          <%= htmlWebpackPlugin.options.zi18n.title %>
-        </a>
-      </h1>
-      <div class="flex-spring"></div>
-      <span class="header-left">
-        <a
-          class="header-left__lang"
-          href="./index.zh.html"
-          onclick="window.localStorage.setItem('langCode', 'zh')"
-        >
-          中文
-        </a>
-        <a
-          class="header-left__lang"
-          href="./index.html"
-          onclick="window.localStorage.setItem('langCode', 'en')"
-        >
-          English
-        </a>
-      </span>
-    </header>
+    <div class="bg" aria-hidden="true"></div>
 
-    <main>
-      <ul class="main-list">
-        <li class="main-list__item">
-          <a href="https://ctc.zjffun.com" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.clickToComponent %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.clickToComponentDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://blog.zjffun.com" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.blog %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.blogDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="https://github.com/zjffun" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.github %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.githubDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="https://aacgg.com/recommend?name=zjffun" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.aacggRecommend %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.aacggRecommendDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=zjffun.snippetsmanager"
-            target="_blank"
-          >
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.vscodesm %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.vscodesmDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=zjffun.gotofolder"
-            target="_blank"
-          >
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolderDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a
-            href="https://github.com/zjffun/vue-click-to-component"
-            target="_blank"
-          >
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.vueClickToComponent %>
-              </h2>
-              <p>
-                <%= htmlWebpackPlugin.options.zi18n.vueClickToComponentDesc %>
-              </p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a
-            href="https://marketplace.visualstudio.com/items?itemName=zjffun.dependency-dependent"
-            target="_blank"
-          >
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.vscodeDependencyDependent %>
-              </h2>
-              <p>
-                <%=
-                htmlWebpackPlugin.options.zi18n.vscodeDependencyDependentDesc %>
-              </p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="https://dochub.zjffun.com" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.dochub %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.dochubDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://bb-embed.zjffun.com" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.bbEmbed %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.bbEmbedDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://yt-embed.zjffun.com" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.ytEmbed %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.ytEmbedDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a href="http://tft.zjffun.com" target="_blank">
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.tftHelper %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.tftHelperDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a
-            href="https://zjffun.github.io/js-async-visualization/?example=0"
-            target="_blank"
-          >
-            <section>
-              <h2 class="main-list__item__title">
-                <%= htmlWebpackPlugin.options.zi18n.jsav %>
-              </h2>
-              <p><%= htmlWebpackPlugin.options.zi18n.jsavDesc %></p>
-            </section>
-          </a>
-        </li>
-        <li class="main-list__item">
-          <a>
-            <section>
-              <p><%= htmlWebpackPlugin.options.zi18n.truth1 %></p>
-              <p><%= htmlWebpackPlugin.options.zi18n.truth2 %></p>
-              <p><%= htmlWebpackPlugin.options.zi18n.truth3 %></p>
-            </section>
-          </a>
-        </li>
-      </ul>
-    </main>
+    <div class="frame">
+      <aside class="rail">
+        <a class="rail__brand" href="<%= htmlWebpackPlugin.options.zi18n.mainHref %>">
+          <span class="rail__mark">Z</span>
+        </a>
+
+        <div class="rail__meta">
+          <span class="rail__status">SYS_ONLINE</span>
+        </div>
+
+        <div class="rail__lang">
+          <a href="./index.html" onclick="window.localStorage.setItem('langCode', 'en')">EN</a>
+          <a href="./index.zh.html" onclick="window.localStorage.setItem('langCode', 'zh')">中</a>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero">
+          <div class="hero__crumbs">
+            <span>// root</span>
+            <span class="hero__sep">/</span>
+            <span><%= htmlWebpackPlugin.options.zi18n.title %></span>
+          </div>
+
+          <h1 class="hero__title" data-text="ZJFFUN">ZJFFUN</h1>
+
+          <div class="hero__row">
+            <p class="hero__sub">// just for fun — a transmission of side-projects, tools &amp; experiments</p>
+            <div class="hero__tag">
+              <span>v.2026</span>
+              <span class="hero__bar"></span>
+              <span>13 NODES</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="feed" aria-label="projects">
+          <div class="feed__head">
+            <span>NODES</span>
+            <span class="feed__line"></span>
+            <span>↗ EXTERNAL</span>
+          </div>
+
+          <ul class="feed__list">
+            <li class="node">
+              <a href="https://ctc.zjffun.com" target="_blank">
+                <span class="node__num">01</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.clickToComponent %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.clickToComponentDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="http://blog.zjffun.com" target="_blank">
+                <span class="node__num">02</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.blog %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.blogDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://github.com/zjffun" target="_blank">
+                <span class="node__num">03</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.github %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.githubDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://aacgg.com/recommend?name=zjffun" target="_blank">
+                <span class="node__num">04</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.aacggRecommend %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.aacggRecommendDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://marketplace.visualstudio.com/items?itemName=zjffun.snippetsmanager" target="_blank">
+                <span class="node__num">05</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vscodesm %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vscodesmDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://marketplace.visualstudio.com/items?itemName=zjffun.gotofolder" target="_blank">
+                <span class="node__num">06</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolderDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://github.com/zjffun/vue-click-to-component" target="_blank">
+                <span class="node__num">07</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vueClickToComponent %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vueClickToComponentDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://marketplace.visualstudio.com/items?itemName=zjffun.dependency-dependent" target="_blank">
+                <span class="node__num">08</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vscodeDependencyDependent %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vscodeDependencyDependentDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://dochub.zjffun.com" target="_blank">
+                <span class="node__num">09</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.dochub %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.dochubDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="http://bb-embed.zjffun.com" target="_blank">
+                <span class="node__num">10</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.bbEmbed %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.bbEmbedDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="http://yt-embed.zjffun.com" target="_blank">
+                <span class="node__num">11</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.ytEmbed %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.ytEmbedDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="http://tft.zjffun.com" target="_blank">
+                <span class="node__num">12</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.tftHelper %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.tftHelperDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+            <li class="node">
+              <a href="https://zjffun.github.io/js-async-visualization/?example=0" target="_blank">
+                <span class="node__num">13</span>
+                <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.jsav %></span>
+                <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.jsavDesc %></span>
+                <span class="node__arrow">↗</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <footer class="foot">
+          <span>END_OF_TRANSMISSION</span>
+          <span class="foot__line"></span>
+          <span>©<%= htmlWebpackPlugin.options.zi18n.title %></span>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>
