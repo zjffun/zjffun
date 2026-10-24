@@ -22,7 +22,7 @@
   "devDependencies": {
     "lodash-es": "^4.17.21",
     "sass": "^1.103.1",
-    "vite": "^7.3.6",
+    "vite": "^7.3.7",
     "yaml": "^2.4.0"
   }
 }
