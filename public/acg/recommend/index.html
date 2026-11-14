@@ -44,7 +44,7 @@
       .item {
         content-visibility: auto;
         contain-intrinsic-size: 200px 310px;
-        transition: transform 180ms ease, filter 180ms ease;
+        transition: filter 180ms ease;
       }
       .item img {
         aspect-ratio: 1 / 1.414;
@@ -81,7 +81,7 @@
         text-decoration: none;
         text-transform: uppercase;
         clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
-        transition: filter 150ms ease, transform 150ms ease;
+        transition: filter 150ms ease, box-shadow 150ms ease;
       }
       .sourceIcon { width: 13px; height: 13px; flex: none; }
       .sourceLink--bangumi { background: #a8d8e8; }
@@ -89,9 +89,9 @@
       .tbc { width: min(100%, 1480px); margin: 44px auto 12px; padding: 0 32px; }
       .tbc img { height: 36px; width: auto; max-width: 100%; object-fit: contain; }
       @media (hover: hover) {
-        .item:hover { transform: translateY(-4px); filter: drop-shadow(0 8px 0 rgba(0, 255, 210, 0.45)); }
+        .item:hover { filter: drop-shadow(0 6px 0 rgba(0, 255, 210, 0.45)); }
         .item:hover img { filter: saturate(1.08) contrast(1.03); }
-        .sourceLink:hover { filter: brightness(1.14); transform: translateY(-1px); }
+        .sourceLink:hover { filter: brightness(1.14); box-shadow: inset 0 0 0 1px currentColor; }
       }
       @media (max-width: 639px) {
         .header__inner { padding: 0 14px; }
