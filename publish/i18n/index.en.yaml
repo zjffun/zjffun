@@ -10,8 +10,6 @@ note: Note
 noteDesc: This problem took a long time, record it. WTF, it is recorded before. @_@
 blog: Blog
 blogDesc: Write down, but forget read them when meeting the same problem.
-dochub: DucHub
-dochubDesc: Real-time follow-up document translation platform.
 github: GitHub
 githubDesc: Big adventure, Tons of fun, A beautiful heart, Faithfull and strong, Sharing kindness It's an easy feat. And GitHub makes it all complete.
 vscodesm: VS Code Snippets Manager
@@ -24,10 +22,6 @@ vscodeDependencyDependent: VS Code Dependency & Dependent
 vscodeDependencyDependentDesc: Show dependencies and dependents.
 tftHelper: TFT helper
 tftHelperDesc: Not playing anymore.
-bbEmbed: bilibili embed image overlay
-bbEmbedDesc: A tool to add more visual cue when embedding bilibili videos in GitHub.
-ytEmbed: YouTube embed image overlay
-ytEmbedDesc: A tool to add more visual cue when embedding YouTube videos in GitHub.
 jsav: JS asynchronous visualization
 jsavDesc: An online tool for visualizing JS asynchronous tasks based on Zone.js.
 aacgg: ACG
