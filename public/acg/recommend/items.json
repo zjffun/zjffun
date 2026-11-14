@@ -2,286 +2,479 @@
  {
   "name": "小马宝莉",
   "coverImage": "O-wrO_o0gj7wSg4nzLSqi",
-  "image": "img/O-wrO_o0gj7wSg4nzLSqi.webp"
+  "image": "img/O-wrO_o0gj7wSg4nzLSqi.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/29870"
+  }
  },
  {
   "name": "天元突破 红莲螺岩",
   "coverImage": "rJmqViQ7tfZR9EeEQsmjW",
-  "image": "img/rJmqViQ7tfZR9EeEQsmjW.webp"
+  "image": "img/rJmqViQ7tfZR9EeEQsmjW.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/770"
+  }
  },
  {
   "name": "斩服少女",
   "coverImage": "CRohQFpLOGR201MCVsWTX",
-  "image": "img/CRohQFpLOGR201MCVsWTX.webp"
+  "image": "img/CRohQFpLOGR201MCVsWTX.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/72941",
+   "mikan": "https://mikanani.me/Home/Bangumi/188"
+  }
  },
  {
   "name": "赛博朋克 边缘行者",
   "coverImage": "AEmTOZvlpwiS0HQ5zYqX2",
-  "image": "img/AEmTOZvlpwiS0HQ5zYqX2.webp"
+  "image": "img/AEmTOZvlpwiS0HQ5zYqX2.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/309311"
+  }
  },
  {
   "name": "炎拳",
   "coverImage": "6KVLzkmBbtg4YMjEgmKs2",
-  "image": "img/6KVLzkmBbtg4YMjEgmKs2.webp"
+  "image": "img/6KVLzkmBbtg4YMjEgmKs2.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/179872"
+  }
  },
  {
   "name": "再见绘梨",
   "coverImage": "sQvwpNxWQ0MqcYP1SYWFs",
-  "image": "img/sQvwpNxWQ0MqcYP1SYWFs.webp"
+  "image": "img/sQvwpNxWQ0MqcYP1SYWFs.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/377599"
+  }
  },
  {
   "name": "蓦然回首",
   "coverImage": "wKKL7NLdRWUeSei2E2e9T",
-  "image": "img/wKKL7NLdRWUeSei2E2e9T.webp"
+  "image": "img/wKKL7NLdRWUeSei2E2e9T.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/480441",
+   "mikan": "https://mikanani.me/Home/Bangumi/3498"
+  }
  },
  {
   "name": "电锯人",
   "coverImage": "Gvgw_Tz9EttqsEQ2SZX3C",
-  "image": "img/Gvgw_Tz9EttqsEQ2SZX3C.webp"
+  "image": "img/Gvgw_Tz9EttqsEQ2SZX3C.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/321885",
+   "mikan": "https://mikanani.me/Home/Bangumi/2821"
+  }
  },
  {
   "name": "来自新世界",
   "coverImage": "1nIsg2AYXkLCWFstygq4X",
-  "image": "img/1nIsg2AYXkLCWFstygq4X.webp"
+  "image": "img/1nIsg2AYXkLCWFstygq4X.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/37785"
+  }
  },
  {
   "name": "JOJO的奇妙冒险",
   "coverImage": "7bmB9N_PSBUp6tQbdiYMU",
-  "image": "img/7bmB9N_PSBUp6tQbdiYMU.webp"
+  "image": "img/7bmB9N_PSBUp6tQbdiYMU.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/43558"
+  }
  },
  {
   "name": "男子高中生的日常",
   "coverImage": "EzoNIAqgsa6RTiBQRPpka",
-  "image": "img/EzoNIAqgsa6RTiBQRPpka.webp"
+  "image": "img/EzoNIAqgsa6RTiBQRPpka.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/24790"
+  }
  },
  {
   "name": "日常",
   "coverImage": "RDp2M71k0nITe-TLciozd",
-  "image": "img/RDp2M71k0nITe-TLciozd.webp"
+  "image": "img/RDp2M71k0nITe-TLciozd.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/9912"
+  }
  },
  {
   "name": "小邪神飞踢",
   "coverImage": "FKcq3Bt1ysQf2EJh4femW",
-  "image": "img/FKcq3Bt1ysQf2EJh4femW.webp"
+  "image": "img/FKcq3Bt1ysQf2EJh4femW.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/231722",
+   "mikan": "https://mikanani.me/Home/Bangumi/1684"
+  }
  },
  {
   "name": "街角魔族",
   "coverImage": "WzpfhN4wFWgJd1hck80Tr",
-  "image": "img/WzpfhN4wFWgJd1hck80Tr.webp"
+  "image": "img/WzpfhN4wFWgJd1hck80Tr.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/272510",
+   "mikan": "https://mikanani.me/Home/Bangumi/1994"
+  }
  },
  {
   "name": "葬送的芙莉莲",
   "coverImage": "mqVt03B9F_yGFOSLdW-sa",
-  "image": "img/mqVt03B9F_yGFOSLdW-sa.webp"
+  "image": "img/mqVt03B9F_yGFOSLdW-sa.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/400602"
+  }
  },
  {
   "name": "Angel Beats!",
   "coverImage": "30-OXWwY-f9xr5J_j1XLI",
-  "image": "img/30-OXWwY-f9xr5J_j1XLI.webp"
+  "image": "img/30-OXWwY-f9xr5J_j1XLI.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/1851"
+  }
  },
  {
   "name": "秒速5厘米",
   "coverImage": "eCoRGvbcdNePMuo0Hxsqx",
-  "image": "img/eCoRGvbcdNePMuo0Hxsqx.webp"
+  "image": "img/eCoRGvbcdNePMuo0Hxsqx.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/927"
+  }
  },
  {
   "name": "落叶",
   "coverImage": "hzJ2Qn-D91gw6IykseQc_",
-  "image": "img/hzJ2Qn-D91gw6IykseQc_.webp"
+  "image": "img/hzJ2Qn-D91gw6IykseQc_.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/8461"
+  }
  },
  {
   "name": "小魔女学园",
   "coverImage": "SH5icev9ec7YFIimbk00i",
-  "image": "img/SH5icev9ec7YFIimbk00i.webp"
+  "image": "img/SH5icev9ec7YFIimbk00i.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/185792",
+   "mikan": "https://mikanani.me/Home/Bangumi/1316"
+  }
  },
  {
   "name": "魔法少女小圆",
   "coverImage": "BikD047QVQc5lymWES1ev",
-  "image": "img/BikD047QVQc5lymWES1ev.webp"
+  "image": "img/BikD047QVQc5lymWES1ev.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/9717"
+  }
  },
  {
   "name": "宝石之国",
   "coverImage": "RXjS6SE7fRWjjJ4g6dgWy",
-  "image": "img/RXjS6SE7fRWjjJ4g6dgWy.webp"
+  "image": "img/RXjS6SE7fRWjjJ4g6dgWy.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/214799",
+   "mikan": "https://mikanani.me/Home/Bangumi/1421"
+  }
  },
  {
   "name": "奇诺之旅",
   "coverImage": "tj6IrE4Ta5A2ZwzSwGqvn",
-  "image": "img/tj6IrE4Ta5A2ZwzSwGqvn.webp"
+  "image": "img/tj6IrE4Ta5A2ZwzSwGqvn.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/1948"
+  }
  },
  {
   "name": "少女终末旅行",
   "coverImage": "E7Go0J4nkYYc0HpW9dXTK",
-  "image": "img/E7Go0J4nkYYc0HpW9dXTK.webp"
+  "image": "img/E7Go0J4nkYYc0HpW9dXTK.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/218707",
+   "mikan": "https://mikanani.me/Home/Bangumi/1415"
+  }
  },
  {
   "name": "魔女之旅",
   "coverImage": "cL_menYvCtv8eDfOx8BDN",
-  "image": "img/cL_menYvCtv8eDfOx8BDN.webp"
+  "image": "img/cL_menYvCtv8eDfOx8BDN.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/292970",
+   "mikan": "https://mikanani.me/Home/Bangumi/2294"
+  }
  },
  {
   "name": "空之境界",
   "coverImage": "KusT-BkZXNUbtOuePPBrt",
-  "image": "img/KusT-BkZXNUbtOuePPBrt.webp"
+  "image": "img/KusT-BkZXNUbtOuePPBrt.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/1333"
+  }
  },
  {
   "name": "Rewrite",
   "coverImage": "dm-rBu45sCiim5k0P9lC9",
-  "image": "img/dm-rBu45sCiim5k0P9lC9.webp"
+  "image": "img/dm-rBu45sCiim5k0P9lC9.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/147568",
+   "mikan": "https://mikanani.me/Home/Bangumi/759"
+  }
  },
  {
   "name": "吊带袜天使",
   "coverImage": "AmvCrqXMwmsfPZgMogPeg",
-  "image": "img/AmvCrqXMwmsfPZgMogPeg.webp"
+  "image": "img/AmvCrqXMwmsfPZgMogPeg.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/8402"
+  }
  },
  {
   "name": "FX战士久留美",
   "coverImage": "ZkeNr661YSt56446sOItm",
-  "image": "img/ZkeNr661YSt56446sOItm.webp"
+  "image": "img/ZkeNr661YSt56446sOItm.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/339887"
+  }
  },
  {
   "name": "星之声",
   "coverImage": "P_kV_aI3BJpSdxISvvLsm",
-  "image": "img/P_kV_aI3BJpSdxISvvLsm.webp"
+  "image": "img/P_kV_aI3BJpSdxISvvLsm.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/1936"
+  }
  },
  {
   "name": "幸运星",
   "coverImage": "aN5pKOMb8sA0NU9NylGwb",
-  "image": "img/aN5pKOMb8sA0NU9NylGwb.webp"
+  "image": "img/aN5pKOMb8sA0NU9NylGwb.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/276"
+  }
  },
  {
   "name": "银魂",
   "coverImage": "VPBr-mTtedyHFxZnmXMxU",
-  "image": "img/VPBr-mTtedyHFxZnmXMxU.webp"
+  "image": "img/VPBr-mTtedyHFxZnmXMxU.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/247"
+  }
  },
  {
   "name": "漫研部",
   "coverImage": "dtjGpw4x9evhHZ9SPb0aO",
-  "image": "img/dtjGpw4x9evhHZ9SPb0aO.webp"
+  "image": "img/dtjGpw4x9evhHZ9SPb0aO.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/53890"
+  }
  },
  {
   "name": "反叛的鲁路修",
   "coverImage": "UpWrpJLSSJsQ8gDqikp4d",
-  "image": "img/UpWrpJLSSJsQ8gDqikp4d.webp"
+  "image": "img/UpWrpJLSSJsQ8gDqikp4d.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/793"
+  }
  },
  {
   "name": "明日之丈",
   "coverImage": "DXpXmcCY6Zf8umndOd5UW",
-  "image": "img/DXpXmcCY6Zf8umndOd5UW.webp"
+  "image": "img/DXpXmcCY6Zf8umndOd5UW.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/10404"
+  }
  },
  {
   "name": "罪恶王冠",
   "coverImage": "8lBVpICgYq91pA19fdlz4",
-  "image": "img/8lBVpICgYq91pA19fdlz4.webp"
+  "image": "img/8lBVpICgYq91pA19fdlz4.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/18635"
+  }
  },
  {
   "name": "未来日记",
   "coverImage": "z2fvPoKUq8fO7-00jzT6U",
-  "image": "img/z2fvPoKUq8fO7-00jzT6U.webp"
+  "image": "img/z2fvPoKUq8fO7-00jzT6U.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/16235"
+  }
  },
  {
   "name": "为美好的世界献上祝福",
   "coverImage": "SfST9I_ysKYrdvaZ4kzkA",
-  "image": "img/SfST9I_ysKYrdvaZ4kzkA.webp"
+  "image": "img/SfST9I_ysKYrdvaZ4kzkA.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/135275",
+   "mikan": "https://mikanani.me/Home/Bangumi/671"
+  }
  },
  {
   "name": "笨蛋，测验，召唤兽",
   "coverImage": "MLeOIm6MSEBM5tAbCR5r_",
-  "image": "img/MLeOIm6MSEBM5tAbCR5r_.webp"
+  "image": "img/MLeOIm6MSEBM5tAbCR5r_.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/3326"
+  }
  },
  {
   "name": "星之梦",
   "coverImage": "dGAcrre0GLAb3J9ZX1ByH",
-  "image": "img/dGAcrre0GLAb3J9ZX1ByH.webp"
+  "image": "img/dGAcrre0GLAb3J9ZX1ByH.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/178884",
+   "mikan": "https://mikanani.me/Home/Bangumi/1200"
+  }
  },
  {
   "name": "天体的秩序",
   "coverImage": "kCSVBlo42rV_piI9DYDFp",
-  "image": "img/kCSVBlo42rV_piI9DYDFp.webp"
+  "image": "img/kCSVBlo42rV_piI9DYDFp.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/100040",
+   "mikan": "https://mikanani.me/Home/Bangumi/395"
+  }
  },
  {
   "name": "黑社会的超能力女儿",
   "coverImage": "3W0aMPDDYdgE0TQ_gX6Uy",
-  "image": "img/3W0aMPDDYdgE0TQ_gX6Uy.webp"
+  "image": "img/3W0aMPDDYdgE0TQ_gX6Uy.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/225631",
+   "mikan": "https://mikanani.me/Home/Bangumi/1597"
+  }
  },
  {
   "name": "悠哉日常大王",
   "coverImage": "sB2T9x7VLwGFcQCzwSMO-",
-  "image": "img/sB2T9x7VLwGFcQCzwSMO-.webp"
+  "image": "img/sB2T9x7VLwGFcQCzwSMO-.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/78405",
+   "mikan": "https://mikanani.me/Home/Bangumi/220"
+  }
  },
  {
   "name": "石纪元",
   "coverImage": "duAWq9LLPRsBNaLqom47c",
-  "image": "img/duAWq9LLPRsBNaLqom47c.webp"
+  "image": "img/duAWq9LLPRsBNaLqom47c.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/266794"
+  }
  },
  {
   "name": "魔法禁书目录",
   "coverImage": "TgRbSoXcrsm6LgRYrtmnR",
-  "image": "img/TgRbSoXcrsm6LgRYrtmnR.webp"
+  "image": "img/TgRbSoXcrsm6LgRYrtmnR.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/1014"
+  }
  },
  {
   "name": "灼眼的夏娜",
   "coverImage": "gL0U5HWSTCLrvjwBoAsVB",
-  "image": "img/gL0U5HWSTCLrvjwBoAsVB.webp"
+  "image": "img/gL0U5HWSTCLrvjwBoAsVB.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/490"
+  }
  },
  {
   "name": "幻想嘉年华",
   "coverImage": "w6lA96XiZgata0gXhJA-a",
-  "image": "img/w6lA96XiZgata0gXhJA-a.webp"
+  "image": "img/w6lA96XiZgata0gXhJA-a.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/18882"
+  }
  },
  {
   "name": "幻想万华镜",
   "coverImage": "9jX8GibtQYZ_fcnqYRJCn",
-  "image": "img/9jX8GibtQYZ_fcnqYRJCn.webp"
+  "image": "img/9jX8GibtQYZ_fcnqYRJCn.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/21942"
+  }
  },
  {
   "name": "键等",
   "coverImage": "F5VKCzeGJh_l0ph74ucwM",
-  "image": "img/F5VKCzeGJh_l0ph74ucwM.webp"
+  "image": "img/F5VKCzeGJh_l0ph74ucwM.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/333598",
+   "mikan": "https://mikanani.me/Home/Bangumi/2587"
+  }
  },
  {
   "name": "忍者杀手",
   "coverImage": "Z83teUg8jW0qpIa1nhsJV",
-  "image": "img/Z83teUg8jW0qpIa1nhsJV.webp"
+  "image": "img/Z83teUg8jW0qpIa1nhsJV.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/101437"
+  }
  },
  {
   "name": "旋风管家",
   "coverImage": "bqLP4_rOkYToggFLgNcuy",
-  "image": "img/bqLP4_rOkYToggFLgNcuy.webp"
+  "image": "img/bqLP4_rOkYToggFLgNcuy.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/808"
+  }
  },
  {
   "name": "三颗星彩色冒险",
   "coverImage": "G8D5qwKwvQUXotnJRwjoS",
-  "image": "img/G8D5qwKwvQUXotnJRwjoS.webp"
+  "image": "img/G8D5qwKwvQUXotnJRwjoS.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/211066",
+   "mikan": "https://mikanani.me/Home/Bangumi/1487"
+  }
  },
  {
   "name": "侵略！？乌贼娘",
   "coverImage": "1-SoVRdrVw60on286QYUC",
-  "image": "img/1-SoVRdrVw60on286QYUC.webp"
+  "image": "img/1-SoVRdrVw60on286QYUC.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/18004"
+  }
  },
  {
   "name": "珈百璃的堕落",
   "coverImage": "uqGQzta_ZZNk3NHHuTesp",
-  "image": "img/uqGQzta_ZZNk3NHHuTesp.webp"
+  "image": "img/uqGQzta_ZZNk3NHHuTesp.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/188091",
+   "mikan": "https://mikanani.me/Home/Bangumi/1159"
+  }
  },
  {
   "name": "欢迎来到加帕里公园",
   "coverImage": "HArmYHUJOaMrd6zigA19E",
-  "image": "img/HArmYHUJOaMrd6zigA19E.webp"
+  "image": "img/HArmYHUJOaMrd6zigA19E.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/256543",
+   "mikan": "https://mikanani.me/Home/Bangumi/1734"
+  }
  },
  {
   "name": "无神世界的神明活动",
   "coverImage": "lV9ZqGdn9Oi-MBkUnn3Bp",
-  "image": "img/lV9ZqGdn9Oi-MBkUnn3Bp.webp"
+  "image": "img/lV9ZqGdn9Oi-MBkUnn3Bp.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/377607",
+   "mikan": "https://mikanani.me/Home/Bangumi/2993"
+  }
  },
  {
   "name": "异世界舅舅",
   "coverImage": "rnhu2VsgUFAW6j7Wmjxqk",
-  "image": "img/rnhu2VsgUFAW6j7Wmjxqk.webp"
+  "image": "img/rnhu2VsgUFAW6j7Wmjxqk.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/339326",
+   "mikan": "https://mikanani.me/Home/Bangumi/2739"
+  }
  },
  {
   "name": "碧蓝之海",
   "coverImage": "4PzFtYOqTEntMS0LHqP6O",
-  "image": "img/4PzFtYOqTEntMS0LHqP6O.webp"
+  "image": "img/4PzFtYOqTEntMS0LHqP6O.webp",
+  "links": {
+   "bangumi": "https://bangumi.tv/subject/235130",
+   "mikan": "https://mikanani.me/Home/Bangumi/1678"
+  }
  }
 ]
