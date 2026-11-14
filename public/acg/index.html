@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACG</title>
+    <meta name="description" content="An Anime, Comic & Game Gallery (archived static snapshot)" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        min-height: 100dvh;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        background: linear-gradient(135deg, #b580ff, #87ddfe 60%, #e2ffa5);
+        background-attachment: fixed;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 5rem;
+      }
+      @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (min-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+      @media (min-width: 1024px) { .grid { grid-template-columns: repeat(5, 1fr); } }
+      @media (min-width: 1280px) { .grid { grid-template-columns: repeat(6, 1fr); } }
+      .tile {
+        position: relative;
+        display: block;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: rgba(249, 250, 251, 0.5);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4px);
+      }
+      .tile-bg {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        object-fit: cover; filter: blur(4px);
+      }
+      .tile-move { position: relative; width: 100%; height: 100%; transition: transform 0s; }
+      .tile:hover .tile-move { transform: scale(1.1); transition-duration: 1s; }
+      .tile-img { width: 100%; height: 100%; object-fit: cover; }
+      .tile:hover .tile-img { object-fit: contain; }
+      .tile-icon {
+        position: absolute; top: 0.5rem; left: 0.5rem; z-index: 2;
+        width: 1rem; height: 1rem; opacity: 0.7;
+      }
+      footer {
+        position: fixed; left: 0; right: 0; bottom: 1rem; text-align: center;
+        font-size: 12px; color: #374151; z-index: 50;
+      }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid" id="grid"></div>
+    </main>
+    <footer>
+      ACG · archived snapshot ·
+      <a href="recommend/">recommend</a> ·
+      <a href="../">zjffun.com</a>
+    </footer>
+    <script>
+      const ICONS = {
+        youtube:
+          '<svg class="tile-icon" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
+        tweet:
+          '<svg class="tile-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>',
+        link:
+          '<svg class="tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>',
+      };
+      const esc = (s) =>
+        String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+      fetch("items.json")
+        .then((r) => r.json())
+        .then((items) => {
+          document.getElementById("grid").innerHTML = items
+            .map(
+              (i) => `<a class="tile" href="${esc(i.url)}" target="_blank" rel="noreferrer">
+                <img class="tile-bg" src="${esc(i.image)}" alt="" loading="lazy" />
+                ${ICONS[i.type] || ICONS.link}
+                <div class="tile-move"><img class="tile-img" src="${esc(i.image)}" alt="${esc(i.url)}" loading="lazy" /></div>
+              </a>`,
+            )
+            .join("");
+        });
+    </script>
+  </body>
+</html>

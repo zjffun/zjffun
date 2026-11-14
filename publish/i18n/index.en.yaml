@@ -30,3 +30,5 @@ ytEmbed: YouTube embed image overlay
 ytEmbedDesc: A tool to add more visual cue when embedding YouTube videos in GitHub.
 jsav: JS asynchronous visualization
 jsavDesc: An online tool for visualizing JS asynchronous tasks based on Zone.js.
+aacgg: ACG
+aacggDesc: An Anime, Comic & Game gallery (archived static snapshot).

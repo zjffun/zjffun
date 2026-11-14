@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACG · Recommend</title>
+    <meta name="description" content="ACG recommend list (archived static snapshot)" />
+    <link rel="icon" href="../../favicon.ico" />
+    <link rel="stylesheet" href="cyberpunk.css" />
+    <link rel="stylesheet" href="page.css" />
+    <style>
+      @font-face {
+        font-family: "Cyberpunk";
+        src: url(Cyberpunk.ttf) format("truetype");
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #000; }
+      .header h1 {
+        margin: 0;
+        font-family: "Cyberpunk", sans-serif;
+        font-size: 2.25rem;
+        padding: 16px 16px 8px 16px;
+        color: var(--black);
+        text-shadow: var(--cyan-cyberpunk-font1) 1px 1px, var(--cyan-cyberpunk-font2) 2px 2px;
+        text-transform: uppercase;
+      }
+      .content { padding: 24px 0 56px; min-height: calc(100vh - 100px); }
+      .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .item img { aspect-ratio: 1 / 1.414; object-fit: cover; width: 100%; display: block; }
+      .tbc { margin: 40px 0 16px; padding: 0 16px; }
+      .tbc img { height: 40px; width: auto; }
+      .back { position: fixed; right: 12px; bottom: 36px; font-size: 12px; z-index: 5; }
+      .back a { color: var(--yellow); }
+    </style>
+  </head>
+  <body class="cyberpunk-recommend">
+    <div class="container">
+      <div class="header">
+        <div class="cyber-razor-bottom"><h1>recommend</h1></div>
+      </div>
+      <div class="content">
+        <div class="wrap"><div class="grid" id="grid"></div></div>
+        <div class="tbc"><img src="to-be-continued.jpg" alt="to be continued" /></div>
+      </div>
+      <div class="footer"></div>
+    </div>
+    <div class="back"><a href="../">← ACG</a></div>
+    <script>
+      const esc = (s) =>
+        String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+      fetch("items.json")
+        .then((r) => r.json())
+        .then((items) => {
+          document.getElementById("grid").innerHTML = items
+            .map(
+              (i) => `<div class="item cyber-tile-small fg-dark">
+                <img src="${esc(i.image)}" width="90" height="127" loading="lazy" alt="${esc(i.name)}" />
+                <label class="itemLabel">${esc(i.name)}</label>
+              </div>`,
+            )
+            .join("");
+        });
+    </script>
+  </body>
+</html>
