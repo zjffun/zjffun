@@ -2,6 +2,8 @@ description: 您好搜索引擎。如果您已经有了自主意识，可以帮�
 lang: zh-CN
 mainHref: /index.html
 title: ZJFFUN // 搞事情
+heroTagline: 就是图个好玩
+heroDescription: 关于我的点点滴滴。
 clickToComponent: 点击跳转到代码
 clickToComponentDesc: 浏览器中点击元素即可立即在 VS Code 中打开源代码。支持自定义配置打开 WebStorm、Cursor、GitHub 等
 aacggRecommend: 动漫推荐
@@ -26,3 +28,10 @@ aacgg: ACG
 aacggDesc: 动漫游戏链接图集（已归档的静态快照）。
 zan: 攒
 zanDesc: 边看边记，把视频时间点和读书想法按标签攒在一起；只存引用，不存内容。
+highlightsLabel: 精选入口
+highlightCode: 代码
+highlightAnime: 动漫
+highlightBooks: 读书
+highlightMusic: 音乐
+highlightBooksDetail: 微信读书书单
+highlightMusicDetail: 网易云音乐

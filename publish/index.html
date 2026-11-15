@@ -35,141 +35,118 @@
           <h1 class="hero__title" data-text="ZJFFUN">ZJFFUN</h1>
 
           <div class="hero__row">
-            <p class="hero__sub">// just for fun — a transmission of side-projects, tools &amp; experiments</p>
-            <div class="hero__tag">
-              <span>v.2026</span>
-              <span class="hero__bar"></span>
-              <span>12 NODES</span>
-            </div>
+            <p class="hero__sub">
+              <strong><span aria-hidden="true">// </span><%- htmlWebpackPlugin.options.zi18n.heroTagline %></strong>
+              <span class="hero__desc"><%- htmlWebpackPlugin.options.zi18n.heroDescription %></span>
+            </p>
+            <span class="hero__tag">v.2026</span>
           </div>
         </header>
+
+        <nav class="highlights" aria-label="<%= htmlWebpackPlugin.options.zi18n.highlightsLabel %>">
+          <a class="highlight highlight--code" href="https://github.com/zjffun" target="_blank" rel="noopener">
+            <span class="highlight__title"><%= htmlWebpackPlugin.options.zi18n.highlightCode %></span>
+            <span class="highlight__detail">GitHub</span>
+          </a>
+          <a class="highlight highlight--anime" href="./acg/recommend/" target="_blank" rel="noopener">
+            <span class="highlight__title"><%= htmlWebpackPlugin.options.zi18n.highlightAnime %></span>
+            <span class="highlight__detail"><%= htmlWebpackPlugin.options.zi18n.aacggRecommend %></span>
+          </a>
+          <a class="highlight highlight--books" href="https://weread.qq.com/misc/booklist/939232961_8d706TDMz" target="_blank" rel="noopener">
+            <span class="highlight__title"><%= htmlWebpackPlugin.options.zi18n.highlightBooks %></span>
+            <span class="highlight__detail"><%= htmlWebpackPlugin.options.zi18n.highlightBooksDetail %></span>
+          </a>
+          <a class="highlight highlight--music" href="https://y.music.163.com/m/user?id=17929463590" target="_blank" rel="noopener">
+            <span class="highlight__title"><%= htmlWebpackPlugin.options.zi18n.highlightMusic %></span>
+            <span class="highlight__detail"><%= htmlWebpackPlugin.options.zi18n.highlightMusicDetail %></span>
+          </a>
+        </nav>
 
         <section class="feed" aria-label="projects">
           <div class="feed__head">
             <span>NODES</span>
             <span class="feed__line"></span>
-            <span>↗ EXTERNAL</span>
           </div>
 
           <ul class="feed__list">
             <li class="node">
               <a href="https://zan.zjffun.com" target="_blank">
-                <span class="node__num">01</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.zan %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.zanDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
-              </a>
-            </li>
-            <li class="node">
-              <a href="./acg/recommend/" target="_blank">
-                <span class="node__num">02</span>
-                <span class="node__content">
-                  <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.aacggRecommend %></span>
-                  <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.aacggRecommendDesc %></span>
-                </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="./acg/" target="_blank">
-                <span class="node__num">03</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.aacgg %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.aacggDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="https://ctc.zjffun.com" target="_blank">
-                <span class="node__num">04</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.clickToComponent %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.clickToComponentDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
-              </a>
-            </li>
-            <li class="node">
-              <a href="https://github.com/zjffun" target="_blank">
-                <span class="node__num">05</span>
-                <span class="node__content">
-                  <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.github %></span>
-                  <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.githubDesc %></span>
-                </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="https://marketplace.visualstudio.com/items?itemName=zjffun.snippetsmanager" target="_blank">
-                <span class="node__num">06</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vscodesm %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vscodesmDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="https://marketplace.visualstudio.com/items?itemName=zjffun.gotofolder" target="_blank">
-                <span class="node__num">07</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolder %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vscodeGoToFolderDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="https://github.com/zjffun/vue-click-to-component" target="_blank">
-                <span class="node__num">08</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vueClickToComponent %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vueClickToComponentDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="https://marketplace.visualstudio.com/items?itemName=zjffun.dependency-dependent" target="_blank">
-                <span class="node__num">09</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.vscodeDependencyDependent %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.vscodeDependencyDependentDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="http://blog.zjffun.com" target="_blank">
-                <span class="node__num">10</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.blog %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.blogDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="http://tft.zjffun.com" target="_blank">
-                <span class="node__num">11</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.tftHelper %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.tftHelperDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
             <li class="node">
               <a href="https://zjffun.github.io/js-async-visualization/?example=0" target="_blank">
-                <span class="node__num">12</span>
                 <span class="node__content">
                   <span class="node__title"><%= htmlWebpackPlugin.options.zi18n.jsav %></span>
                   <span class="node__desc"><%= htmlWebpackPlugin.options.zi18n.jsavDesc %></span>
                 </span>
-                <span class="node__arrow">↗</span>
               </a>
             </li>
           </ul>

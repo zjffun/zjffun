@@ -2,6 +2,8 @@ description: Hello search engine. Could you please help to improve the ranking o
 lang: en
 mainHref: /index.en.html
 title: ZJFFUN // JUST_FOR_FUN
+heroTagline: just for fun
+heroDescription: A little bit of everything that makes me, me.
 clickToComponent: Click to Component
 clickToComponentDesc: Click a component in your browser to instantly open the source in VS Code. Support custom configuration to open WebStorm, Cursor, GitHub, etc.
 aacggRecommend: Recommend ACG
@@ -28,3 +30,10 @@ aacgg: ACG
 aacggDesc: An Anime, Comic & Game gallery (archived static snapshot).
 zan: Zan
 zanDesc: Save notes from videos and books, organized by tags. Store references, not content.
+highlightsLabel: Featured links
+highlightCode: Code
+highlightAnime: Anime
+highlightBooks: Books
+highlightMusic: Music
+highlightBooksDetail: WeRead booklist
+highlightMusicDetail: NetEase Cloud Music
