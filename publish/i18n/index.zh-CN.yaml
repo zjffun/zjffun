@@ -4,6 +4,9 @@ mainHref: /index.html
 title: ZJFFUN // 搞事情
 heroTagline: 搞事情
 heroDescription: 关于我的点点滴滴。
+socialLabel: 社交账号
+socialTieba: 贴吧
+socialXiaohongshu: 小红书
 clickToComponent: 点击跳转到代码
 clickToComponentDesc: 在浏览器里点一下组件，直接跳到源码。默认打开 VS Code，也可以配置成 Cursor、WebStorm 或 GitHub。
 aacggRecommend: 我喜欢的动漫，排名不分先后？

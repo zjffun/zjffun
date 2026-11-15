@@ -4,6 +4,9 @@ mainHref: /index.en.html
 title: ZJFFUN // JUST_FOR_FUN
 heroTagline: just for fun
 heroDescription: A little bit of everything that makes me, me.
+socialLabel: Social profiles
+socialTieba: Tieba
+socialXiaohongshu: rednote
 clickToComponent: Click to Component
 clickToComponentDesc: Click a component in the browser to jump to its source in VS Code. You can also set it up for Cursor, WebStorm, or GitHub.
 aacggRecommend: Anime I love, in no particular order?
