@@ -191,6 +191,8 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
 
 .highlight {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -211,6 +213,66 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
   &--books { --accent: var(--lime); }
   &--music { --accent: #b8a0ff; }
 
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    right: -9px;
+    width: 112px;
+    height: 76px;
+    color: var(--accent);
+    opacity: 0.26;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  &--code::before {
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    transform: rotate(-12deg);
+    background:
+      radial-gradient(circle, currentColor 1.4px, transparent 2px) 9px 7px / 8px 8px repeat-x,
+      linear-gradient(currentColor, currentColor) 0 21px / 100% 1px no-repeat,
+      linear-gradient(currentColor, currentColor) 13px 34px / 39% 2px no-repeat,
+      linear-gradient(currentColor, currentColor) 23px 45px / 61% 2px no-repeat,
+      linear-gradient(currentColor, currentColor) 23px 56px / 29% 2px no-repeat;
+  }
+
+  &--anime::before {
+    top: 19px;
+    height: 60px;
+    border-block: 1px solid currentColor;
+    transform: rotate(15deg);
+    background:
+      repeating-linear-gradient(90deg, currentColor 0 7px, transparent 7px 13px) 4px 5px / 100% 4px no-repeat,
+      repeating-linear-gradient(90deg, currentColor 0 7px, transparent 7px 13px) 4px calc(100% - 5px) / 100% 4px no-repeat,
+      repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 34px) 4px center / 100% 30px no-repeat,
+      linear-gradient(145deg, transparent 44%, currentColor 45% 48%, transparent 49%) 9px center / 27px 30px repeat-x;
+  }
+
+  &--books::before {
+    top: 19px;
+    transform: rotate(-10deg);
+    clip-path: polygon(0 9%, 19% 3%, 35% 4%, 50% 13%, 65% 4%, 81% 3%, 100% 9%, 100% 89%, 81% 84%, 65% 85%, 50% 96%, 35% 85%, 19% 84%, 0 89%);
+    background:
+      linear-gradient(90deg, transparent 49%, var(--bg-2) 49% 51%, transparent 51%),
+      repeating-linear-gradient(0deg, transparent 0 8px, currentColor 8px 9px) 12px center / 29% 32px no-repeat,
+      repeating-linear-gradient(0deg, transparent 0 8px, currentColor 8px 9px) calc(100% - 12px) center / 29% 32px no-repeat,
+      color-mix(in srgb, currentColor 46%, transparent);
+  }
+
+  &--music::before {
+    top: -13px;
+    right: -16px;
+    height: 112px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, var(--bg-2) 0 3px, currentColor 4px 12px, transparent 13px),
+      repeating-radial-gradient(circle, transparent 0 5px, currentColor 6px, transparent 7px 9px);
+  }
+
   &__title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(1.45rem, 3.2vw, 2.2rem);
@@ -226,6 +288,7 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
 
   &:hover, &:focus-visible {
     border-color: var(--accent);
+    &::before { opacity: 0.43; }
     .highlight__title { color: var(--accent); }
   }
 
