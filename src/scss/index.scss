@@ -300,14 +300,8 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
 
 /* feed (project list) -------------------------------- */
 .feed {
-  padding: 36px 0 60px;
+  padding-top: 28px;
 
-  &__head {
-    display: flex; align-items: center; gap: 14px;
-    color: var(--dim); font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
-    margin-bottom: 18px;
-  }
-  &__line { flex: 1; height: 1px; background: var(--line-strong); }
   &__list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
 }
 
@@ -349,10 +343,8 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
 
 /* foot ------------------------------------------------ */
 .foot {
-  display: flex; align-items: center; gap: 14px;
-  padding: 20px 0 36px;
-  color: var(--dim); font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
-  &__line { flex: 1; height: 1px; background: var(--line); }
+  padding: 20px 16px 36px;
+  color: var(--dim); font-size: 0.8rem; letter-spacing: 0.12em;
 }
 
 /* ── responsive ─────────────────────────────────────── */
@@ -374,6 +366,7 @@ body { min-height: 100vh; position: relative; overflow-x: hidden; }
     min-height: 104px;
     padding: 20px 12px;
   }
+  .foot { padding-inline: 12px; }
   .node__content { gap: 6px; }
   .node__desc { font-size: 0.78rem; }
 }
