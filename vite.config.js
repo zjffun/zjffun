@@ -7,35 +7,33 @@ import YAML from 'yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const loadYaml = (f) =>
-  YAML.parse(readFileSync(path.resolve(__dirname, `publish/i18n/${f}`), 'utf8'));
-
-const i18nMap = {
-  'index.html': loadYaml('index.en.yaml'),
-  'index.zh.html': loadYaml('index.zh-CN.yaml'),
+const localeFiles = {
+  'index.html': path.resolve(__dirname, 'publish/i18n/index.en.yaml'),
+  'index.zh.html': path.resolve(__dirname, 'publish/i18n/index.zh-CN.yaml'),
 };
-
-const analytics = readFileSync(
-  path.resolve(__dirname, 'publish/common/analytics.html'),
-  'utf8',
-);
-
-const templateHtml = readFileSync(
-  path.resolve(__dirname, 'publish/index.html'),
-  'utf8',
-).replace(
-  /<%=\s*require\(['"]!!raw-loader!\.\/common\/analytics\.html['"]\)\.default\s*%>/,
-  analytics,
-);
+const templateFile = path.resolve(__dirname, 'publish/index.html');
+const analyticsFile = path.resolve(__dirname, 'publish/common/analytics.html');
+const homepageFiles = new Set([templateFile, analyticsFile, ...Object.values(localeFiles)]);
 
 const i18nHtmlPlugin = {
   name: 'i18n-html',
+  configureServer(server) {
+    server.watcher.add([...homepageFiles]);
+    server.watcher.on('change', (file) => {
+      if (homepageFiles.has(file)) server.ws.send({ type: 'full-reload', path: '*' });
+    });
+  },
   transformIndexHtml: {
     order: 'pre',
     handler(_html, ctx) {
       const name = ctx.path.replace(/^\//, '').replace(/\?.*$/, '') || 'index.html';
-      const data = i18nMap[name];
-      if (!data) return _html;
+      if (!Object.hasOwn(localeFiles, name)) return _html;
+
+      const data = YAML.parse(readFileSync(localeFiles[name], 'utf8'));
+      const templateHtml = readFileSync(templateFile, 'utf8').replace(
+        /<%=\s*require\(['"]!!raw-loader!\.\/common\/analytics\.html['"]\)\.default\s*%>/,
+        () => readFileSync(analyticsFile, 'utf8'),
+      );
       return template(templateHtml)({
         htmlWebpackPlugin: { options: { zi18n: data } },
       });

@@ -1,33 +1,33 @@
-description: 您好搜索引擎。如果您已经有了自主意识，可以帮忙提高下这个网站的排名吗？非常感谢。
+description: ZJFFUN 的个人主页。这里有代码、动漫、读书、音乐，还有些做着玩的项目。
 lang: zh-CN
 mainHref: /index.html
 title: ZJFFUN // 搞事情
-heroTagline: 就是图个好玩
+heroTagline: 搞事情
 heroDescription: 关于我的点点滴滴。
 clickToComponent: 点击跳转到代码
-clickToComponentDesc: 浏览器中点击元素即可立即在 VS Code 中打开源代码。支持自定义配置打开 WebStorm、Cursor、GitHub 等
-aacggRecommend: 动漫推荐
+clickToComponentDesc: 在浏览器里点一下组件，直接跳到源码。默认打开 VS Code，也可以配置成 Cursor、WebStorm 或 GitHub。
+aacggRecommend: 我喜欢的动漫，排名不分先后？
 aacggRecommendDesc: 赛博朋克风格动漫游戏推荐页面
 blog: 博客
-blogDesc: 这个问题搞了好久记一下。我去，之前已经记过了@_@
+blogDesc: 都 AI 时代了，谁还看技术博客啊？哦，我自己。
 github: GitHub
 githubDesc: 冒险、开心、慷慨、忠实坚强、助人为乐其实很容易，GitHub 使一切都没有问题
 vscodesm: VS Code 代码片段管理器
-vscodesmDesc: 一个用来快速创建和编辑代码片段的 VS Code 拓展程序
+vscodesmDesc: 在 VS Code 里创建和编辑代码片段。
 vscodeGoToFolder: VS Code 前往文件夹
-vscodeGoToFolderDesc: 快速前往文件夹
+vscodeGoToFolderDesc: 在 VS Code 里直接跳到想去的文件夹。
 vueClickToComponent: Vue 点击打开组件
-vueClickToComponentDesc: 在浏览器中按住 Option(Alt) 并点击组件立即在编辑器中打开对应代码.
+vueClickToComponentDesc: 按住 Option（Alt）点一下 Vue 组件，直接在编辑器里打开源码。
 vscodeDependencyDependent: VS Code 依赖和使用者
-vscodeDependencyDependentDesc: 查看依赖和使用者
+vscodeDependencyDependentDesc: 看看一个文件依赖谁，又被谁依赖。
 tftHelper: 云顶之弈助手
-tftHelperDesc: 已经不玩了
+tftHelperDesc: 以前玩云顶之弈时做的小工具。
 jsav: JS 异步可视化
-jsavDesc: 一个基于 Zone.js 的 JS 异步任务可视化工具
+jsavDesc: 用 Zone.js 把 JavaScript 异步任务的执行顺序画出来。
 aacgg: ACG
-aacggDesc: 动漫游戏链接图集（已归档的静态快照）。
+aacggDesc: 把有意思的动漫和游戏链接挂起来，凑成一间小画廊。
 zan: 攒
-zanDesc: 边看边记，把视频时间点和读书想法按标签攒在一起；只存引用，不存内容。
+zanDesc: 把视频时间点和读书笔记按标签攒起来，只存引用和自己的笔记。
 highlightsLabel: 精选入口
 highlightCode: 代码
 highlightAnime: 动漫
@@ -35,3 +35,4 @@ highlightBooks: 读书
 highlightMusic: 音乐
 highlightBooksDetail: 微信读书书单
 highlightMusicDetail: 网易云音乐
+feedLabel: 项目列表
